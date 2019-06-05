@@ -1,0 +1,11 @@
+.main-navigation {
+  position: relative;
+
+  @include bp( medium ) {
+    position: sticky;
+    top: 0;
+    transition: all 300ms ease-in-out;
+    width: 100%;
+    z-index: 299;
+  }
+}
