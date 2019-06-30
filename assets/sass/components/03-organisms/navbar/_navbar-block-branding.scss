@@ -1,0 +1,25 @@
+/* ==========================================================================
+   NAVBAR - BLOCK - BRANDING
+   ========================================================================== */
+
+#navbar {
+
+    .block-system-branding-block {
+
+        margin: 0;
+        height: 110px;
+        float: left;
+
+        a {
+            display: inline-block;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .site-logo img {
+            width: auto;
+            height: 90px;
+        }
+    
+    }
+    
+}

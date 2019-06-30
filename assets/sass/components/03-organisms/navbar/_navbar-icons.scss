@@ -1,0 +1,67 @@
+/* ==========================================================================
+   NAVBAR - ICONS
+   ========================================================================== */
+
+#navbar {
+
+    .icon-menu {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 80px;
+        height: 110px;
+        border: 0;
+        background: none;
+        z-index: 200;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .icon-menu span.icon-menu-1,
+    .icon-menu span.icon-menu-2,
+    .icon-menu span.icon-menu-3 {
+        width: 30px;
+        height: 4px;
+        background: $navbar-text;
+        display: block;
+        margin: 6px auto;    
+        border-radius: 2px;  
+        position: relative;
+        top: 0;
+    }
+    .icon-menu span.icon-menu-1,
+    .icon-menu span.icon-menu-3 {
+        transition: all 0.1s 0.1s;  
+    }
+    .icon-menu span.icon-menu-2 {
+        transition: all 0.1s 0.1s;  
+    }
+
+}
+
+/* open */
+body.menu-open #navbar {
+
+    .icon-menu span.icon-menu-1 {
+        transform: rotate(45deg);
+        position: relative;
+        top: 10px;
+    }
+    .icon-menu span.icon-menu-2 {
+        visibility: hidden;
+    }
+    .icon-menu span.icon-menu-3 {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -10px;
+    }
+    .icon-menu span.icon-menu-1,
+    .icon-menu span.icon-menu-3 {
+        transition: all 0 0;  
+    }
+    .icon-menu span.icon-menu-2 {
+        transition: all 0.1s 0s;   
+    }
+
+}

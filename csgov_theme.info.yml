@@ -9,6 +9,7 @@ libraries:
   - csgov_theme/global-styling
 
 regions:
+  navbar: 'Mobile navbar'
   top_bar: 'Top Bar'
   logo: 'Logo'
   search: 'Search'

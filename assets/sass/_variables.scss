@@ -1,6 +1,7 @@
 //
 // Default colors
 //
+
 // Colors
 $black: rgb(0, 0, 0);
 $white: rgb(255, 255, 255);
@@ -30,6 +31,56 @@ $white-7: rgba(255, 255, 255, .7);
 $white-8: rgba(255, 255, 255, .8);
 $white-9: rgba(255, 255, 255, .9);
 $white-10: $white;
+
+
+//
+// Design system color
+//
+
+// Primary
+$primary-color: #2362A2;
+$primary-light-color: #337DBD;
+$primary-dark-color: #254E80;
+
+// Secondary
+$secondary-color: #ECAE1A;
+$secondary-dark-color: #DD9F0C;
+
+// Background
+$background-color: #F5F5F5;
+$background-light-color: #FFFFFF;
+$background-dark-color: #3B3B3B;
+
+// Text
+$primary-text-color: #FFFFFF;
+$secondary-text-color: #3B3B3B;
+
+// Other
+$error-color: #E04857;
+$success-color: #6FBD2C;
+
+
+// 
+// Components
+// 
+
+// Navbar
+$navbar-bg: $primary-color;
+$navbar-text: $primary-text-color;
+$navbar-collapse-bg: $background-color;
+$navbar-collapse-text: $secondary-text-color;
+
+// Header
+
+// Main Menu
+$main-menu-bg: $primary-color;
+$main-menu-bg-active: $primary-dark-color;
+$main-menu-text: $primary-text-color;
+$main-menu-text-active: $primary-text-color;
+
+// Footer
+
+
 
 //
 // Color sections
@@ -70,9 +121,11 @@ $color-info:            #5bc0de;
 $color-warning:         #f0ad4e;
 $color-danger:          #d9534f;
 
+
 //
 // Layout dimensions.
 //
+
 // Small screen side padding
 $site-padding: 2rem;
 // Max width for large monitor.
@@ -93,9 +146,18 @@ $breakpoints: (
   large: $bp-large / 1.6,
 );
 
+$screen-sm-min: $bp-small;
+$screen-md-min: $bp-medium;
+$screen-lg-min: $bp-large;
+
+$screen-sm-max: ($screen-md-min - 1);
+$screen-md-max: ($screen-lg-min - 1); 
+
+
 //
 // Fonts
 //
+
 // Font sizes
 $base-font-size: 1.6rem;
 $font-size-large: $base-font-size * 1.5;
@@ -147,6 +209,8 @@ $main-navigation-background: $gray-2;
 $main-navigation-action-hover: $black;
 $main-navigation-accent: $gray-3;
 $main-navigation-accent-hover: $color-standard-action;
+
+
 
 //
 // View modes

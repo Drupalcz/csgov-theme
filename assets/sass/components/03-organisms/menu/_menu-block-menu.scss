@@ -1,0 +1,186 @@
+/* ==========================================================================
+   MAIN - BLOCK - MENU
+   ========================================================================== */
+   
+#menu {
+
+    .block-menu > h2 {
+        display: none;
+    }
+  
+    @media (max-width: $screen-sm-max) {
+
+        .container {
+            padding: 0;
+            margin: 0;
+        }
+
+        .block-menu {
+
+            padding: 30px 35px;
+            margin: 0;
+
+            /* 1 */
+            ul.menu {
+                margin: 0;
+                padding: 0;
+            }
+            ul.menu li {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            ul.menu li a {
+                display: block;  
+                padding: 20px 80px 20px 20px;
+                text-decoration: none;
+                border-bottom: 1px solid #EEEEEE;
+                color: #000000;
+                font-weight: 700;
+                font-size: 20px;
+                border-left: 5px solid #FFFFFF;
+            }
+            ul.menu li a.is-active {
+                color: $primary-color;
+                border-left: 5px solid $primary-color;
+            }
+
+            /* 2 */
+            ul.menu li ul {
+                display: none;
+                border: 0;
+            }
+            ul.menu li ul.open {
+                display: block;
+            }            
+            ul.menu li ul li a {
+                padding: 25px 80px 25px 40px;
+            }
+            ul.menu li a:hover {
+
+            } 
+
+            /* 3 */
+            ul.menu li ul li ul li a {
+                padding: 25px 80px 25px 60px;
+            }
+
+            /* 4 */
+            ul.menu li ul li ul li ul li a {
+                padding: 25px 80px 25px 80px;
+            }
+
+            /* span */
+            ul.menu li span {
+                position: absolute;
+                right: 0;
+                top: 0px;
+                height: 60px;
+                width: 60px;
+                background: url('../images/mob-down.png') no-repeat 50% 50%;
+                cursor: pointer;
+                border-left: 1px solid #DDDDDD;  
+            }
+            ul.menu li span.open {
+                background: url('../images/mob-up.png') no-repeat 50% 50%;
+            }
+            
+        }
+
+    } 
+
+    @media (min-width: $screen-md-min) {
+    
+        .block-menu {
+
+            display: block !important;
+
+            /* 1 */
+            ul.menu {
+                margin: 0;
+                padding: 0;
+                display: flex; 
+                flex-direction: row;
+            }
+            ul.menu li {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                /* flex-grow: 1; */
+                position: relative;
+                line-height: 1;
+            }
+            ul.menu li a {
+                display: block;
+                height: 60px;
+                line-height: 60px;
+                padding: 0 30px;
+                color: $main-menu-text;     
+                text-decoration: none;
+                text-transform: uppercase;
+                white-space: nowrap;   
+            }
+            ul.menu > li:hover > a {
+                background: $main-menu-bg;
+                color: $main-menu-text;
+            }
+            ul.menu > li > a:hover {
+                background: $main-menu-bg-active;
+                color: $main-menu-text-active;
+            }
+            ul.menu > li > a.is-active,
+            ul.menu > li > a.is-active:hover {
+                background: $main-menu-bg-active;     
+                color: $main-menu-text-active;     
+            }
+
+            /* 2 */
+            ul.menu > li > ul {
+                display: none;
+                background: $main-menu-bg;            
+            }
+            ul.menu > li:hover > ul {
+                position: absolute;
+                top: 60px;
+                z-index: 1000;
+                display: block;
+                height: auto;
+                min-width: 100%;
+            }
+            ul.menu > li:last-child > ul {
+                right: 0;
+                left: auto;
+            }
+            ul.menu > li > ul > li {
+                margin: 0;
+                padding: 0;
+                height: auto;
+                line-height: 1;
+            }
+            ul.menu > li > ul > li > a {
+                height: 60px;
+                line-height: 60px;
+                padding: 0 30px;
+                color: $main-menu-text;
+            }
+            ul.menu > li > ul > li > a:hover {
+                background: $main-menu-bg-active;
+                color: $main-menu-text;
+            }
+            ul.menu >  ul > li > a.is-active,
+            ul.menu >  ul > li > a.is-active:hover {
+                background: $main-menu-bg-active;
+                color: $main-menu-text;          
+            }
+
+            /* 3 */
+            ul.menu > li > ul > li > ul {
+                display: none !important;
+            }
+
+        }
+
+    }
+  
+}

@@ -1,0 +1,19 @@
+//
+// HEADER - BRANDING
+//
+
+#header {
+
+    @media (max-width: $screen-sm-max) {
+
+        .block-system-branding-block {
+            display: none;
+        }
+    
+    }
+    
+    @media (min-width: $screen-md-min) {
+    
+    }
+    
+}
