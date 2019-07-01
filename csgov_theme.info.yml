@@ -9,10 +9,8 @@ libraries:
   - csgov_theme/global-styling
 
 regions:
-  navbar: 'Mobile navbar'
-  top_bar: 'Top Bar'
-  logo: 'Logo'
-  search: 'Search'
+  navbar: 'Navbar'
+  header: 'Header'
   navigation: 'Navigation'
   admin_area: 'Admin area'
   layoutless: 'Layoutless pages'

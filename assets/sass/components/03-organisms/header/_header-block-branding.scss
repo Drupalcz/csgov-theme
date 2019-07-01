@@ -4,6 +4,10 @@
 
 #header {
 
+    .block-system-branding-block > h2 {
+        display: none;
+    }
+
     @media (max-width: $screen-sm-max) {
 
         .block-system-branding-block {
@@ -14,6 +18,36 @@
     
     @media (min-width: $screen-md-min) {
     
+        .block-system-branding-block {
+            margin-right: auto;
+            padding: 20px 0 25px 0;
+        }
+
+        /* logo */
+        .block-system-branding-block .site-logo {
+            display: inline-block;
+            padding-top: 5px;
+        }
+        .block-system-branding-block .site-logo img {
+            height: 110px;
+            width: auto; 
+        }
+
+        /* name */
+        .site-name {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        .site-name a {
+            text-decoration: none;
+        }
+
+        /* slogan */
+        .site-slogan {
+            font-size: 2rem;
+        }
+
+
     }
     
 }

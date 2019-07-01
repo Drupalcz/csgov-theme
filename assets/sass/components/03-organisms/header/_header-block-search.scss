@@ -4,6 +4,10 @@
 
 #header {
 
+    .block-search > h2 {
+        display: none;
+    }
+
     @media (max-width: $screen-sm-max) {
 
         .block-search {
@@ -15,6 +19,11 @@
     
     @media (min-width: $screen-md-min) {
     
+        .block-search {
+            margin-top: 60px;
+            margin-left: 35px;
+        }
+
     }
     
 }

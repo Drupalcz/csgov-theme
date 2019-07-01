@@ -4,20 +4,45 @@
 
 #navbar {
 
+    .block-system-branding-block > h2 {
+        display: none;
+    }
+
     .block-system-branding-block {
 
+        display: flex;
         margin: 0;
-        height: 110px;
-        float: left;
-
-        a {
+        height: 90px;
+        
+        /* logo */
+        .site-logo {
             display: inline-block;
-            padding: 10px;
+            padding: 10px 15px 10px 15px;
             text-decoration: none;
         }
         .site-logo img {
             width: auto;
-            height: 90px;
+            height: 70px;
+        }
+
+        /* name */
+        .site-name {
+            display: inline-block;
+            line-height: 90px;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .site-name a {
+            text-decoration: none;
+            color: $navbar-text;
+        }
+
+        /* slogan */
+        .site-slogan {
+            display: inline-block;
+            line-height: 90px;
+            font-size: 2rem;
         }
     
     }
