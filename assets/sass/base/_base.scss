@@ -1,7 +1,17 @@
-* {
-  box-sizing: border-box;
+/* box model */
+*,
+*::before,
+*::after {
+     box-sizing: border-box;
 }
 
+/* focus */
+*:focus {
+    outline: 0;
+}
+
+/* body */
 body {
-  color: $color-standard-foreground;
+  color: $body-text;
+  background: $body-bg;
 }

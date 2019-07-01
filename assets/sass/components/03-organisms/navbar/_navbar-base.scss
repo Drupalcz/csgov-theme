@@ -1,0 +1,32 @@
+//
+// NAVBAR
+//
+
+@media (max-width: $screen-sm-max) {
+
+    #navbar-wrapper {
+        position: relative;
+        height: 90px;
+    }
+    #navbar {
+        position: relative;
+        z-index: 100;
+        height: 90px;
+        background: $navbar-bg;
+        color: $navbar-text;
+    }
+    body.menu-open #navbar {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+    }
+
+}
+
+@media (min-width: $screen-md-min) {
+
+    #navbar-wrapper {
+        display: none !important;
+    }
+
+}

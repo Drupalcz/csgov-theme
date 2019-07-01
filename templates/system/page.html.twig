@@ -43,23 +43,27 @@
  */
 #}
 
-<div class="top-bar">
-  <div class="container">
-    {{ page.top_bar }}
+<div id="navbar-wrapper">
+  <div id="navbar" role="banner">
+    {{ page.navbar }}
+    <button class="icon-menu">
+      <span class="icon-menu-1"></span>
+      <span class="icon-menu-2"></span>
+      <span class="icon-menu-3"></span>
+    </button>
   </div>
 </div>
 
-<header role="banner">
-  <div class="region-header">
-    <div class="logo">{{ page.logo }}</div>
-    {% if page.search %}
-      <div class="search">{{ page.search }}</div>
-    {% endif %}
-  </div>
-</header>
-<div class="main-navigation">
-  <div class="container">
-    {{ page.navigation }}
+<div id="navbar-collapse">
+  <header id="header" role="banner">
+    <div class="container">
+      {{ page.header }}
+    </div>
+  </header>
+  <div id="menu" class="main-navigation">
+    <div class="container">
+      {{ page.navigation }}
+    </div>
   </div>
 </div>
 

@@ -1,0 +1,29 @@
+//
+// HEADER - BLOCK - SEARCH
+//
+
+#header {
+
+    .block-search > h2 {
+        display: none;
+    }
+
+    @media (max-width: $screen-sm-max) {
+
+        .block-search {
+            padding: 30px 35px 0px 35px;
+            margin: 0;
+        }
+    
+    }
+    
+    @media (min-width: $screen-md-min) {
+    
+        .block-search {
+            margin-top: 60px;
+            margin-left: 35px;
+        }
+
+    }
+    
+}

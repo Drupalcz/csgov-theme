@@ -1,0 +1,24 @@
+//
+// NAVBAR - COLLAPSE
+//
+
+@media (max-width: $screen-sm-max) {
+
+    #navbar-collapse {
+        display: none;
+    }
+
+    body.menu-open #navbar-collapse {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: calc(100% - 90px);
+        top: 90px;
+        left: 0;
+        z-index: 1000;
+        background: $navbar-collapse-bg;
+        color: $navbar-collapse-text;
+        overflow-y: auto;
+    }
+    
+}

@@ -1,0 +1,21 @@
+//
+// HEADER
+//
+
+@media (max-width: $screen-sm-max) {
+
+  #header .container {
+    margin: 0;
+    padding: 0;
+  }
+
+}
+
+@media (min-width: $screen-md-min) {
+
+  #header .region-header {
+    display: flex;
+  }
+
+}
+
