@@ -6,6 +6,5 @@ global-styling:
   js:
     js/csgov_theme.js: {}
   dependencies:
-    - core/jquery
-    - core/jquery.once
     - core/drupal
+    - core/drupal.debounce

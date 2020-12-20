@@ -2,34 +2,44 @@
  * @file
  * JS for Back To Top link.
  */
+(function BackToTop(Drupal) {
 
-(function ($) {
+  Drupal.behaviors.BackToTop = {
+    attach(context) {
+      context = context || document;
+      const backToTopTrigger = context.querySelector('.back-to-top__link');
+      const backToTopProcessedClass = 'js-back-to-top__link';
 
-  Drupal.behaviors.csgov_theme_BackToTop = {
-    attach: function (context, settings) {
-      var $body = $('body, html');
-      var backToTop = $('.back-to-top__link', context);
+      if (!backToTopTrigger || backToTopTrigger.classList.contains(backToTopProcessedClass)) {
+        return;
+      }
 
-      // Toggle class on backToTop.
-      $(window).scroll(function () {
-        if ($(this).scrollTop() > 250) {
-          backToTop.addClass('is-visible');
+      // Toggle class on backToTopTrigger.
+      function scroll() {
+        var scroll_target = 250;
+        var scroll = window.scrollY;
+        if (scroll >= scroll_target) {
+          backToTopTrigger.classList.add('is-visible');
         } else {
-          backToTop.removeClass('is-visible');
+          backToTopTrigger.classList.remove('is-visible');
         }
-      });
+      };
 
-      // Scroll smoothly to top on click.
-      backToTop.click(function (event) {
-        $body.animate({
-          scrollTop: 0
-        }, 800, function () {
-          $body.attr('tabindex','-1').focus().removeAttr('tabindex');
-        });
-        event.preventDefault();
-      });
+      // Scroll the window content up.
+      function scrollUp(e) {
+        console.log('clicked');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        e.preventDefault();
+      };
 
+      // Add event listeners.
+      window.addEventListener('scroll', Drupal.debounce(scroll, 250));
+      backToTopTrigger.addEventListener('click', scrollUp);
+      backToTopTrigger.addEventListener('touch', scrollUp);
+
+      // Add the processed class.
+      backToTopTrigger.classList.add(backToTopProcessedClass);
     }
   };
 
-})(jQuery);
+})(Drupal);
