@@ -9,7 +9,7 @@ var sass = require('gulp-sass');
 var imagemin = require('gulp-imagemin');
 var plumber = require('gulp-plumber');
 var glob = require('gulp-sass-glob');
-var uglify = require('gulp-uglify');
+var terser = require('gulp-terser');
 var concat = require('gulp-concat');
 var notify = require('gulp-notify');
 var rename = require('gulp-rename');
@@ -115,7 +115,7 @@ gulp.task('scripts', function() {
       .pipe(concat('./index.js'))
       .pipe(gulp.dest('./assets/scripts/'))
       .pipe(rename(config.js.file))
-      .pipe(uglify())
+      .pipe(terser())
       .pipe(gulp.dest(config.js.dest));
 });
 
