@@ -1,0 +1,31 @@
+.user-forms form {
+  max-width: 400px;
+  margin: 100px auto 30px;
+  padding: 10px 20px;
+  text-align: left;
+  border: 1px solid $gray-1;
+  border-radius: 4px;
+  box-shadow: 0 0 30px $gray-1;
+}
+
+.back-to-site {
+  max-width: 350px;
+  margin: 20px auto;
+}
+
+.user-forms {
+  nav.tabs {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.user-forms .region-layoutless {
+  padding-top: 150px;
+  text-align: center;
+
+  @include bp(small) {
+    padding-top: 100px;
+  }
+}
