@@ -1,0 +1,35 @@
+/* Paragraph content needs to be separated. */
+.paragraph .paragraph-content {
+  padding-bottom: var(--content-layout-padding);
+  padding-top: var(--content-layout-padding);
+  position: relative;
+  z-index: 101;
+}
+
+/* But no need for vertical padding on paragraph content if the paragraph has background color. */
+.paragraph[class^='color-']>.paragraph-content {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+/* Paragraphs on edgy layout. */
+.section-layout--edgy .paragraph-content {
+  box-sizing: border-box;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: var(--bp-super);
+  padding-left: var(--site-padding);
+  padding-right: var(--site-padding);
+  width: 100%;
+}
+
+/* No need for horizontal padding on paragraph content if the paragraph has background color. */
+.section-layout--edgy .paragraph[class^='color-']:not(.color--standard) {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+.paragraph--title {
+  margin-top: 0;
+}

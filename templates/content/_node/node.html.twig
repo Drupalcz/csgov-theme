@@ -1,0 +1,28 @@
+{% if node.field_banner_image.value and node.field_banner_image.0 %}
+  {% set hero_media_alt = node.field_banner_image.0.entity.field_media_image.0.alt %}
+  {% set hero_media_image = drupal_image(node.field_banner_image.0.entity.field_media_image|file_uri, 'hero_media', {alt: hero_media_alt }, responsive=true) %}
+{% endif %}
+{% if label %}
+  {% set hero_media_label = label %}
+{% endif %}
+{% if node.field_banner_title.value %}
+  {% set hero_media_label = node.field_banner_title.0.value %}
+{% endif %}
+{% if node.field_banner_intro.value %}
+  {% set hero_media_intro = node.field_banner_intro.value | check_markup(node.field_banner_intro.format) %}
+{% endif %}
+
+{% set classes = [
+  'node',
+  not node.isPublished() ? 'node--unpublished',
+  hero_media_image ? 'node--has-hero-media'
+]
+%}
+
+<article{{attributes.addClass(classes)}}>
+  {{ title_prefix }}
+  {% include "@csgov_theme/includes/hero-media/hero-media.twig" %}
+  {{ title_suffix }}
+
+  {{ content }}
+</article>

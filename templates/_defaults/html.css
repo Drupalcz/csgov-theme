@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--c-default-bg);
+  color: var(--c-default-text);
+  transition: var(--trans-out);
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+}
+
+/* We stop all animations where the user don't want them. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  :before,
+  :after {
+    animation: none !important;
+  }
+}

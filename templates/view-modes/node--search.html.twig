@@ -1,0 +1,11 @@
+{%
+  set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  not node.isPublished() ? 'node--unpublished',
+]
+%}
+{{ attach_library('csgov_theme/search') }}
+<article{{ attributes.addClass(classes) }}>
+  {{ content }}
+</article>

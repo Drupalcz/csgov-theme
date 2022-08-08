@@ -1,0 +1,71 @@
+/* Layout contained is our general class for the width of content area. */
+/* We make the layout-container relative, so if we have anything that is
+positioned absolute, that item won't move behind the admin toolbar when
+ogged in */
+.container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--bp-super);
+  padding: 0 var(--site-padding);
+}
+
+.container--super {
+  max-width: var(--bp-super);
+}
+
+.container--xxxlarge {
+  max-width: var(--bp-xxxlarge);
+}
+
+.container--xxlarge {
+  max-width: var(--bp-xxlarge);
+}
+
+.container--xlarge {
+  max-width: var(--bp-xlarge);
+}
+
+.container--large {
+  max-width: var(--bp-large);
+}
+
+.container--medium {
+  max-width: var(--bp-medium);
+}
+
+.container--small {
+  max-width: var(--bp-small);
+}
+
+.layout__region>* {
+  margin-bottom: var(--spacing);
+}
+
+@media screen and (min-width: 40rem) {
+  .layout__region>* {
+    margin-bottom: var(--spacing--m);
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  .layout__region>* {
+    margin-bottom: var(--spacing--L);
+  }
+}
+
+@media screen and (min-width: 40rem) {
+  .small-screen {
+    display: none;
+  }
+}
+
+.large-screen {
+  display: none;
+}
+
+@media screen and (min-width: 40rem) {
+  .large-screen {
+    display: block;
+  }
+}

@@ -1,0 +1,73 @@
+/* Styling for card view mode. */
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
+  overflow: hidden;
+  position: relative;
+  transition: var(--trans-in);
+  height: 100%;
+  background: var(--card-background);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--view-mode-box-shadow);
+}
+
+.card:hover,
+.card:focus-within {
+  box-shadow: var(--view-mode-box-shadow-hover);
+}
+
+.card a {
+  color: var(--card-foreground);
+}
+
+.card a:hover {
+  background: transparent;
+  text-decoration: none;
+}
+
+.card__image img {
+  display: block;
+}
+
+.card__summary {
+  padding: 0;
+}
+
+.card__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  margin-top: auto;
+  width: 100%;
+  transition: var(--trans-in);
+  padding: 0 var(--spacing--s) var(--spacing--s);
+}
+
+.card__title {
+  margin: 0;
+}
+
+.card__title a {
+  display: block;
+  padding: 0.5em 0;
+  transition: var(--trans-in);
+}
+
+.card:hover,
+.card__content,
+.card__content a {
+  transition: var(--trans-out);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card:hover,
+  .card:focus-within {
+    filter: brightness(120%) contrast(1);
+  }
+}
+
+:root[data-force-color-mode="dark"] .card:hover,
+:root[data-force-color-mode="dark"] .card:focus-within {
+  filter: brightness(120%) contrast(1);
+}

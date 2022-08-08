@@ -1,0 +1,90 @@
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-default);
+  font-weight: var(--fw-light);
+  line-height: var(--base-line-height);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin: var(--spacing--m) 0 var(--spacing--s);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-bold);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  font-weight:var(--fw-bold);
+}
+
+h4 {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-medium);
+}
+
+h5 {
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-regular);
+}
+
+h6 {
+  font-size: var(--fs-h6);
+  font-weight: var(--fw-regular);
+}
+
+p {
+  margin: 0;
+  max-width: var(--content-width);
+}
+
+p + p {
+  margin-top: var(--spacing--s);
+}
+
+a {
+  color: var(--c-default-action);
+  transition: var(--trans-out);
+  text-decoration: underline;
+  padding: 0 2px;
+  box-decoration-break: clone;
+}
+
+a:hover,
+a:focus {
+  color: var(--c-default-text);
+  text-decoration: none;
+  transition: var(--trans-in);
+  background: var(--c-default-action-hover);
+}
+
+a:focus {
+  outline: 3px solid var(--c-default-action);
+  outline-offset: 2px;
+}
+
+strong {
+  font-weight: var(--fw-bold);
+}
+
+.lead {
+  font-size: var(--fs-large);
+  font-style: italic;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}

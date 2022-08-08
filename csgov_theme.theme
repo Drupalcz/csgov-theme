@@ -3,7 +3,7 @@
  * @file
  * CS Gov theme main theme file.
  */
-
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_preprocess_page().
@@ -27,8 +27,8 @@ function csgov_theme_preprocess_layout(&$variables) {
 }
 
 /**
-+ * Implements hook_theme_suggestions_HOOK_alter().
-+ */
+ * Implements hook_theme_suggestions_HOOK_alter().
+*/
 function csgov_theme_theme_suggestions_field_alter(&$suggestions, array $variables) {
   // Provide a new suggestion for field in specific layouts.
   $element = $variables['element'];
@@ -36,5 +36,26 @@ function csgov_theme_theme_suggestions_field_alter(&$suggestions, array $variabl
     // See system_theme_suggestions_field().
     $suggestions[] = 'field__' . $element['#entity_type'] . '__' . $element['#field_name'] . '__' . $element['#third_party_settings']['layout_builder']['view_mode'];
   }
+
   return $suggestions;
+}
+
+function csgov_theme_theme_suggestions_input_alter(&$suggestions, array $variables) {
+  $element = $variables['element'];
+
+  // Provide a suggestion for form elements.
+  if (isset($element['#attributes']['data-twig-suggestion'])) {
+    $suggestions[] = 'input__' . $element['#type'] . '__' . $element['#attributes']['data-twig-suggestion'];
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+*/
+function csgov_theme_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Add data attribute and class to search exposed form.
+  if ($form['#id'] == 'views-exposed-form-search-page-1') {  
+    $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_results_submit';
+    $form['actions']['submit']['#attributes']['class'][] = 'search-box__button';
+  }
 }

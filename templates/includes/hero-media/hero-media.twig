@@ -1,0 +1,23 @@
+{{ attach_library('csgov_theme/hero-media') }}
+<div class="hero-media {{ hero_media_image ? 'hero-media--has-image' }}">
+  <div class="hero-media__content container">
+    {% if drupal_breadcrumb() %}
+      {{ drupal_breadcrumb() }}
+    {% endif %}
+    {{ title_prefix }}
+    <h1{{title_attributes}}>
+      {{ hero_media_label }}
+    </h1>
+    {{ title_suffix }}
+    {% if hero_media_intro %}
+      <div class="hero-media__intro">
+        {{ hero_media_intro }}
+      </div>
+    {% endif %}
+  </div>
+  {% if hero_media_image %}
+    <div class="hero-media__bg">
+      {{ hero_media_image }}
+    </div>
+  {% endif %}
+</div>

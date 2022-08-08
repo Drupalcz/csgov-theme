@@ -1,10 +1,164 @@
 global-styling:
   css:
     theme:
-      css/style.css: {}
-      css/font-awesome.css: {}
+      templates/variables/colors.css: {}
+      templates/variables/fonts.css: {}
+      templates/variables/misc.css: {}
+      templates/variables/transitions.css: {}
+      templates/variables/vertical-rhytm.css: {}
+      templates/variables/widths.css: {}
+      templates/_defaults/normalize.css: {}
+      templates/_defaults/layout.css: {}
+      templates/layouts/section-layouts.css: {}
+      templates/_defaults/typography.css: {}
+      templates/_defaults/html.css: {}
+      templates/form/button.css: {}
+      templates/form/forms.css: {}
+
+hero-media:
+  css:
+    theme:
+      templates/includes/hero-media/hero-media.css: {}
+
+breadcrumbs:
+  css:
+    theme:
+      templates/navigation/breadcrumbs/breadcrumbs.css: {}
+
+# Navigation
+facets:
+  css:
+    theme:
+      templates/navigation/facets/facets.css: {}
+menu-local-tasks:
+  css:
+    theme:
+      templates/navigation/menu-local-tasks/menu-local-tasks.css: {}
+
+menu-main:
+  css:
+    theme:
+     templates/navigation/menu-main/menu-main.css: {}
   js:
-    js/csgov_theme.js: {}
+    templates/navigation/menu-main/menu-main.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+menu-trigger:
+  css:
+    theme:
+      templates/navigation/menu-main/menu-trigger.css: {}
+
+back-to-top:
+  css:
+    theme:
+      templates/system/back-to-top.css: {}
+  js:
+    templates/system/back-to-top.js: {}
   dependencies:
     - core/drupal
     - core/drupal.debounce
+
+postscript:
+  css:
+    theme:
+      templates/system/postscript.css: {}
+  js:
+    templates/system/theme-switcher.js: {}
+
+# Regions
+footer:
+  css:
+    theme:
+      templates/regions/footer.css: {}
+
+header:
+  css:
+    theme:
+      templates/regions/header.css: {}
+
+# Layouts
+list:
+  css:
+    theme:
+      templates/includes/list/list.css: {}
+
+# Fields
+field-default:
+  css:
+    theme:
+      templates/fields/field-default.css: {}
+
+field-body:
+  css:
+    theme:
+      templates/fields/field-body.css: {}
+
+# View modes
+calendar-item:
+  css:
+    theme:
+      templates/view-modes/calendar-item.css: {}
+
+card:
+  css:
+    theme:
+      templates/view-modes/card.css: {}
+
+search:
+  css:
+    theme:
+      templates/view-modes/search.css: {}
+
+summary:
+  css:
+    theme:
+      templates/view-modes/summary.css: {}
+
+teaser:
+  css:
+    theme:
+      templates/view-modes/teaser.css: {}
+
+teaser-small:
+  css:
+    theme:
+      templates/view-modes/teaser-small.css: {}
+
+tile:
+  css:
+    theme:
+      templates/view-modes/tile.css: {}
+
+title:
+  css:
+    theme:
+      templates/view-modes/title.css: {}
+
+# Paragraphs
+paragraphs:
+  css:
+    theme:
+      templates/paragraphs/paragraphs.css: {}
+
+section-colors:  
+  css:
+    theme:
+      templates/paragraphs/section-colors.css: {}
+
+# Views
+search-block:  
+  css:
+    theme:
+      templates/views/search/search-block.css: {}
+
+views:  
+  css:
+    theme:
+      templates/views/views.css: {}
+
+views-layout:  
+  css:
+    theme:
+      templates/layouts/views-layout.css: {}

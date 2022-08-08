@@ -1,0 +1,133 @@
+.postscript__wrapper {
+  overflow: hidden;
+  border-top: 1px solid rgba(132, 132, 132, 0.5);
+}
+
+.postscript {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.csgov-promo {
+  display: flex;
+  align-items: center;
+}
+
+.csgov-promo a {
+  display: inline-block;
+  height: 1rem;
+  width: auto;
+  margin-left: 0.5rem;
+}
+
+.csgov-promo a:hover,
+.csgov-promo a:focus {
+  background: transparent;
+}
+
+.csgov-promo svg {
+  display: inline-block;
+  height: 2rem;
+  width: 3rem;
+}
+
+:root[data-force-color-mode="dark"] .csgov-logo-bg {
+  fill: #171717;
+}
+:root[data-force-color-mode="light"] .csgov-logo-bg {
+  fill: #fffffe;
+}
+:root[data-force-color-mode="dark"] .csgov-logo-border {
+  fill: #006da3;
+}
+:root[data-force-color-mode="light"] .csgov-logo-border {
+  fill: #007fb6;
+}
+:root[data-force-color-mode="dark"] .csgov-logo-text  {
+  fill: #c21e2d;
+}
+:root[data-force-color-mode="light"] .csgov-logo-text {
+  fill: #ab2430;
+}
+
+/* Light mode switcher. */
+.light-mode-switcher {
+  display: flex;
+  gap: 10px;
+}
+
+.light-mode-switcher svg {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  display: block;
+  fill: var(--c-default-text);
+}
+
+.light-mode-switcher__label {
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.toggle-darkmode--reset {
+  width: 30px;
+  height: 30px;
+  display: none;
+  background: transparent;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+}
+
+:root[data-force-color-mode] .toggle-darkmode--reset {
+  display: block;
+}
+
+.toggle-darkmode--dark,
+.toggle-darkmode--light {
+  display: block;
+  transition: var(--trans-out);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(0);
+  pointer-events: none;
+  background: transparent;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+}
+
+.toggle-darkmode--light {
+  transform: translateY(50px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .toggle-darkmode--dark {
+    transform: translateY(50px);
+  }
+  .toggle-darkmode--light {
+    transform: translateY(0);
+  }
+}
+
+:root[data-force-color-mode="dark"] .toggle-darkmode--light {
+  transform: translateY(0);
+}
+
+:root[data-force-color-mode="dark"] .toggle-darkmode--dark {
+  transform: translateY(50px);
+}
+
+:root[data-force-color-mode="light"] .toggle-darkmode--light {
+  transform: translateY(50px);
+}
+
+:root[data-force-color-mode="light"] .toggle-darkmode--dark {
+  transform: translateY(0);
+}

@@ -43,8 +43,17 @@
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    
   ]
 %}
+
+
+
+{{ attach_library('csgov_theme/paragraphs') }}
+{% if paragraph.field_color_classes.0.value  %}
+  {{ attach_library('csgov_theme/section-colors') }}
+{% endif %}
+
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     <div class="paragraph-content">

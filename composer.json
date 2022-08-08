@@ -1,7 +1,0 @@
-{
-    "name": "drupalcz/csgov_theme",
-    "type": "drupal-theme",
-    "description": "A CS Gov  base theme.",
-    "license": "GPL-2.0-or-later",
-    "minimum-stability": "dev"
-}

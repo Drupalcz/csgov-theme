@@ -1,0 +1,80 @@
+/* Styling for teaser view mode. */
+.teaser {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--trans-out);
+}
+
+@media screen and (min-width: 40rem) {
+  .teaser {
+    flex-direction: row;
+  }
+}
+
+.teaser__image {
+  order: 1;
+  border-radius: var(--teaser-border-radius);
+  overflow: hidden;
+  height: 100%;
+}
+
+.teaser__image img {
+  display: block;
+}
+
+@media screen and (min-width: 40rem) {
+  .teaser__image {
+    max-width: 250px;
+  }
+}
+
+.teaser__content {
+  order: 2;
+  transition: var(--trans-out);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.teaser__content p:first-child {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 40rem) {
+  .teaser__content {
+    padding: 0 0 0 1em;
+  }
+}
+
+.teaser__title {
+  display: inline-block;
+  margin: 0;
+}
+
+@media screen and (min-width: 40rem) {
+  .teaser__title {
+    margin: -9px 0 0 0;
+  }
+}
+
+.teaser__title a {
+  display: block;
+  padding: 0.5em 0;
+  transition: var(--trans-out);
+}
+
+@media screen and (min-width: 40rem) {
+  .teaser__title a {
+    padding: 0;
+  }
+}
+
+.teaser__tags {
+  font-size: var(--fs-small);
+  margin-top: auto;
+}
+
+.teaser:hover {
+  transition: var(--trans-in);
+}

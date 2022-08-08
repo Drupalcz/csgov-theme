@@ -1,0 +1,49 @@
+/* Styling for title view mode. */
+.title {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  transition: var(--trans-out);
+  border-radius: var(--title-border-radius);
+  box-shadow: var(--view-mode-box-shadow);
+}
+
+.title__content {
+  background: var(--title-background);
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  transition: var(--trans-out);
+}
+
+.title__title {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+}
+
+.title__title a {
+  display: block;
+  font-weight: var(--fw-regular);
+  margin: auto;
+  padding: 1.5em 1em;
+  transition: var(--trans-out);
+  color: var(--title-foreground);
+}
+
+.title:hover {
+  transition: var(--trans-in);
+  box-shadow: var(--view-mode-box-shadow-hover);
+}
+
+.title:hover .title__content {
+  background: var(--title-background-hover);
+  transition: var(--trans-in);
+}
+
+.title:hover .title__content a {
+  transition: var(--trans-in);
+  background: transparent;
+}

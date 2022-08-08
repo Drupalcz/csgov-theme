@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Karla";
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../../assets/fonts/Karla-VariableFont_wght.ttf") format("truetype-variations");
+}
+@font-face {
+  font-family: "Karla";
+  font-weight: 300 700;
+  font-display: swap;
+  font-style: italic;
+  src: url("../../assets/fonts/Karla-Italic-VariableFont_wght.ttf") format("truetype-variations");
+}
+
+:root {
+  /* Font weight. */
+  --fw-thin: 100;
+  --fw-extra-light: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+  --fw-black: 900;
+
+  /* Font family */
+  --ff-primary: "Karla", sans-serif;
+  --ff-secondary: "Times", serif;
+
+  /* Font size */
+  --fs-default: 1.125rem; /* 18px */
+  --fs-h1: 2.375rem; /* 38px */
+  --fs-h2: 1.75rem; /* 28px */
+  --fs-h3: 1.3125rem; /* 21px */
+  --fs-large: 1.3125rem; /* 24px */
+  --fs-small: 0.875rem; /* 14px */
+  
+  /* Line height */
+  --lh-h1: 3rem;
+  --lh-h2: 3rem;
+  --lh-h3: 1.5rem;
+}
+
+@media (min-width: 48rem) {
+  :root {
+    /* /* Font size */
+    --fs-h1: 3.375rem; /* 54px */
+    --fs-h2: 2.25rem; /* 36px */
+    --fs-h3: 1.5rem; /* 24px */
+    --fs-large: 1.5rem; /* 24px */
+
+    /* /* Line height */
+    --lh-h1: 4.5rem;
+    --lh-h2: 3rem;
+    --lh-h3: 1.5rem;
+  }
+}

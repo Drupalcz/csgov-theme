@@ -1,0 +1,14 @@
+:root {
+  /* Vertical Rythm */
+  --base-vr: 1.6875rem; /* 27px */
+  --base-line-height: 1.5;
+  --base-scale: 1.414;
+  --vh100: 100vh;
+
+  /* Spaces */
+  --spacing: 1.6875rem; /* 27px Default */
+  --spacing--t: calc(var(--spacing) / 4); /* Tiny */
+  --spacing--s: calc(var(--spacing) / 2); /* Small */
+  --spacing--m: calc(var(--spacing) * 2); /* Medium */
+  --spacing--l: calc(var(--spacing) * 3); /* Large */
+}

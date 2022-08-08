@@ -1,0 +1,273 @@
+:root,
+:root[data-force-color-mode="light"] {
+  /* Default black and white. */
+  --c-default-bg: hsl(0, 0%, 100%);
+  --c-default-text: hsl(0, 0%, 0%);
+  --c-default-action: hsl(198, 100%, 30%);
+  --c-default-action-hover: hsl(49, 100%, 45%);
+
+  /* Primary colour. */
+  --c-primary-bg: hsl(204, 76%, 63%);
+  --c-primary-text: hsl(0, 0%, 0%);
+  --c-primary-action: hsl(198, 100%, 6%);
+
+  /* Secondary colour. */
+  --c-secondary-bg: hsl(360, 70%, 62%);
+  --c-secondary-text: hsl(0, 0%, 0%);
+  --c-secondary-action: hsl(360, 70%, 4%);
+
+  /* Light neutral theme. */
+  --c-light-bg: hsl(0, 0%, 95%);
+  --c-light-text: hsl(0, 0%, 0%);
+  --c-light-action: hsl(198, 100%, 26%);
+
+  /* Dark neutral theme. */
+  --c-dark-bg: hsl(203, 100%, 26%);
+  --c-dark-text: hsl(0, 0%, 100%);
+  --c-dark-action: hsl(203, 100%, 86%);
+
+  /* Page regions */
+  /* Header  */
+  --c-header-background: hsl(0, 0%, 95%);
+
+  /* Hero */
+  --hero-text: hsl(0, 0%, 100%);
+  --hero-link-hover: hsl(0, 100%, 0%);
+  --hero-background-overlay: linear-gradient(0deg, hsla(0, 0%, 0%, 70%) 0%, hsla(0, 0%, 0%, 0%) 80%);
+
+  /* Buttons */
+  --button-background: hsl(124, 100%, 26%);
+  --button-border: 2px solid hsl(0, 0%, 100%);
+  --button-border-radius: var(--border-radius);
+  --button-foreground: hsl(0, 0%, 100%);
+  --button-padding: 1rem 2rem;
+  --button-background-hover: hsl(125, 100%, 8%);
+  --button-foreground-hover: hsl(0, 0%, 100%);
+  --button-primary-background: var(--c-primary-bg);
+  --button-primary-foreground: var(--c-primary-text);
+  --button-secondary-background: var(--c-secondary-bg);
+  --button-secondary-foreground: var(--c-secondary-text);
+  --button-light-background: var(--c-light-bg);
+  --button-light-foreground: var(--c-light-text);
+  --button-dark-background: var(--c-dark-bg);
+  --button-dark-foreground: var(--c-dark-text);
+  --button-box-shadow-hover: 0 0 55px hsla(0, 0%, 0%, 0.25), 0 0 10px hsla(0, 0%, 0%, 0.35);
+
+  /* Fields */
+  --form-border-radius: var(--border-radius);
+  --form-border-color: hsl(0, 0%, 33%);
+  --form-background: hsl(0, 0%, 95%);
+  --form-text: var(--c-default-text);
+  --form-input-padding: 1rem 1rem;
+
+  /* Main navigation */
+  --menu-local-task-background: hsla(0, 0%, 0%, 0.6);
+  --menu-local-task-background-hover: hsla(0, 0%, 0%, 0.9);
+  --menu-local-task-border-radius: 4px;
+  --menu-local-task-foreground: hsla(0, 0%, 100%, 1);
+
+  --main-navigation-background: hsla(0, 0%, 90%, 1);
+  --main-navigation-action: hsla(0, 0%, 0%, 1);
+  --main-navigation-action-hover: hsla(0, 0%, 0%, 1);
+  --main-navigation-accent: hsla(0, 0%, 0%, 0.3);
+  --main-navigation-accent-hover: var(--c-default-action);
+  --main-navigation-l2-background: var(--main-navigation-background);
+  --main-navigation-l2-action: hsla(0, 0%, 0%, 1);
+  --main-navigation-l2-accent-hover: var(--main-navigation-accent-hover);
+
+  /* View modes vars */
+  --view-mode-box-shadow: 0 0 25px hsla(0, 0%, 0%, 0.05), 0 0 5px hsla(0, 0%, 0%, 0.05);
+  --view-mode-box-shadow-hover: 0 0 45px hsla(0, 0%, 0%, 0.15), 0 0 10px hsla(0, 0%, 0%, 0.15);
+
+  /* Calendar item */
+  --calendar-item__date-width: 7rem;
+  --calendar-item__date-number-size: calc(var(--calendar-item__date-width) / 2);
+  --calendar-item-current-background: var(--c-primary-bg);
+  --calendar-item-current-foreground: var(--c-primary-text);
+  --calendar-item-past-background: hsl(0, 0%, 95%);
+  --calendar-item-past-foreground: hsl(0, 0%, 40%);
+  --calendar-item-future-background: hsl(0, 0%, 75%);
+  --calendar-item-future-foreground: hsl(0, 0%, 20%);
+  --calendar-item-border: 2px;
+
+  /* Card */
+  --card-background: var(--c-default-bg);
+  --card-foreground: var(--c-primary-text);
+  --card-border-radius: var(--border-radius);
+
+  /* Teaser */
+  --teaser-border-radius: var(--border-radius);
+
+  /* Tile */
+  --tile-background: hsla(0, 0%, 100%, 0.8);
+  --tile-background-hover: hsla(0, 0%, 100%, 0.9);
+  --tile-foreground: var(--c-primary-text);
+  --tile-border-radius: var(--border-radius);
+
+  /* Title */
+  --title-background: hsla(0, 0%, 100%, 0.8);
+  --title-background-hover: hsla(0, 0%, 100%, 0.9);
+  --title-foreground: var(--c-primary-text);
+  --title-border-radius: var(--border-radius);
+}
+
+/* Dark mode variables. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-default-bg: hsl(203, 100%, 5%);
+    --c-default-text: hsla(0, 0%, 100%, 75%);
+    --c-default-action: hsla(0, 0%, 100%, 75%);
+    --c-default-action-hover: hsl(49, 100%, 20%);
+
+    --c-primary-bg: hsl(203, 100%, 10%);
+    --c-primary-text: hsla(0, 0%, 100%, 75%);
+    --c-primary-action: hsl(198, 100%, 65%);
+
+    --c-secondary-bg: hsl(0, 88%, 10%);
+    --c-secondary-text: hsla(0, 0%, 100%, 75%);
+    --c-secondary-action: hsl(360, 70%, 65%);
+
+    --c-light-bg: hsl(0, 0%, 10%);
+    --c-light-text: hsla(0, 0%, 100%, 75%);
+    --c-light-action: hsl(198, 100%, 65%);
+
+    --c-dark-bg: hsl(203, 100%, 17%);
+    --c-dark-text: hsla(0, 0%, 100%, 75%);
+    --c-dark-action: hsl(203, 100%, 65%);
+
+    /* Page regions */
+    /* Header  */
+    --c-header-background: hsl(0, 0%, 05%);
+
+    /* Hero */
+    --hero-text: hsl(0, 0%, 85%);
+
+    /* Buttons */
+    --button-background: hsl(125, 100%, 8%);
+    --button-foreground: hsla(0, 0%, 100%, 75%);
+    --button-border: 2px solid hsla(0, 0%, 100%, 65%);
+
+    /* Fields */
+    --form-border-color: hsl(0, 0%, 57%);
+    --form-background: hsl(0, 0%, 15%);
+
+    /* Main navigation */
+    --menu-local-task-background: hsla(0, 0%, 100%, 0.6);
+    --menu-local-task-background-hover: hsla(0, 0%, 100%, 0.8);
+    --menu-local-task-foreground: hsla(0, 0%, 0%, 1);
+
+    --main-navigation-background: hsla(0, 0%, 10%, 1);
+    --main-navigation-accent: hsla(0, 0%, 100%, 0.3);
+    --main-navigation-accent-hover: var(--c-default-action);
+    --main-navigation-action: hsla(0, 0%, 100%, 0.85);
+    --main-navigation-action-hover: hsla(0, 0%, 100%, 1);
+    --main-navigation-l2-background: var(--main-navigation-background);
+    --main-navigation-l2-action: hsla(0, 0%, 100%, 0.85);
+    --main-navigation-l2-accent-hover: hsla(0, 0%, 35%, 1);
+
+    /* Calendar item */
+    --calendar-item-current-background: var(--c-primary-bg);
+    --calendar-item-current-foreground: var(--c-primary-text);
+    --calendar-item-past-background: hsl(0, 0%, 5%);
+    --calendar-item-past-foreground: hsl(0, 0%, 60%);
+    --calendar-item-future-background: hsl(0, 0%, 15%);
+    --calendar-item-future-foreground: hsl(0, 0%, 80%);
+
+    /* Tile */
+    --tile-background: hsla(0, 0%, 0%, 0.7);
+    --tile-background-hover: hsla(0, 0%, 0%, 0.8);
+
+    /* Title */
+    --title-background: hsla(0, 0%, 0%, 0.7);
+    --title-background-hover: hsla(0, 0%, 0%, 0.8);
+  }
+}
+
+/* Dark mode variables. Again for forced change by the user. */
+:root[data-force-color-mode="dark"] {
+  --c-default-bg: hsl(203, 100%, 5%);
+  --c-default-text: hsla(0, 0%, 100%, 75%);
+  --c-default-action: hsla(0, 0%, 100%, 75%);
+  --c-default-action-hover: hsl(49, 100%, 20%);
+
+  --c-primary-bg: hsl(203, 100%, 10%);
+  --c-primary-text: hsla(0, 0%, 100%, 75%);
+  --c-primary-action: hsl(198, 100%, 65%);
+
+  --c-secondary-bg: hsl(0, 88%, 10%);
+  --c-secondary-text: hsla(0, 0%, 100%, 75%);
+  --c-secondary-action: hsl(360, 70%, 65%);
+
+  --c-light-bg: hsl(0, 0%, 10%);
+  --c-light-text: hsla(0, 0%, 100%, 75%);
+  --c-light-action: hsl(198, 100%, 65%);
+
+  --c-dark-bg: hsl(203, 100%, 17%);
+  --c-dark-text: hsla(0, 0%, 100%, 75%);
+  --c-dark-action: hsl(203, 100%, 65%);
+
+  /* Page regions */
+  /* Header  */
+  --c-header-background: hsl(0, 0%, 05%);
+
+  /* Hero */
+  --hero-text: hsl(0, 0%, 85%);
+
+  /* Buttons */
+  --button-background: hsl(125, 100%, 8%);
+  --button-foreground: hsla(0, 0%, 100%, 75%);
+  --button-border: 2px solid hsla(0, 0%, 100%, 65%);
+
+  /* Fields */
+  --form-border-color: hsl(0, 0%, 57%);
+  --form-background: hsl(0, 0%, 15%);
+
+  /* Main navigation */
+  --menu-local-task-background: hsla(0, 0%, 100%, 0.6);
+  --menu-local-task-background-hover: hsla(0, 0%, 100%, 0.8);
+  --menu-local-task-foreground: hsla(0, 0%, 0%, 1);
+
+  --main-navigation-background: hsla(0, 0%, 10%, 1);
+  --main-navigation-accent: hsla(0, 0%, 100%, 0.3);
+  --main-navigation-accent-hover: var(--c-default-action);
+  --main-navigation-action: hsla(0, 0%, 100%, 0.85);
+  --main-navigation-action-hover: hsla(0, 0%, 100%, 1);
+  --main-navigation-l2-background: var(--main-navigation-background);
+  --main-navigation-l2-action: hsla(0, 0%, 100%, 0.85);
+  --main-navigation-l2-accent-hover: hsla(0, 0%, 35%, 1);
+
+  /* Calendar item */
+  --calendar-item-current-background: var(--c-primary-bg);
+  --calendar-item-current-foreground: var(--c-primary-text);
+  --calendar-item-past-background: hsl(0, 0%, 5%);
+  --calendar-item-past-foreground: hsl(0, 0%, 60%);
+  --calendar-item-future-background: hsl(0, 0%, 15%);
+  --calendar-item-future-foreground: hsl(0, 0%, 80%);
+
+  /* Tile */
+  --tile-background: hsla(0, 0%, 0%, 0.7);
+  --tile-background-hover: hsla(0, 0%, 0%, 0.8);
+
+  /* Title */
+  --title-background: hsla(0, 0%, 0%, 0.7);
+  --title-background-hover: hsla(0, 0%, 0%, 0.8);
+
+}
+
+@media (prefers-color-scheme: dark) {
+  img {
+    filter: brightness(75%) contrast(1.2);
+  }
+
+  .logo img {
+    filter: brightness(100%) contrast(1);
+  }
+}
+
+:root[data-force-color-mode="dark"] img {
+  filter: brightness(75%) contrast(1.2);
+}
+
+:root[data-force-color-mode="dark"] .logo img {
+  filter: brightness(100%) contrast(1);
+}

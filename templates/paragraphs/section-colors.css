@@ -1,0 +1,45 @@
+.color--standard {
+  background: var(--c-default-bg);
+  color: var(--c-default-text);
+  padding: var(--site-padding) 0;
+}
+
+.color--primary {
+  background: var(--c-primary-bg);
+  color: var(--c-primary-text);
+  padding: var(--site-padding);
+}
+
+.color--primary a:not(.button) {
+  color: var(--c-primary-action)
+}
+
+.color--secondary {
+  background: var(--c-secondary-bg);
+  color: var(--c-secondary-text);
+  padding: var(--site-padding);
+}
+
+.color--secondary a:not(.button) {
+  color: var(--c-secondary-action)
+}
+
+.color--light {
+  background: var(--c-light-bg);
+  color: var(--c-light-text);
+  padding: var(--site-padding);
+}
+
+.color--light a:not(.button) {
+  color: var(--c-light-action)
+}
+
+.color--dark {
+  background: var(--c-dark-bg);
+  color: var(--c-dark-text);
+  padding: var(--site-padding);
+}
+
+.color--dark a:not(.button) {
+  color: var(--c-dark-action)
+}

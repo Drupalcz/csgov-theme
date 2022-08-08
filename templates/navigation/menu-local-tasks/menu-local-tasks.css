@@ -1,0 +1,26 @@
+ul.tabs {
+  margin: 0;
+  padding: .5rem 0;
+  list-style: none;
+}
+
+ul.tabs li {
+  margin-right: .5rem;
+  display: inline-block;
+}
+
+.tabs a {
+  background: var(--menu-local-task-background);
+  border-radius: var(--menu-local-task-border-radius);
+  color: var(--menu-local-task-foreground);
+  font-size: var(--fs-small);
+  padding: 0.5rem 0.8rem;
+  text-transform: uppercase;
+}
+
+.tabs a.is-active,
+.tabs a:hover,
+.tabs a:focus {
+  background: var(--menu-local-task-background-hover);
+  box-shadow: none;
+}

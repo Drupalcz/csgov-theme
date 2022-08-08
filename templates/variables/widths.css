@@ -1,0 +1,23 @@
+:root {
+  /* We set this variables to the most usual devices. */
+  --bp-xsmall: 20rem; /* 320px */
+  --bp-small: 30rem; /* 480px */
+  --bp-medium: 40rem; /* 640px */
+  --bp-large: 48rem; /* 768px */
+  --bp-xlarge: 60rem; /* 960px */
+  --bp-xxlarge: 64rem; /* 1024px */
+  --bp-xxxlarge: 75rem; /* 1200px */
+  --bp-super: 90rem; /* 1440px */
+
+  /* Content width. */
+  --content-width: var(--bp-large);
+  --layout-gap: 2rem;
+  --site-padding: 1rem;
+  --content-layout-padding: 2rem;
+}
+
+@media screen and (min-width: 48rem) {
+  :root {
+    --site-padding: 2rem;
+  }
+}

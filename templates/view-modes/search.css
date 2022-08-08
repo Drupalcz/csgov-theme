@@ -1,0 +1,41 @@
+/* Styling for search view mode. */
+.search {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--trans-out);
+}
+
+@media screen and (min-width: 40rem) {
+  .search {
+    flex-direction: row;
+  }
+}
+
+.search__content {
+  transition: var(--trans-out);
+  width: 100%;
+}
+
+.search__content p:first-child {
+  margin-top: 0;
+}
+
+.search__title {
+  display: inline-block;
+  margin-top: 0;
+}
+
+.search__title a {
+  display: block;
+  transition: var(--trans-out);
+}
+
+.search__tags {
+  font-size: var(--fs-small);
+  text-align: right;
+}
+
+.search:hover {
+  transition: var(--trans-in);
+}

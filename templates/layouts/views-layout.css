@@ -1,0 +1,63 @@
+/* Allow views to get same layouts as other listings. */
+@media screen and (min-width: 30rem) {
+.views-layout .view-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+  }
+}
+
+.views-layout .view-content .views-row {
+  margin-top: var(--spacing);
+}
+
+.views-layout--tiny-gap .view-content .views-row:not(:first-child) {
+  margin-top: 2px;
+}
+
+/* Specific styles for the view layout classes. */
+/* One item in row. */
+.views-layout--full-width .view-content .views-row {
+  width: 100%;
+}
+
+/* Two items in row. */
+@media screen and (min-width: 30rem) {
+  .views-layout--halves .view-content .views-row {
+    width: calc(100 / 2 * 1%);
+  }
+}
+
+/* Three items in row. */
+@media screen and (min-width: 30rem) {
+  .views-layout--thirds .view-content .views-row {
+    width: calc(100 / 3 * 1%);
+  }
+}
+
+/* Four items in row. */
+@media screen and (min-width: 30rem) {
+  .views-layout--quarters .view-content .views-row {
+    width: calc(100 / 4 * 1%);
+  }
+}
+
+/* Five items in row. */
+@media screen and (min-width: 30rem) {
+  .views-layout--fifths .view-content .views-row {
+    width: calc(100 / 5 * 1%);
+  }
+}
+
+/* Six items in row. */
+@media screen and (min-width: 48rem) {
+  .views-layout--sixths .view-content .views-row {
+    width: calc(100 / 3 * 1%);
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  .views-layout--sixths .view-content .views-row {
+    width: calc(100 / 6 * 1%);
+  }
+}
