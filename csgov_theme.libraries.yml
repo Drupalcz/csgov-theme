@@ -137,28 +137,38 @@ title:
       templates/view-modes/title.css: {}
 
 # Paragraphs
+paragraph-accordion:
+  css:
+    theme:
+      templates/paragraphs/accordions/accordions.css: {}
+  js:
+    templates/paragraphs/accordions/accordions.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
 paragraphs:
   css:
     theme:
       templates/paragraphs/paragraphs.css: {}
 
-section-colors:  
+section-colors:
   css:
     theme:
       templates/paragraphs/section-colors.css: {}
 
 # Views
-search-block:  
+search-block:
   css:
     theme:
       templates/views/search/search-block.css: {}
 
-views:  
+views:
   css:
     theme:
       templates/views/views.css: {}
 
-views-layout:  
+views-layout:
   css:
     theme:
       templates/layouts/views-layout.css: {}
