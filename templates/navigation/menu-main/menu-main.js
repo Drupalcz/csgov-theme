@@ -31,7 +31,8 @@
 
   Drupal.behaviors.submenu = {
     attach(context) {
-      context.querySelectorAll('.menu__item--has-children').forEach(el => {
+      const menuItems = once('menu__item--has-children', '.menu__item--has-children', context);
+      menuItems.forEach(el => {
         initSubmenu(el);
       });
     },
