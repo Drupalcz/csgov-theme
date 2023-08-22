@@ -11,6 +11,12 @@
   font-style: italic;
   src: url("../../assets/fonts/Karla-Italic-VariableFont_wght.ttf") format("truetype-variations");
 }
+@font-face {
+  font-family: "gov-basic-icons";
+  font-weight: 300;
+  font-display: swap;
+  src: url("../../assets/fonts/gov-basic-icons.woff2") format("woff2");
+}
 
 :root {
   /* Font weight. */
@@ -35,7 +41,7 @@
   --fs-h3: 1.3125rem; /* 21px */
   --fs-large: 1.3125rem; /* 24px */
   --fs-small: 0.875rem; /* 14px */
-  
+
   /* Line height */
   --lh-h1: 3rem;
   --lh-h2: 3rem;

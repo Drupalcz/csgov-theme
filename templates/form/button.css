@@ -1,4 +1,4 @@
-main button,
+main button:not(.gov-button--icon-only),
 main .button,
 main a.button {
   background: var(--button-background);
@@ -15,7 +15,7 @@ main a.button {
   cursor: pointer;
 }
 
-main button:hover,
+main button:not(.gov-button--icon-only):hover,
 main .button:hover,
 main a.button:hover,
 main button:focus,
