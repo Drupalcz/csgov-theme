@@ -14,6 +14,7 @@ global-styling:
       templates/_defaults/html.css: {}
       templates/form/button.css: {}
       templates/form/forms.css: {}
+      templates/variables/navigation.css: {}
 
 hero-media:
   css:
@@ -137,6 +138,11 @@ title:
       templates/view-modes/title.css: {}
 
 # Paragraphs
+gov-notification:
+  css:
+    theme:
+      templates/content/notification/gov-alert.css: {}
+
 paragraph-accordion:
   css:
     theme:
