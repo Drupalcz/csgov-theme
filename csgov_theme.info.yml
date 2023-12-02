@@ -2,7 +2,7 @@ name: "CS Gov Theme"
 description: 'Starter theme for CS Gov Distribution.'
 
 type: theme
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 base theme: stable
 
 libraries:
