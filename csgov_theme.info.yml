@@ -7,7 +7,7 @@ version: 4.x
 core_version_requirement: ^10.1
 
 'interface translation project': csgov_theme
-'interface translation server pattern': themes/custom/csgov_theme/translations/%language.po
+'interface translation server pattern': themes/contrib/csgov_theme/translations/%language.po
 
 regions:
   notifications: 'Notifications'
