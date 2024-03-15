@@ -1,0 +1,33 @@
+.tiles .gov-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: var(--csgov-spacing-l);
+}
+
+@media screen and (min-width: 60rem) {
+  .tiles .gov-container {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+  }
+}
+
+.tiles--heading-top .gov-container {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto
+}
+
+@media screen and (min-width: 60rem) {
+  .tiles__heading {
+    text-align: left;
+    padding-top: var(--csgov-spacing-s);
+  }
+}
+
+.tiles--heading-top .tiles__heading {
+  padding-top: 0;
+}
+
+.tiles__title {
+  margin-bottom: var(--csgov-spacing-xs);
+}

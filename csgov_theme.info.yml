@@ -1,27 +1,45 @@
-name: "CS Gov Theme"
-description: 'Starter theme for CS Gov Distribution.'
-
+name: CSGOV Theme
 type: theme
-core_version_requirement: ^9 || ^10
-base theme: stable
+'base theme': false
+starterkit: true
+version: 4.x
 
-libraries:
-  - csgov_theme/global-styling
+core_version_requirement: ^10.1
+
+'interface translation project': csgov_theme
+'interface translation server pattern': themes/custom/csgov_theme/translations/%language.po
 
 regions:
-  top_bar: 'Top Bar'
+  notifications: 'Notifications'
   logo: 'Logo'
   search: 'Search'
   navigation: 'Navigation'
+  header_extra: 'Header Extra'
+  off_canvas: 'Off Canvas'
   admin_area: 'Admin area'
-  layoutless: 'Layoutless pages'
+  breadcrumb: 'Breadcrumb'
+  messages: 'Messages'
+  help: 'Help'
   content_top: 'Content top'
   content: 'Content'
-  content_view: 'Content view'
   content_bottom: 'Content bottom'
-  footer: 'Footer'
+  footer_brand: 'Footer brand'
+  footer_top: 'Footer top'
+  footer_bottom: 'Footer bottom'
+  legal: 'Legal info'
   page_top: 'Page top' # Needed by Drupal Core
   page_bottom: 'Page bottom' # Needed by Drupal Core
 
-ckeditor_stylesheets:
-  - css/style.css
+libraries:
+  - csgov_theme/base
+  - csgov_theme/grid
+
+libraries-extend:
+  core/drupal.ajax:
+    - gov_cz/throbber
+
+libraries-override:
+  # Replace an entire library.
+  layout_builder/twocol_section: csgov_theme/twocol_section
+  layout_builder/threecol_section: csgov_theme/threecol_section
+  layout_builder/fourcol_section: csgov_theme/fourcol_section

@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Theme override to display a Page title block.
+ */
+#}
+{% if hide_block != true %}
+{{ attach_library('csgov_theme/page-title')}}
+  <div class="page-title gov-container padding-horizontal">
+    {{ content }}
+  </div>
+{% endif %}

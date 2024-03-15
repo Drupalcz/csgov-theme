@@ -1,35 +1,28 @@
-/* Paragraph content needs to be separated. */
-.paragraph .paragraph-content {
-  padding-bottom: var(--content-layout-padding);
-  padding-top: var(--content-layout-padding);
-  position: relative;
-  z-index: 101;
+.paragraph {
+  padding: var(--csgov-spacing-xl) 0;
 }
 
-/* But no need for vertical padding on paragraph content if the paragraph has background color. */
-.paragraph[class^='color-']>.paragraph-content {
-  padding-bottom: 0;
-  padding-top: 0;
+.paragraph__heading {
+  margin-bottom: var(--csgov-spacing-m);
 }
 
-/* Paragraphs on edgy layout. */
-.section-layout--edgy .paragraph-content {
-  box-sizing: border-box;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: var(--bp-super);
-  padding-left: var(--site-padding);
-  padding-right: var(--site-padding);
-  width: 100%;
+/* Limit the width of specific tags for better readability,
+ but leave others intact (e.g. table) as we want to use the whole width. */
+.paragraph__content p,
+.paragraph__content ul,
+.paragraph__content ol,
+.paragraph__content h2,
+.paragraph__content h3,
+.paragraph__content h4,
+.paragraph__content h5,
+.paragraph__content h6 {
+  max-width: var(--csgov-content-width);
 }
 
-/* No need for horizontal padding on paragraph content if the paragraph has background color. */
-.section-layout--edgy .paragraph[class^='color-']:not(.color--standard) {
-  padding-left: 0;
-  padding-right: 0;
+.background--primary {
+  background: var( --csgov-color-primary-light);
 }
 
-
-.paragraph--title {
-  margin-top: 0;
+.background--secondary {
+  background: var(--csgov-color-secondary-lighter);
 }

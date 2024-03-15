@@ -1,0 +1,30 @@
+.email {
+  display: flex;
+  align-items: center;
+  gap: var(--csgov-spacing-xs);
+}
+
+.field-email__icon .gov-icon__holder {
+  width: 1rem;
+  height: 1rem;
+}
+
+.field-email {
+  max-width: 30rem;
+}
+
+.field-email a {
+  padding-block: var(--csgov-spacing-s);
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 45em) {
+  .field-email {
+    max-width: 20rem;
+  }
+
+  .field-email a {
+    padding-block: 0;
+  }
+}

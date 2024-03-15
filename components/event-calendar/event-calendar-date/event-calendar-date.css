@@ -1,0 +1,10 @@
+.event-calendar-date_component {
+  display: flex;
+  align-items: first baseline;
+  gap: var(--csgov-spacing-xs);
+}
+
+.field-date__icon .gov-icon__holder {
+  width: 1rem;
+  height: 1rem;
+}

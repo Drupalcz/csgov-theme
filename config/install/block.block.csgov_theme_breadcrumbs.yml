@@ -1,0 +1,19 @@
+langcode: cs
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - csgov_theme
+id: csgov_theme_breadcrumbs
+theme: csgov_theme
+region: breadcrumb
+weight: -7
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Drobečková navigace'
+  label_display: '0'
+  provider: system
+visibility: {  }

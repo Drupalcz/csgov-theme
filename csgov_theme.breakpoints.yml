@@ -1,28 +1,49 @@
-csgov_theme.mobile:
-  label: mobile
-  mediaQuery: ''
+csgov_breakpoints.2xs:
+  label: 2XS
+  mediaQuery: 'all and (max-width: 320px)'
   weight: 0
   multipliers:
     - 1x
     - 2x
-csgov_theme.small:
-  label: small
-  mediaQuery: '(min-width: 768px)'
+csgov_breakpoints.xs:
+  label: XS
+  mediaQuery: 'all and (min-width: 320px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+csgov_breakpoints.s:
+  label: S
+  mediaQuery: 'all and (min-width: 600px)'
   weight: 1
   multipliers:
     - 1x
     - 2x
-csgov_theme.medium:
-  label: medium
-  mediaQuery: '(min-width: 992px)'
+csgov_breakpoints.m:
+  label: M
+  mediaQuery: 'all and (min-width: 768px)'
   weight: 2
   multipliers:
     - 1x
     - 2x
-csgov_theme.large:
-  label: large
-  mediaQuery: '(min-width: 1200px)'
+csgov_breakpoints.l:
+  label: L
+  mediaQuery: 'all and (min-width: 992px)'
   weight: 3
+  multipliers:
+    - 1x
+    - 2x
+csgov_breakpoints.xl:
+  label: XL
+  mediaQuery: 'all and (min-width: 1260px)'
+  weight: 4
+  multipliers:
+    - 1x
+    - 2x
+csgov_breakpoints.2xl:
+  label: 2XL
+  mediaQuery: 'all and (min-width: 1440px)'
+  weight: 5
   multipliers:
     - 1x
     - 2x

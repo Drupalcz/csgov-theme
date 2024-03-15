@@ -1,0 +1,48 @@
+.event-calendar {
+  border: 1px solid var(--csgov-event-calendar-border-color);
+}
+
+.event-calendar:hover,
+.event-calendar:focus-within {
+  border: 1px solid var(--csgov-event-calendar-border-color-hover);
+}
+
+.event-calendar__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 30em) {
+  .event-calendar__inner {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .event-calendar__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.event-calendar__content {
+  padding: var(--csgov-spacing-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--csgov-spacing);
+}
+
+.event-calendar__title {
+  font-size: var(--csgov-fs-3xl);
+  font-weight: var(--csgov-fw-bold);
+  margin-bottom: var(--csgov-spacing);
+}
+
+.event-calendar__image picture {
+  display: block;
+  height: 100%;
+}
+
+.event-calendar__image img {
+  object-fit: cover;
+  height: 100%;
+}

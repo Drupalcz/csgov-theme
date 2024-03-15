@@ -1,0 +1,16 @@
+/*
+ * @file
+ * Provides the layout styles for four-column layout section.
+ */
+
+.layout--fourcol-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--csgov-spacing-l);
+}
+
+@media screen and (min-width: 60em) {
+  .layout--fourcol-section {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

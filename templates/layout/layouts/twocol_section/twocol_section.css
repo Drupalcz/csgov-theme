@@ -1,0 +1,32 @@
+/*
+ * @file
+ * Provides the layout styles for two-column layout section.
+ */
+
+.layout--twocol-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--csgov-spacing-l);
+}
+
+@media screen and (min-width: 60em) {
+  .layout--twocol-section.layout--twocol-section--50-50 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .layout--twocol-section.layout--twocol-section--33-67 {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .layout--twocol-section.layout--twocol-section--67-33 {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .layout--twocol-section.layout--twocol-section--25-75 {
+    grid-template-columns: 1fr 3fr;
+  }
+
+  .layout--twocol-section.layout--twocol-section--75-25 {
+    grid-template-columns: 3fr 1fr;
+  }
+}

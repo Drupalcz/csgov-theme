@@ -1,0 +1,36 @@
+{%
+  set classes = [
+    'csgov-notification',
+    'node',
+  ]
+%}
+{{ attach_library('csgov_theme/node') }}
+{{ attach_library('csgov_theme/notification') }}
+<div{{attributes.addClass(classes)}}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  {% if node.field_csgov_notification_dismiss.value == 'never' %}
+    {% set infobar_closable = FALSE %}
+  {% else %}
+    {% set infobar_closable = TRUE %}
+    {% set infobar_closed_for = node.field_csgov_notification_dismiss.value %}
+    {% set infobar_closed_for_days = content.field_csgov_notification_dismiss.0['#markup'] %}
+  {% endif %}
+
+  {% embed 'gov_cz:gov-infobar' with {
+    infobar_variant: node.field_csgov_notification_level.value,
+    infobar_icon: node.field_csgov_icon|file_url,
+    infobar_id: 'infobar-' ~ node.id(),
+  }
+  %}
+    {% block infobar_main %}
+      {{ content.field_csgov_teaser }}
+      {% if node.field_csgov_notification_link.value %}
+      <div class="csgov-infobar__link">
+        <a href="{{ content.field_csgov_notification_link.0['#url'] }}">{{ 'Get more info'|t({}, {'context' : 'CSGOV: Notifications'}) }}</a>
+      </div>
+      {% endif %}
+    {% endblock %}
+  {% endembed %}
+</div>

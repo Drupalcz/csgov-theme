@@ -1,0 +1,119 @@
+.footer {
+  background: var(--csgov-footer-background);
+  color: var(--csgov-footer-foreground);
+  padding-block: var(--csgov-spacing-3xl) var(--csgov-spacing-xl);
+  margin-top: var(--csgov-spacing-3xl);
+}
+
+.footer a,
+.footer-legal  a,
+.footer a > *,
+.footer-legal  a > * {
+  color: var(--csgov-footer-foreground);
+  text-decoration: none;
+}
+
+.footer a:hover,
+.footer-legal  a:hover,
+.footer a:focus,
+.footer-legal  a:focus {
+  text-decoration: underline;
+}
+
+.footer .menu {
+  margin: 0;
+  padding: 0;
+}
+
+.footer .menu li:before {
+  display: none;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__brand:first-child {
+  margin-top: calc(var(--csgov-spacing-3xl) * -1);
+  transform: translateY(-30%);
+}
+
+.region-footer-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--csgov-spacing-l);
+}
+
+@media screen and (min-width: 48rem) {
+  .region-footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  .region-footer-top {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+.footer .block__title {
+  font-size: var(--csgov-fs-l);
+  font-weight: var(--csgov-fw-bold);
+  margin-bottom: var(--csgov-spacing);
+}
+
+.region-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__bottom {
+  border-top: 1px solid var(--csgov-footer-bottom-divider);
+  padding-top: var(--csgov-spacing-m);
+  margin-top: var(--csgov-spacing-m);
+}
+
+.footer__bottom .menu {
+  list-style-type: none;
+  display: flex;
+  gap: var(--csgov-spacing-m);
+}
+
+.footer__bottom .menu li:before {
+  display: none;
+}
+
+.footer__bottom__back-to-top {
+  display: flex;
+  align-items: center;
+  gap: var(--csgov-spacing-xs);
+}
+
+.footer__bottom__back-to-top .gov-icon {
+  transition: var(--csgov-transition-out);
+}
+
+.footer__bottom__back-to-top:hover .gov-icon,
+.footer__bottom__back-to-top:focus .gov-icon {
+  transform: translateY(-0.5rem);
+  transition: var(--csgov-transition-in);
+}
+
+.footer-legal {
+  background: var(--csgov-footer-legal-background);
+  padding-block: var(--csgov-spacing-s);
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-legal * {
+  color: var(--csgov-footer-legal-foreground);
+  font-size: var(--csgov-fs-xs);
+}
+
+.footer-legal .gov-container {
+  display: flex;
+  justify-content: space-between;
+}

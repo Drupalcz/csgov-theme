@@ -1,0 +1,25 @@
+{% set address_book_title = label %}
+{% set address_book_link = url %}
+{% if node.field_csgov_person_position.value %}
+  {% set address_book_position = content.field_csgov_person_position %}
+{% endif %}
+{% if node.field_csgov_address.value %}
+  {% set address_book_address = content.field_csgov_address %}
+{% endif %}
+{% if node.field_csgov_phone.value %}
+  {% set address_book_phone = content.field_csgov_phone %}
+{% endif %}
+{% if node.field_csgov_mobile.value %}
+  {% set address_book_mobile = content.field_csgov_mobile %}
+{% endif %}
+{% if node.field_csgov_email.value %}
+  {% set address_book_email = content.field_csgov_email %}
+{% endif %}
+{% if node.field_csgov_main_image.value %}
+  {% set address_book_image = content.field_csgov_main_image %}
+{% endif %}
+{% if node.field_csgov_office_hours.value %}
+  {% set address_book_office_hours = content.field_csgov_office_hours %}
+{% endif %}
+{{ attach_library('csgov_theme/address-book') }}
+{{ include('csgov_theme:address-book') }}

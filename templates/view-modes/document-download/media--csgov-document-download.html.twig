@@ -1,0 +1,110 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'media',
+    'media--type-' ~ media.bundle()|clean_class,
+    not media.isPublished() ? 'media--unpublished',
+    view_mode ? 'media--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+<article{{attributes.addClass(classes)}}>
+  {{ title_suffix.contextual_links }}
+  {% if content %}
+    {# Output the number of pages. #}
+    {% if media.field_csgov_document_pages.value is not empty %}
+      {% set attachment_pages = media.field_csgov_document_pages.value %}
+    {% endif %}
+
+    {% set file = media.field_media_document.entity %}
+
+    {# Output the file URL #}
+    {% set file_url = media.field_media_document | file_url %}
+
+    {# Output real file name. #}
+    {% set file_name = file.filename.value %}
+
+    {% set media_name = media.label %}
+
+    {# If the media entity name is the same as file name, we use custom string. #}
+    {% if media_name == file_name %}
+      {% set media_name = 'Download document'|t %}
+    {% endif %}
+
+    {# Output file size in megabytes #}
+    {% set file_size = (file.filesize.value / 1000000)|round(2) %}
+
+    {# Output the file type #}
+    {% if file.filemime.value == 'text/plain' %}
+      {% set file_type = 'txt' %}
+    {% elseif file.filemime.value == 'text/csv' %}
+      {% set file_type = 'csv' %}
+    {% elseif file.filemime.value == 'application/xml' %}
+      {% set file_type = 'xml' %}
+    {% elseif file.filemime.value == 'application/pdf' %}
+      {% set file_type = 'pdf' %}
+    {% elseif file.filemime.value == 'application/rtf' %}
+      {% set file_type = 'rtf' %}
+    {% elseif file.filemime.value == 'application/rar' %}
+      {% set file_type = 'rar' %}
+    {% elseif file.filemime.value == 'application/zip' %}
+      {% set file_type = 'zip' %}
+    {% elseif file.filemime.value == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' %}
+      {% set file_type = 'docx' %}
+    {% elseif file.filemime.value == 'application/msword' %}
+      {% set file_type = 'doc' %}
+    {% elseif file.filemime.value == 'application/vnd.oasis.opendocument.text' %}
+      {% set file_type = 'odt' %}
+    {% elseif file.filemime.value == 'image/jpeg' %}
+      {% set file_type = 'jpeg' %}
+    {% elseif file.filemime.value == 'image/png' %}
+      {% set file_type = 'png' %}
+    {% elseif file.filemime.value == 'image/gif' %}
+      {% set file_type = 'gif' %}
+    {% elseif file.filemime.value == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' %}
+      {% set file_type = 'xlsx' %}
+    {% elseif file.filemime.value == 'application/vnd.ms-excel' %}
+      {% set file_type = 'xls' %}
+    {% elseif file.filemime.value == 'application/vnd.oasis.opendocument.spreadsheet' %}
+      {% set file_type = 'ods' %}
+    {% elseif file.filemime.value == 'application/vnd.openxmlformats-officedocument.presentationml.presentation' %}
+      {% set file_type = 'pptx' %}
+    {% elseif file.filemime.value == 'application/vnd.ms-powerpoint' %}
+      {% set file_type = 'ppt' %}
+    {% elseif file.filemime.value == 'application/vnd.oasis.opendocument.presentation' %}
+      {% set file_type = 'odp' %}
+    {% elseif file.filemime.value == 'application/vnd.apple.keynote' %}
+      {% set file_type = 'keynote' %}
+    {% elseif file.filemime.value == 'application/vnd.apple.pages' %}
+      {% set file_type = 'pages' %}
+    {% elseif file.filemime.value == 'application/vnd.apple.numbers' %}
+      {% set file_type = 'numbers' %}
+    {% else %}
+      {% set file_type = 'file' %}
+    {% endif %}
+
+    {{ include ('csgov_theme:document-download', {
+      document_color: 'secondary',
+      document_type: file_type,
+      document_url: file_url,
+      document_name: media_name,
+      document_filename: file_name,
+      document_size: file_size ~ ' MB',
+      document_pages: attachment_pages,
+    })
+    }}
+
+  {% endif %}
+</article>

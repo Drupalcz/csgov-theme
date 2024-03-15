@@ -1,0 +1,9 @@
+.calendar-item__date-full {
+  display: flex;
+  gap: var(--csgov-spacing-xs);
+}
+
+.calendar-item__date-full .gov-icon__holder {
+  width: 1rem;
+  height: 1rem;
+}

@@ -1,0 +1,27 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Page Footer
+props:
+  type: object
+  required:
+    - footer_brand
+  properties:
+    footer_brand:
+      type: string
+      title: Site logo
+      description: Sitewide logo
+    footer_content_left_one:
+      type: string
+      title: Content on left one
+      description: Footer area left one.
+    footer_content_left_two:
+      type: string
+      title: Content on left two
+      description: Footer area left two.
+    footer_content_right_one:
+      type: string
+      title: Content on right one
+      description: Footer area right one.
+    footer_content_right_two:
+      type: string
+      title: Content on right two
+      description: Footer area right two.

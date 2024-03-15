@@ -1,0 +1,20 @@
+.phone-number {
+  display: flex;
+  align-items: center;
+  gap: var(--csgov-spacing-xs);
+}
+
+.field-phone__icon .gov-icon__holder {
+  width: 1rem;
+  height: 1rem;
+}
+
+.field-phone a {
+  padding-block: var(--csgov-spacing-s);
+}
+
+@media screen and (min-width: 45em) {
+  .field-phone a {
+    padding-block: 0;
+  }
+}

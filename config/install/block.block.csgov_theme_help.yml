@@ -1,0 +1,19 @@
+langcode: cs
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - csgov_theme
+id: csgov_theme_help
+theme: csgov_theme
+region: help
+weight: -6
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Nápověda
+  label_display: '0'
+  provider: help
+visibility: {  }

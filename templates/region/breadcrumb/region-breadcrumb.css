@@ -1,0 +1,4 @@
+.region-breadcrumb .small-screen,
+.region-breadcrumb .large-screen{
+  padding-block: var(--csgov-spacing-2xs);
+}

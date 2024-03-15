@@ -1,0 +1,49 @@
+{% set hero_attribute = create_attribute() %}
+{% set classes = [
+  'hero',
+  hero_image ? 'hero--has-image',
+  hero_search_box ? 'hero--has-search',
+  hero_background ? hero_background,
+] %}
+
+<div{{hero_attribute.addClass(classes)}}>
+{# We print the searchbox only if hero image is present.
+And it such case we move the title and subtitle to the same box. #}
+  {% if hero_search_box and hero_image %}
+    <div class="hero__content_on_image">
+      <h1 class="hero__title">{{ hero_title }}</h1>
+      {% if hero_subtitle %}
+        <div class="hero__subtitle">
+          {{ hero_subtitle }}
+        </div>
+      {% endif %}
+
+      {{ include('csgov_theme:search-box', {
+        search_box_label: hero_search_label,
+        search_box_label_visible: TRUE,
+        search_box_button_label_visible: TRUE,
+        search_box_placeholder: hero_search_placeholder,
+        search_box_form_id: hero_search_form_id,
+        })
+      }}
+    </div>
+
+  {% else %}
+    {% if hero_title or hero_subtitle %}
+      <div class="hero__content gov-container {{ hero_background ? hero_background }}">
+        <h1 class="hero__title">{{ hero_title }}</h1>
+        {% if hero_subtitle %}
+          <div class="hero__subtitle">
+            {{ hero_subtitle }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endif %}
+
+  {% if hero_image %}
+    <div class="hero__image">
+      {{ hero_image }}
+    </div>
+  {% endif %}
+</div>

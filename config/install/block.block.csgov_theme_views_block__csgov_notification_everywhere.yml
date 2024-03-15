@@ -1,0 +1,23 @@
+langcode: cs
+status: true
+dependencies:
+  config:
+    - views.view.csgov_notification
+  module:
+    - views
+  theme:
+    - csgov_theme
+id: csgov_theme_views_block__csgov_notification_everywhere
+theme: csgov_theme
+region: notifications
+weight: -10
+provider: null
+plugin: 'views_block:csgov_notification-everywhere'
+settings:
+  id: 'views_block:csgov_notification-everywhere'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

@@ -1,0 +1,21 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Info Panel
+props:
+  type: object
+  properties:
+    infopanel_icon:
+      type: string
+      title: infopanel Icon
+      description: Infopanel Icon
+    infopanel_title:
+      type: string
+      title: Infopanel title
+      description: The title for the infopanel.
+    infopanel_content:
+      type: string
+      title: Infopanel content
+      description: The content for the infopanel.
+    infopanel_link:
+      type: string
+      title: Infopanel Link
+      description: Optional link at the bottom of the panel.

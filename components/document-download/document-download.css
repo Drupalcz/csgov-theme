@@ -1,0 +1,59 @@
+.document-download {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  padding: var(--csgov-spacing-xs) var(--csgov-spacing-s);
+  border: 1px solid var(--csgov-document-download-border-color);
+  background: var(--csgov-document-download-background);
+  align-items: center;
+  gap: var(--csgov-spacing-s);
+  justify-items: start;
+  border-radius: var(--csgov-border-radius);
+}
+
+.document-download:hover,
+.document-download:focus-within {
+  border: 1px solid var(--csgov-document-download-border-color-hover);
+  background: var(--csgov-document-download-background-hover);
+  cursor: pointer;
+}
+
+.document-download__icon {
+  height: 2rem;
+  width: auto;
+  color: var(--csgov-document-download-icon-color);
+}
+
+.document-download__title {
+  font-size: var(--csgov-fs-m);
+  font-weight: var(--csgov-fw-bold);
+}
+
+.document-download__title a {
+  color: var(--csgov-document-download-title-color);
+  text-decoration: none;
+}
+
+.document-download__meta {
+  font-size: var(--csgov-fs-s);
+  line-height: var(--csgov-line-height-s);
+}
+
+/* Color variant */
+.document-download--primary {
+  border-color: var(--csgov-document-download-variant-border-color);
+  background: var(--csgov-document-download-variant-background);
+}
+
+.document-download--primary:hover,
+.document-download--primary:focus-within {
+  border: 1px solid var(--csgov-document-download-variant-border-color-hover);
+  background: var(--csgov-document-download-variant-background-hover);
+}
+
+.document-download--primary .document-download__title a {
+  color: var(--csgov-document-download-variant-title-color);
+}
+
+.document-download--primary .document-download__icon {
+  color: var(--csgov-document-download-variant-icon-color);
+}

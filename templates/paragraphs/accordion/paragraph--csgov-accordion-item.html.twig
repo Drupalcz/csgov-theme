@@ -1,0 +1,14 @@
+{{ include('gov_cz:gov-accordion-item', {
+  accordion_size: paragraph._referringItem.parent.parent.entity.field_csgov_p_size.value,
+  accordion_variant: paragraph._referringItem.parent.parent.entity.field_csgov_p_variant.value,
+  accordion_item_label_id: 'label-' ~ paragraph.id(),
+  accordion_item_content_id: 'content-' ~ paragraph.id(),
+  accordion_item_label: content.field_csgov_p_title,
+  accordion_item_content: content.field_csgov_p_content,
+  accordion_item_icon: paragraph.field_csgov_p_icon|file_url,
+  accordion_item_annotation: content.field_csgov_p_annotation,
+  accordion_item_disabled: paragraph.field_csgov_p_disabled.value,
+  accordion_item_expanded: paragraph.field_csgov_p_expanded.value,
+  accordion_trigger_tag: paragraph._referringItem.parent.parent.entity.field_csgov_p_trigger_tag.value
+  })
+}}

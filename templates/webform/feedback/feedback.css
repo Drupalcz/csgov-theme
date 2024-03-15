@@ -1,0 +1,63 @@
+.block-csgov-feedback:has(.webform-ajax-form-wrapper) {
+  background: var(--csgov-feedback-background);
+  padding-block: var(--csgov-spacing-l);
+  margin-top: var(--csgov-spacing-l);
+}
+
+.block-csgov-feedback .form-item-csgov-feedback-question {
+  min-width: 3rem;
+  text-align: center;
+}
+
+.block-csgov-feedback .form-item-csgov-feedback-question input {
+  display: none;
+}
+
+.block-csgov-feedback .form-item {
+  max-width: 40rem;
+}
+
+.block-csgov-feedback .form-item-csgov-feedback-question label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 5rem;
+  justify-content: end;
+  cursor: pointer;
+  gap: var(--csgov-spacing-2xs);
+}
+
+.block-csgov-feedback .form-item-csgov-feedback-question label:before {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  transition: var(--csgov-transition-out);
+  background: var(--csgov-color-primary);
+}
+
+.block-csgov-feedback .form-item-csgov-feedback-question:has(input:checked) label:before {
+  width: 2.5rem;
+  height: 2.5rem;
+  transition: var(--csgov-transition-in);
+}
+
+.block-csgov-feedback .form-item-csgov-feedback-question:nth-child(1) label:before {
+  mask-image: url('../../../assets/icons/face-smile-beam-light.svg');
+}
+
+.block-csgov-feedback .form-item-csgov-feedback-question:nth-child(2) label:before {
+  mask-image: url('../../../assets/icons/face-thinking-light.svg');
+}
+
+.block-csgov-feedback .form-item-csgov-feedback-question:nth-child(3) label:before {
+  mask-image: url('../../../assets/icons/face-pensive-light.svg');
+}
+
+.block-csgov-feedback .form-item-csgov-feedback-question+.form-item-csgov-feedback-question {
+  margin-left: var(--csgov-spacing-2xl);
+}
+
+.block-csgov-feedback .form-actions {
+  margin-top: var(--csgov-spacing);
+}

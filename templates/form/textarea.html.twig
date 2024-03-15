@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Theme override for a 'textarea' #type form element.
+ *
+ * Available variables
+ * - wrapper_attributes: A list of HTML attributes for the wrapper element.
+ * - attributes: A list of HTML attributes for the <textarea> element.
+ * - resizable: An indicator for whether the textarea is resizable.
+ * - required: An indicator for whether the textarea is required.
+ * - value: The textarea content.
+ *
+ * @see template_preprocess_textarea()
+ */
+#}
+{%
+  set classes = [
+    'form-textarea',
+    resizable ? 'resize-' ~ resizable,
+    required ? 'required',
+  ]
+%}
+<div{{wrapper_attributes.addClass('form-textarea-wrapper')}}>
+  {{ include('gov_cz:gov-form-input', {
+  gov_form_input_type: element['#type'],
+  gov_form_input: '<textarea' ~ attributes.addClass(classes) ~ '>' ~ value ~ '</textarea>',
+  gov_form_input_error: attributes['aria-invalid'],
+  })
+}}
+</div>

@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+
+{# We need to extract the second to last item from
+the array and pass it to the template. #}
+{# Get the total number of items in your array #}
+{% set itemCount = breadcrumb|length %}
+{# Calculate the key for the second to last item #}
+{% set secondToLastKey = itemCount - 2 %}
+{# Extract the second to last item using the slice filter #}
+{% set secondToLastItem = breadcrumb|slice(secondToLastKey, 1) %}
+
+{% if itemCount > 0 %}
+  {{ attach_library('csgov_theme/breadcrumb') }}
+  {# We include the current page title in breadcrumbs, but ensure there's at least
+   # one other breadcrumb besides "Home" before displaying, hence the comparison to 2. #}
+  {% if itemCount > 2 %}
+    {# On small screens, just render the parent level of the current page #}
+    <div class="small-screen">
+      {% for item in breadcrumb %}
+        {% if loop.last and loop.index > 1 %}
+          {{ include('gov_cz:gov-breadcrumbs', {
+            breadcrumbs_items: secondToLastItem,
+            breadcrumbs_accessibility_label: 'Previous level'|t({}, {'context' : 'CSGOV: Breadcrumbs'}),
+            })
+          }}
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+  {# On large screens, render all breadcrumbs #}
+    <div class="large-screen"> {{ include('gov_cz:gov-breadcrumbs', {
+        breadcrumbs_items: breadcrumb,
+        breadcrumbs_accessibility_label: 'Breadcrumbs'|t({}, {'context' : 'CSGOV: Breadcrumbs'}),
+        })
+      }}
+  </div>
+{% endif %}

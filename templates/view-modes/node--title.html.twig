@@ -1,9 +1,0 @@
-{%
-  set classes = [
-  'node--type-' ~ node.bundle|clean_class,
-]
-%}
-{{ attach_library('csgov_theme/title') }}
-<article{{ attributes.addClass(classes) }}>
-  {{ content }}
-</article>

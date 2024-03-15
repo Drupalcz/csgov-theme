@@ -1,180 +1,205 @@
-global-styling:
+# Base
+base:
   css:
     theme:
-      templates/variables/colors.css: {}
-      templates/variables/fonts.css: {}
-      templates/variables/misc.css: {}
-      templates/variables/transitions.css: {}
-      templates/variables/vertical-rhytm.css: {}
-      templates/variables/widths.css: {}
-      templates/_defaults/normalize.css: {}
-      templates/_defaults/layout.css: {}
-      templates/layouts/section-layouts.css: {}
-      templates/_defaults/typography.css: {}
-      templates/_defaults/html.css: {}
-      templates/form/button.css: {}
-      templates/form/forms.css: {}
-      templates/variables/navigation.css: {}
+      templates/_base/variables.css: {}
+      templates/_base/base.css: {}
 
-hero-media:
+grid:
   css:
     theme:
-      templates/includes/hero-media/hero-media.css: {}
+      templates/_base/grid.css: {}
 
-breadcrumbs:
-  css:
-    theme:
-      templates/navigation/breadcrumbs/breadcrumbs.css: {}
-
-# Navigation
-facets:
-  css:
-    theme:
-      templates/navigation/facets/facets.css: {}
-menu-local-tasks:
-  css:
-    theme:
-      templates/navigation/menu-local-tasks/menu-local-tasks.css: {}
-
-menu-main:
-  css:
-    theme:
-     templates/navigation/menu-main/menu-main.css: {}
+clickable-items:
   js:
-    templates/navigation/menu-main/menu-main.js: {}
+    js/clickable-items/clickable-items.js: {}
   dependencies:
     - core/drupal
     - core/once
 
-menu-trigger:
+pager:
   css:
     theme:
-      templates/navigation/menu-main/menu-trigger.css: {}
+      templates/system/pager/pager.css: {}
 
-back-to-top:
+twocol_section:
   css:
     theme:
-      templates/system/back-to-top.css: {}
-  js:
-    templates/system/back-to-top.js: {}
-  dependencies:
-    - core/drupal
-    - core/drupal.debounce
+      templates/layout/layouts/twocol_section/twocol_section.css: {}
 
-postscript:
+threecol_section:
   css:
     theme:
-      templates/system/postscript.css: {}
-  js:
-    templates/system/theme-switcher.js: {}
+      templates/layout/layouts/threecol_section/threecol_section.css: {}
 
-# Regions
-footer:
+fourcol_section:
   css:
     theme:
-      templates/regions/footer.css: {}
+      templates/layout/layouts/fourcol_section/fourcol_section.css: {}
 
-header:
+messages:
   css:
-    theme:
-      templates/regions/header.css: {}
+    component:
+      templates/system/messages/messages.css: {}
 
-# Layouts
-list:
+# Blocks
+page-title:
   css:
-    theme:
-      templates/includes/list/list.css: {}
+    component:
+      templates/block/page-title/page-title.css: {}
 
-# Fields
-field-default:
+block-menu-page:
   css:
-    theme:
-      templates/fields/field-default.css: {}
+    component:
+      templates/block/menu-page/block-menu-page.css: {}
 
-field-body:
-  css:
-    theme:
-      templates/fields/field-body.css: {}
-
-# View modes
-calendar-item:
-  css:
-    theme:
-      templates/view-modes/calendar-item.css: {}
-
-card:
-  css:
-    theme:
-      templates/view-modes/card.css: {}
-
-search:
-  css:
-    theme:
-      templates/view-modes/search.css: {}
-
-summary:
-  css:
-    theme:
-      templates/view-modes/summary.css: {}
-
-teaser:
-  css:
-    theme:
-      templates/view-modes/teaser.css: {}
-
-teaser-small:
-  css:
-    theme:
-      templates/view-modes/teaser-small.css: {}
-
-tile:
-  css:
-    theme:
-      templates/view-modes/tile.css: {}
-
-title:
-  css:
-    theme:
-      templates/view-modes/title.css: {}
-
-# Paragraphs
-gov-notification:
-  css:
-    theme:
-      templates/content/notification/gov-alert.css: {}
-
-paragraph-accordion:
-  css:
-    theme:
-      templates/paragraphs/accordions/accordions.css: {}
-  js:
-    templates/paragraphs/accordions/accordions.js: {}
-  dependencies:
-    - core/drupal
-    - core/once
-
+# Content components / Paragraphs
 paragraphs:
   css:
-    theme:
+    component:
       templates/paragraphs/paragraphs.css: {}
 
-section-colors:
+tiles:
+  css:
+    component:
+      templates/paragraphs/tiles/tiles.css: {}
+  dependencies:
+    - csgov_theme/paragraphs
+
+content:
+  css:
+    component:
+      templates/paragraphs/content/content.css: {}
+  dependencies:
+    - csgov_theme/paragraphs
+
+embed-view:
+  css:
+    component:
+      templates/paragraphs/embed-view/embed-view.css: {}
+
+node-list:
+  css:
+    component:
+      templates/paragraphs/node-list/node-list.css: {}
+
+branding:
+  css:
+    component:
+      templates/system/branding-block/branding.css: {}
+
+# Content types
+node:
   css:
     theme:
-      templates/paragraphs/section-colors.css: {}
+      templates/content-types/node.css: {}
+
+notification:
+  css:
+    theme:
+      templates/content-types/notification/notification.css: {}
+
+board:
+  css:
+    theme:
+      templates/content-types/board/board.css: {}
+
+directory:
+  css:
+    theme:
+      templates/content-types/directory/directory.css: {}
+
+event:
+  css:
+    theme:
+      templates/content-types/event/event.css: {}
+
+# View modes
+card:
+  css:
+    component:
+      templates/view-modes/card/card.css: {}
+  js:
+      templates/view-modes/card/clickable-items_card-apply.js: {}
+  dependencies:
+    - csgov_theme/clickable-items
+
+calendar-item-event:
+  css:
+    component:
+      templates/view-modes/calendar-item/calendar-item--event.css: {}
+
+# Navigation
+menu-main:
+  css:
+    component:
+      templates/navigation/menu-main/menu-main.css: {}
+
+menu-main-page:
+  css:
+    component:
+      templates/navigation/menu-main-page/menu-main-page.css: { weight: 10 }
+
+breadcrumb:
+  css:
+    theme:
+      templates/navigation/breadcrumb/breadcrumb.css: {}
+
+header:
+  js:
+    js/header.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/drupal.debounce
+    - gov_cz/toggle-section
+    - gov_cz/focus-trap
+
+# Regions
+region-admin-area:
+  css:
+    theme:
+      templates/region/admin-area/admin-area.css: {}
+
+tabs:
+  css:
+    theme:
+      templates/navigation/tabs/tabs.css: {}
+
+region-breadcrumb:
+  css:
+    theme:
+      templates/region/breadcrumb/region-breadcrumb.css: {}
+
+region-notifications:
+  css:
+    theme:
+      templates/region/notifications/region-notifications.css: {}
 
 # Views
-search-block:
+view-notification:
   css:
     theme:
-      templates/views/search/search-block.css: {}
+      templates/views/notification/views-notification.css: {}
 
-views:
+search-page:
   css:
     theme:
-      templates/views/views.css: {}
+      templates/views/search/views-search.css: {}
 
-views-layout:
+# Forms
+facet-checkbox:
   css:
-    theme:
-      templates/layouts/views-layout.css: {}
+    component:
+      templates/views/facets/facets-checkbox.css: {}
+
+# Webforms
+feedback:
+  css:
+    component:
+      templates/webform/feedback/feedback.css: {}
+
+webform:
+  css:
+    component:
+      templates/webform/webform.css: {}

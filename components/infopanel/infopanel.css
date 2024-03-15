@@ -1,0 +1,103 @@
+/* Set helper variables. */
+.infopanel__wrapper {
+  --infopanel-icon-size: 3rem;
+  --infopanel-background: var(--csgov-color-white);
+  --infopanel-foreground: var(--csgov-color-black);
+  --infopanel-cta-background: var(--csgov-color-black);
+  --infopanel-cta-foreground: var(--csgov-color-white);
+}
+
+@media screen and (min-width: 30em) {
+  .infopanel__wrapper {
+    --infopanel-icon-size: 6rem;
+  }
+}
+
+.infopanel__wrapper.background--primary {
+  --infopanel-background: var(--csgov-color-primary);
+  --infopanel-foreground: var(--csgov-color-white);
+}
+
+.infopanel__wrapper.background--secondary {
+  --infopanel-background: var(--csgov-color-secondary);
+  --infopanel-foreground: var(--csgov-color-white);
+}
+
+.infopanel__wrapper.background--success {
+  --infopanel-background: var(--csgov-color-success-lighter);
+  --infopanel-foreground: var(--csgov-color-white);
+}
+
+.infopanel__wrapper.background--warning {
+  --infopanel-background: var(--csgov-color-warning);
+  --infopanel-foreground: var(--csgov-color-black);
+}
+
+.infopanel__wrapper.background--error {
+  --infopanel-background: var(--csgov-color-error);
+  --infopanel-foreground: var(--csgov-color-white);
+}
+
+.infopanel {
+  padding: var(--csgov-spacing-xl) var(--csgov-spacing);
+  background: var(--infopanel-background);
+  color: var(--infopanel-foreground);
+}
+
+@media screen and (min-width: 48em) {
+  .infopanel {
+    padding: var(--csgov-spacing-xl) var(--csgov-spacing-l);
+  }
+}
+
+@media screen and (min-width: 30em) {
+  .infopanel--has-icon {
+    display: grid;
+    grid-template-columns: var(--infopanel-icon-size) 1fr;
+    gap: var(--csgov-spacing-2xl);
+    align-items: start;
+  }
+}
+
+.infopanel__content-wrapper {
+  max-width: var(--csgov-bp-medium);
+}
+
+.infopanel--has-icon .infopanel__icon {
+  max-width: var(--infopanel-icon-size);
+  width: 100%;
+  margin-bottom: var(--csgov-spacing-m);
+  height: var(--infopanel-icon-size);
+}
+
+@media screen and (min-width: 30em) {
+  .infopanel--has-icon .infopanel__icon {
+    margin-bottom: var(--csgov-spacing);
+  }
+}
+
+.infopanel--has-icon .infopanel__content-wrapper {
+  max-width: calc(var(--csgov-bp-medium) - var(--infopanel-icon-size));
+}
+
+.infopanel__title {
+  margin-bottom: var(--csgov-spacing-l);
+}
+
+.infopanel__cta {
+  margin-top: var(--csgov-spacing-2xl);
+}
+
+.infopanel__cta a {
+  padding: var(--csgov-spacing) var(--csgov-spacing-l);
+  background: var(--infopanel-cta-background);
+  color: var(--infopanel-cta-foreground);
+  border-radius: var(--csgov-border-radius);
+  display: inline-block;
+}
+
+/* Colors */
+.infopanel__wrapper[class*=background--] {
+  background: transparent;
+  padding: 0;
+}

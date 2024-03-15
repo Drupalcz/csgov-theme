@@ -1,0 +1,86 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dialog-off-canvas-main-canvas {
+  max-width: var(--csgov-container-large);
+  margin-inline: auto;
+  position: relative;
+}
+
+.csgov-container--large {
+  max-width: var(--csgov-container-large);
+  margin-inline: auto;
+}
+
+a, .gov-link {
+  text-underline-offset: 0.1em;
+}
+
+@media screen and (min-width: 48em) {
+  .small-screen {
+    display: none;
+  }
+}
+
+.large-screen {
+  display: none;
+}
+
+@media screen and (min-width: 48em) {
+  .large-screen {
+    display: block;
+  }
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+svg.ext {
+  width: 1em;
+  margin-left: var(--csgov-spacing-2xs);
+  transition: var(--csgov-transition-out);
+}
+
+a.ext:hover svg.ext,
+a.ext:focus svg.ext {
+  transform: translate3d(0.2em, -0.2em, 0);
+  transition: var(--csgov-transition-in);
+  fill: var(--csgov-color-black);
+}
+
+/* We do honour user choice for reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1s !important;
+    animation-duration: 1s !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+  }
+}
+
+#skip-to-main.focusable:focus {
+  display: block;
+  background: var(--csgov-color-white);
+  padding: var(--csgov-spacing-s) var(--csgov-spacing-m);
+  border: 2px solid var(--csgov-color-black);
+  margin: 0 auto;
+  width: fit-content;
+  color: var(--csgov-color-black);
+  font-weight: var(--csgov-fw-bold);
+  text-decoration: none;
+  position: absolute !important;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 100;
+}

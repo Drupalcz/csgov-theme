@@ -1,0 +1,33 @@
+.csgov-brand__block:hover {
+  opacity: 0.9;
+  z-index: 10;
+}
+
+.csgov-brand__block-link {
+  display: inline-flex;
+  justify-content: start;
+  gap: var(--csgov-spacing-l);
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+}
+
+.csgov-brand__logo img {
+  max-width: 13rem;
+  height: 4rem;
+  object-fit: contain;
+  object-position: left;
+}
+
+.csgov-brand__name {
+  display: none;
+  font-size: clamp(var(--csgov-fs-m), 0.464rem + 1.429vw, var(--csgov-fs-3xl));
+}
+
+@media (min-width: 37.5em) {
+  .csgov-brand__name {
+    display: block;
+    font-weight: var(--csgov-fw-bold);
+    font-size: clamp(var(--csgov-fs-m), 0.464rem + 1.429vw, var(--csgov-fs-3xl));
+  }
+}

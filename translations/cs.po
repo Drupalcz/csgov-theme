@@ -1,0 +1,135 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgctxt "CSGOV: Footer legal"
+msgid "Powered by"
+msgstr "Běží na"
+
+msgctxt "CSGOV: Footer legal"
+msgid "System for managing municipal websites."
+msgstr "Systém pro správu obecních webů."
+
+msgid "Telephone"
+msgstr "Pevná linka"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Mobil"
+msgstr "Mobilní telefon"
+
+msgctxt "CSGOV: Document download"
+msgid "pages"
+msgstr "stran"
+
+msgctxt "CSGOV: Header"
+msgid "Menu"
+msgstr "Menu"
+
+msgctxt "CSGOV: Header"
+msgid "Close"
+msgstr "Zavřít"
+
+msgctxt "CSGOV: Search"
+msgid "Search"
+msgstr "Hledat"
+
+msgctxt "CSGOV: In Page Menu"
+msgid "Submenu"
+msgstr "Podmenu"
+
+msgctxt "CSGOV: Node strings"
+msgid "Responsible person"
+msgstr "Zodpovědná osoba"
+
+msgctxt "CSGOV: Node strings"
+msgid "Published Date"
+msgstr "Datum publikace"
+
+msgctxt "CSGOV: Node strings - board"
+msgid "Published Date"
+msgstr "Datum vystavení"
+
+msgctxt "CSGOV: Node strings - board"
+msgid "Unpublished Date"
+msgstr "Datum sejmutí"
+
+msgctxt "CSGOV: Node strings - board"
+msgid "Published"
+msgstr "Vystavení"
+
+msgctxt "CSGOV: Node strings - board"
+msgid "Unpublished"
+msgstr "Sejmutí"
+
+msgctxt "CSGOV: Node strings - board"
+msgid "Responsible"
+msgstr "Zodpovídá"
+
+msgctxt "CSGOV: Node strings"
+msgid "Reference mark"
+msgstr "Jednací číslo"
+
+msgctxt "CSGOV: Node strings"
+msgid "Board type"
+msgstr "Typ úřední desky"
+
+msgctxt "CSGOV: Node strings"
+msgid "Address"
+msgstr "Adresa"
+
+msgctxt "CSGOV: Node strings"
+msgid "Oppening time"
+msgstr "Otevírací doba"
+
+msgctxt "CSGOV: Node strings"
+msgid "Persons"
+msgstr "Lidé"
+
+msgctxt "CSGOV: Node strings"
+msgid "Event date"
+msgstr "Datum konání"
+
+msgctxt "CSGOV: Node strings"
+msgid "Event place"
+msgstr "Místo konání"
+
+msgctxt "CSGOV: Node strings"
+msgid "Event type"
+msgstr "Typ akce"
+
+msgctxt "CSGOV: Node strings"
+msgid "News type"
+msgstr "Typ novinky"
+
+msgctxt "CSGOV: Node strings"
+msgid "News type"
+msgstr "Typ novinky"
+
+msgctxt "CSGOV: Notifications"
+msgid "Get more info"
+msgstr "Více informací"
+
+msgctxt "CSGOV: Header"
+msgid "Home, @site_name"
+msgstr "Domů, @site_name"
+
+msgctxt "CSGOV: Header"
+msgid "Logo, @site_name"
+msgstr "Logo, @site_name"
+
+msgctxt "CSGOV: Breadcrumbs"
+msgid "Previous level"
+msgstr "Předchozí úroveň"
+
+msgctxt "CSGOV: Breadcrumbs"
+msgid "Breadcrumbs"
+msgstr "Drobečková navigace"
+
+msgctxt "CSGOV: Footer"
+msgid "Back to top"
+msgstr "Zpět nahoru"
+
+msgid "Download document"
+msgstr "Stáhnout soubor"

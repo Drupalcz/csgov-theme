@@ -1,0 +1,35 @@
+{{ attach_library('csgov_theme/paragraphs') }}
+{{ attach_library('csgov_theme/tiles') }}
+
+{%
+  set classes = [
+    'tiles',
+    paragraph.field_csgov_heading_top.0.value == TRUE ? 'tiles--heading-top',
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+<div{{attributes.addClass(classes)}}>
+  <div class="gov-container">
+    {% if paragraph.field_csgov_p_title.value or paragraph.field_csgov_p_subtitle.value %}
+      <div class="paragraph__heading tiles__heading">
+        {% if paragraph.field_csgov_p_title.value %}
+          <h2 class="tiles__title">{{ content.field_csgov_p_title }}</h2>
+        {% endif %}
+        {% if paragraph.field_csgov_p_subtitle.value %}
+          <p class="tiles__subtitle">{{ content.field_csgov_p_subtitle }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+  {{ include('gov_cz:gov-tiles', {
+  tiles_border: paragraph.field_csgov_p_no_border.0.value ? TRUE : FALSE,
+  tiles_column: paragraph.field_csgov_p_columns.value,
+  tiles_items: content.field_csgov_p_tiles
+  })
+}}
+  </div>
+</div>

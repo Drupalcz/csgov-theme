@@ -1,0 +1,55 @@
+{% set classes = [
+  'address-book',
+] %}
+<div {{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  <div class="address-book__content">
+    <h2 class="address-book__title">
+      {% if address_book_link %}
+        <a href="{{ address_book_link }}">
+        {% endif %}
+        {{ address_book_title }}
+        {% if address_book_link %}
+        </a>
+      {% endif %}
+    </h2>
+    {% if address_book_position %}
+      <div class="address-book__position">
+        {{ address_book_position }}
+      </div>
+    {% endif %}
+    {% if address_book_address %}
+      <div class="address-book__address">
+        {{ address_book_address }}
+      </div>
+    {% endif %}
+    <div class="address-book__contacts">
+      {% if address_book_mobile %}
+        <div class="address-book__mobile address-book__contact">
+          {{ address_book_mobile }}
+        </div>
+      {% endif %}
+      {% if address_book_phone %}
+        <div class="address-book__phone address-book__contact">
+          {{ address_book_phone }}
+        </div>
+      {% endif %}
+      {% if address_book_email %}
+        <div class="address-book__email address-book__contact">
+          {{ address_book_email }}
+        </div>
+      {% endif %}
+    </div>
+    {% if address_book_office_hours %}
+      <div class="address-book__email address-book__office-hours">
+        {{ address_book_office_hours }}
+      </div>
+    {% endif %}
+  </div>
+  {% if address_book_image %}
+    <div class="address-book__image">
+      {{ address_book_image }}
+    </div>
+  {% endif %}
+</div>

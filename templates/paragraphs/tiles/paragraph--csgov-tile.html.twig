@@ -1,0 +1,8 @@
+{{ include('gov_cz:gov-tile', {
+  tile_link: content.field_csgov_p_link.0['#title'],
+  tile_link_external: content.field_csgov_p_link.0['#url'].external,
+  tile_icon: paragraph.field_csgov_p_icon|file_url,
+  tile_title: content.field_csgov_p_title,
+  tile_content: content.field_csgov_p_subtitle,
+  })
+}}

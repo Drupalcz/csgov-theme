@@ -1,0 +1,12 @@
+{% set calendar_item_title = label %}
+{% set calendar_item_url = url %}
+{% if node.field_csgov_date_published.value %}
+  {% set calendar_item_date = node.field_csgov_date_published.value %}
+{% endif %}
+{% if node.field_csgov_date_archived.value %}
+  {% set calendar_item_date_archive = content.field_csgov_date_archived %}
+{% endif %}
+{% embed('csgov_theme:calendar-item') %}
+  {% block calendar_item_meta %}
+  {% endblock %}
+{% endembed %}

@@ -1,0 +1,73 @@
+.node__teaser-wrapper {
+  margin-block: var(--csgov-spacing-xl);
+}
+
+.node__teaser-wrapper:has(+ .node__date) {
+  margin-bottom: var(--csgov-spacing);
+}
+
+.node__teaser {
+  font-size: var(--csgov-fs-xl);
+  line-height: var(--csgov-line-height-xl);
+  max-width: var(--csgov-content-width);
+}
+
+.node__date {
+  font-size: var(--csgov-fs-l);
+  margin-block: var(--csgov-spacing-xl);
+  color: var(--csgov-node-date-published);
+}
+
+.node__image {
+  margin-bottom: var(--csgov-spacing-2xl);
+}
+
+.node__image-caption {
+  font-style: italic;
+  margin-top: var(--csgov-spacing);
+  max-width: var(--csgov-content-width);
+}
+
+.node__links {
+  margin-block: var(--csgov-spacing-l);
+}
+
+.node__heading {
+  padding-top: var(--csgov-spacing);
+  font-size: var(--csgov-fs-xl);
+  font-weight: var(--csgov-fw-medium);
+  margin-bottom: var(--csgov-spacing);
+}
+
+.node__links-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.node__links-list__item {
+  font-size: var(--csgov-fs-l);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--csgov-spacing-s);
+}
+
+.node__links-list a {
+  padding-block: var(--csgov-spacing-s);
+  display: inline-block;
+}
+
+.node__links_list__link-icon svg {
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  display: block;
+  transition: var(--csgov-transition-out);
+}
+
+.node__links-list__item:hover .node__links_list__link-icon svg,
+.node__links-list__item:focus-within .node__links_list__link-icon svg {
+  transform: translateX(0.5rem);
+  transition: var(--csgov-transition-in);
+}

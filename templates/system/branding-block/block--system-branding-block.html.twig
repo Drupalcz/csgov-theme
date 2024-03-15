@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('csgov_theme/branding') }}
+<div{{attributes.addClass('csgov-brand__block')}}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  {% if site_logo or site_name %}
+    <a href="{{ path('<front>') }}" rel="home" class="csgov-brand__block-link">
+      <span class="visually-hidden">{{ 'Home, @site_name'|t({'@site_name': site_name}, {'context' : 'CSGOV: Header'}) }}</span>
+      {% if site_logo %}
+        <div class="csgov-brand__logo">
+          <img src="{{ site_logo }}" alt="{{ 'Logo, @site_name'|t({'@site_name': site_name}, {'context' : 'CSGOV: Header'}) }}" fetchpriority="high"/>
+        </div>
+      {% endif %}
+      {% if site_name %}
+        <div class="csgov-brand__name">
+          {{ site_name }}
+        </div>
+      {% endif %}
+    </a>
+  {% endif %}
+</div>

@@ -1,0 +1,28 @@
+<footer class="footer" role="contentinfo">
+  <div class="gov-container">
+    {% if footer_brand %}
+      <div class="footer__brand">
+        {{ footer_brand }}
+      </div>
+    {% endif %}
+    {% if footer_top %}
+      <div class="footer__content footer__content-top">
+        {{ footer_top }}
+      </div>
+    {% endif %}
+    {% if footer_bottom %}
+      <div class="footer__content footer__bottom">
+        {{ footer_bottom }}
+      </div>
+    {% endif %}
+  </div>
+</footer>
+<div class="footer-legal">
+  <div class="gov-container">
+    {{ footer_legal }}
+    <div class="footer__legal__csgov">
+      {{ 'Powered by'|t({}, {'context' : 'CSGOV: Footer legal'}) }} <a href="https://www.csgov.cz" title="{{ 'System for managing municipal websites.'|t({}, {'context' : 'CSGOV: Footer legal'}) }}">CSGOV</a>
+      {% if footer_profile_version %}({{ footer_profile_version }}){% endif %}
+    </div>
+  </div>
+</div>

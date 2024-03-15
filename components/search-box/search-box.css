@@ -1,0 +1,15 @@
+.search-box label {
+  font-size: var(--csgov-fs-xs);
+  display: block;
+}
+
+.search-box__inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: var(--csgov-spacing-s);
+}
+
+.search-box__input {
+  width: 100%;
+}

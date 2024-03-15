@@ -1,0 +1,7 @@
+{{ include('gov_cz:gov-statsbar-item', {
+  statsbar_item_icon: paragraph.field_csgov_p_icon|file_url,
+  statsbar_item_value: content.field_csgov_p_stats_value,
+  statsbar_item_description: content.field_csgov_p_stats_text,
+  statsbar_item_icon_position: paragraph._referringItem.parent.parent.entity.field_csgov_p_stats_position.value,
+  })
+}}

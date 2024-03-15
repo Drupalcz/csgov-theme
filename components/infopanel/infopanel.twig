@@ -1,0 +1,31 @@
+{% set infopanel_attribute = create_attribute() %}
+{% set classes = [
+  'infopanel',
+  infopanel_icon ? 'infopanel--has-icon',
+] %}
+<div{{infopanel_attribute.addClass(classes)}}>
+  {% if infopanel_icon %}
+    <div class="gov-icon infopanel__icon" aria-hidden="true">
+      <span class="gov-icon__holder">
+        {{ source(infopanel_icon, ignore_missing = true) }}
+      </span>
+    </div>
+  {% endif %}
+  <div class="infopanel__content-wrapper">
+    {% if infopanel_title %}
+      <h2 class="infopanel__title">
+        {{ infopanel_title }}
+      </h2>
+    {% endif %}
+    {% if infopanel_content %}
+      <div class="infopanel__content">
+        {{ infopanel_content }}
+      </div>
+    {% endif %}
+    {% if infopanel_link %}
+      <div class="infopanel__cta">
+        {{ infopanel_link }}
+      </div>
+    {% endif %}
+  </div>
+</div>

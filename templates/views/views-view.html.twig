@@ -39,9 +39,7 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
-{{ attach_library('csgov_theme/views') }}
-{{ attach_library('csgov_theme/views-layout') }}
-<div{{ attributes.addClass(classes) }}>
+<div{{attributes.addClass(classes)}}>
   {{ title_prefix }}
   {% if title %}
     {{ title }}
@@ -69,7 +67,11 @@
     </div>
   {% elseif empty %}
     <div class="view-empty">
-      {{ empty }}
+      {{ include('gov_cz:gov-empty', {
+        empty_title: empty.area_text_custom,
+        empty_content: empty.area_text_custom_1,
+        })
+      }}
     </div>
   {% endif %}
 

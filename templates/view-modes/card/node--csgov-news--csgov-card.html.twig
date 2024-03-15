@@ -1,0 +1,22 @@
+{{ attach_library('csgov_theme/card') }}
+{% embed 'gov_cz:gov-card' %}
+  {% set card_title = label %}
+  {% set card_url = url %}
+  {% set card_content = content.field_csgov_teaser %}
+  {% set card_image = content.field_csgov_main_image %}
+  {% set card_promotion = content.field_csgov_promotion %}
+  {% set card_footer = content.field_csgov_footer %}
+  {# We need to place more info inside the content area. #}
+  {% block card_main %}
+    <div class="gov-card__content">
+      <div class="csgov-news-teaser">
+        {{ content.field_csgov_teaser }}
+      </div>
+      {% if node.field_csgov_date_published.value %}
+        <div class="card__date">
+          {{ content.field_csgov_date_published }}
+        </div>
+      {% endif %}
+    </div>
+  {% endblock %}
+{% endembed %}

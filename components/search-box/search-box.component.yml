@@ -1,0 +1,19 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Hero Search Box
+props:
+  type: object
+  required:
+    - search_box_id
+  properties:
+    search_box_id:
+      type: string
+      title: Search box ID
+      description: A11y – connects label to input.
+    search_box_label:
+      type: string
+      title: Hero search box label
+      description: The title for the input field.
+    search_box_placeholder:
+      type: string
+      title: Hero search box placeholder
+      description: The placeholder for the input field.

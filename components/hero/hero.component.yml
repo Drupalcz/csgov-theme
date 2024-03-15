@@ -1,0 +1,19 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Page Hero
+props:
+  type: object
+  required:
+    - hero_title
+  properties:
+    hero_image:
+      type: string
+      title: Hero image
+      description: Main Hero Image
+    hero_title:
+      type: array
+      title: Hero title
+      description: The title overriding the page title.
+    hero_subtitle:
+      type: string
+      title: Hero Subtitle
+      description: Optional subtitle.

@@ -1,0 +1,7 @@
+{% for item in items %}
+  {{ include ('gov_cz:gov-chip', {
+    chip_url: '/radnice/uredni-deska?f[0]=board_type:' ~ item.content['#entity'].tid.value,
+    chip_content: item.content['#title'],
+    })
+  }}
+{% endfor %}

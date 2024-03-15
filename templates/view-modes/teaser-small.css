@@ -1,6 +1,0 @@
-/* Styling for teaser small view mode. */
-@media screen and (min-width: 40rem) {
-  .teaser--small .teaser__image {
-    max-width: 150px;
-  }
-}

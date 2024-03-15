@@ -1,0 +1,19 @@
+langcode: cs
+status: true
+dependencies:
+  theme:
+    - csgov_theme
+id: csgov_theme_primary_local_tasks
+theme: csgov_theme
+region: admin_area
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Hlavní záložky'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

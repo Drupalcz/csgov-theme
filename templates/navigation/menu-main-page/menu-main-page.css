@@ -1,0 +1,66 @@
+.csgov-menu-page {
+  display: grid;
+  gap: var(--csgov-spacing-xs);
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 30em) {
+  .csgov-menu-page {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--csgov-spacing-s);
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .csgov-menu-page {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--csgov-spacing);
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .csgov-menu-page {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.csgov-menu-page__link--link {
+  background: var(--csgov-menu-main-on-page-background);
+  color: var(--csgov-menu-main-on-page-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: var(--csgov-transition-out);
+  padding: var(--csgov-spacing) var(--csgov-spacing-m);
+  padding-left: var(--csgov-spacing-l);
+  height: 100%;
+  border-radius: var(--csgov-border-radius);
+  line-height: 1.5;
+  font-size: var(--csgov-fs-l);
+}
+
+.csgov-menu-page__link--link:hover,
+.csgov-menu-page__link--link:focus {
+  background: var(--csgov-menu-main-on-page-background-hover);
+  color: var(--csgov-menu-main-on-page-foreground-hover);
+  transition: var(--csgov-transition-in);
+}
+
+
+.csgov-menu-page__link--link:before {
+  display: none;
+}
+
+.menu-link-item__icon {
+  position: absolute;
+  left: var(--csgov-spacing-s);
+  width: 1.5rem;
+}
+
+.csgov-menu-page__link--link:hover .menu-link-item__icon,
+.csgov-menu-page__link--link:focus .menu-link-item__icon {
+  color: var(--csgov-menu-main-on-page-foreground-hover);
+  fill: var(--csgov-menu-main-on-page-foreground-hover);
+}

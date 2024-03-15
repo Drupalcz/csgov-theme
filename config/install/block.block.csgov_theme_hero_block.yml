@@ -1,0 +1,19 @@
+langcode: cs
+status: true
+dependencies:
+  module:
+    - csgov_base
+  theme:
+    - csgov_theme
+id: csgov_theme_hero_block
+theme: csgov_theme
+region: content_top
+weight: -10
+provider: null
+plugin: hero_block
+settings:
+  id: hero_block
+  label: 'Hero block'
+  label_display: '0'
+  provider: csgov_base
+visibility: {  }

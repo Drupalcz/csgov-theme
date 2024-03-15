@@ -1,0 +1,36 @@
+{{ attach_library('csgov_theme/card') }}
+{% embed 'gov_cz:gov-card' %}
+  {% set card_title = label %}
+  {% set card_url = url %}
+  {% set card_content = content.field_csgov_teaser %}
+  {% set card_image = content.field_csgov_main_image %}
+  {% set card_promotion = content.field_csgov_promotion %}
+  {% set card_footer = content.field_csgov_footer %}
+  {# We need to place more info inside the content area. #}
+  {% block card_main %}
+    <div class="gov-card__content">
+     {% if node.field_csgov_event_date.value %}
+      <div class="card__date">
+        <div class="gov-icon field-address__icon" aria-hidden="true">
+          <span class="gov-icon__holder">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24">
+              <path fill="currentColor" d="M12,5.25C12,4.839 11.661,4.5 11.25,4.5C10.839,4.5 10.5,4.839 10.5,5.25L10.5,13.5C10.5,13.77 10.644,14.018 10.878,14.151L16.128,17.151C16.238,17.21 16.36,17.241 16.485,17.241C16.896,17.241 17.235,16.903 17.235,16.491C17.235,16.229 17.097,15.985 16.872,15.849L12,13.065L12,5.25ZM12,24C18.627,24 24,18.627 24,12C24,5.373 18.627,0 12,0C5.373,0 0,5.373 0,12C0,18.627 5.373,24 12,24ZM22.5,12C22.5,17.799 17.799,22.5 12,22.5C6.201,22.5 1.5,17.799 1.5,12C1.5,6.201 6.201,1.5 12,1.5C17.799,1.5 22.5,6.201 22.5,12Z"/>
+            </svg>
+          </span>
+        </div>
+        {{ content.field_csgov_event_date }}
+      </div>
+    {% endif %}
+    <span class="card__address">
+      {{ include('csgov_theme:address-book-address', {
+        address: content.field_csgov_address.0,
+        address_compact: TRUE,
+        })
+      }}
+    </span>
+      <div class="csgov-news-teaser">
+        {{ content.field_csgov_teaser }}
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}

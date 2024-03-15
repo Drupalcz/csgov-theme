@@ -1,0 +1,34 @@
+.tabs {
+  list-style: none;
+  display: flex;
+  padding: var(--csgov-spacing-2xs) 0;
+}
+
+.tabs li {
+  margin-bottom: 0;
+}
+
+.tabs li:before {
+  content: none;
+}
+
+.tabs li + li {
+  margin-left: var(--csgov-spacing-s);
+}
+
+.tabs a {
+  background: var(--csgov-admin-tabs-background);
+  padding: var(--csgov-spacing-2xs) var(--csgov-spacing-s);
+  border-radius: var(--csgov-admin-tabs-border-radius);
+  font-size: var(--csgov-fs-s);
+  color: var(--csgov-admin-tabs-foreground);
+  text-decoration: none;
+  transition: var(--csgov-transition-out);
+  display: block;
+}
+
+.tabs a:hover,
+.tabs a.is-active {
+  background:  var(--csgov-admin-tabs-active-background);
+  transition: var(--csgov-transition-in);
+}

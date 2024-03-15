@@ -1,0 +1,20 @@
+.mobile-number {
+  display: flex;
+  align-items: center;
+  gap: var(--csgov-spacing-xs);
+}
+
+.field-mobile__icon .gov-icon__holder {
+  width: 1rem;
+  height: 1rem;
+}
+
+.field-mobile a {
+  padding-block: var(--csgov-spacing-s);
+}
+
+@media screen and (min-width: 45em) {
+  .field-mobile a {
+    padding-block: 0;
+  }
+}

@@ -1,0 +1,85 @@
+.gov-card {
+  transition: var(--csgov-transition-out);
+  border-radius: var(--csgov-border-radius);
+  height: 100%;
+}
+
+.gov-card:hover,
+.gov-card:focus-within {
+  transition: var(--csgov-transition-in);
+  border-color: var(--csgov-card-border-color);
+}
+
+.gov-card a {
+  text-decoration: none;
+}
+
+@media not all and (pointer: coarse) {
+  .gov-card:hover a,
+  .gov-card:focus-within a {
+    text-decoration: underline;
+  }
+}
+
+.gov-card__header {
+  padding: 1.5rem 1.5rem 0;
+  border-bottom: none;
+}
+
+.gov-card__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__date {
+  display: flex;
+  gap: var(--csgov-spacing-xs);
+  align-items: center;
+  margin-top: var(--csgov-spacing-s);
+}
+
+.csgov-news-teaser + .card__date {
+  font-size: var(--csgov-fs-s);
+  display: block;
+}
+
+.csgov-news-teaser + .card__date:before {
+  content: "";
+  border-top: 1px solid var(--csgov-card-border-color);
+  width: 2rem;
+  margin-bottom: var(--csgov-spacing-2xs);
+  display: block;
+}
+
+/* Override small screen display */
+@media screen and (max-width: calc(48em - 1px)) {
+  .gov-card {
+    border: none;
+    padding: var(--csgov-spacing-2xs);
+  }
+
+  .gov-card__inner {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: var(--csgov-spacing-s);
+  }
+
+  .gov-card__img {
+    grid-row: 1/-1;
+  }
+
+  .gov-card__header h3 {
+    font-size: var(--csgov-fs);
+  }
+
+  .gov-card__header,
+  .gov-card__main {
+    grid-column: 2/3;
+    padding: 0;
+  }
+
+  .csgov-news-teaser {
+    display: none;
+  }
+}

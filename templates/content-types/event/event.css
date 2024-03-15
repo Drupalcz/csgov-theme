@@ -1,0 +1,22 @@
+.event__meta {
+  margin-bottom: var(--csgov-spacing-xl);
+  background: var(--csgov-event-meta-background);
+  padding-block: var(--csgov-spacing-l);
+}
+
+.event__meta .gov-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--csgov-spacing-2xl);
+  align-items: baseline;
+}
+
+@media screen and (min-width: 48em) {
+  .event__meta .gov-container {
+    flex-direction: row;
+  }
+}
+
+.event__meta .node__heading {
+  padding-top: 0;
+}

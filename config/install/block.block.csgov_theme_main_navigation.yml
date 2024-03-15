@@ -1,0 +1,30 @@
+langcode: cs
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - csgov_theme
+id: csgov_theme_main_navigation
+theme: csgov_theme
+region: content
+weight: -8
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Hlavní navigace'
+  label_display: visible
+  provider: menu_block
+  follow: true
+  follow_parent: child
+  label_link: false
+  label_type: active_item
+  level: 2
+  depth: 1
+  expand_all_items: true
+  parent: 'main:'
+  suggestion: main_page
+visibility: {  }

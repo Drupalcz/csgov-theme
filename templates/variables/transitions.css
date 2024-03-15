@@ -1,6 +1,0 @@
-:root {
-  --trans--speed-in: 0.3s;
-  --trans-speed-out: calc(var(--trans--speed-in) * 2);
-  --trans-in: all var(--trans--speed-in) ease-in-out;
-  --trans-out: all var(--trans-speed-out) ease-in-out;
-}

@@ -1,0 +1,9 @@
+.webform-submission-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--csgov-spacing);
+}
+
+.form-item--error {
+  color: var(--csgov-color-error);
+}

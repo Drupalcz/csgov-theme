@@ -1,0 +1,3 @@
+.embed-view .paragraph__content + .embed-view__list {
+  margin-top: var(--csgov-spacing-xl);
+}

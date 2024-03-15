@@ -1,0 +1,76 @@
+{%
+  set classes = [
+    'csgov-directory',
+    'csgov-node',
+    'node',
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('csgov_theme/node') }}
+{{ attach_library('csgov_theme/directory') }}
+<article{{attributes.addClass(classes)}}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  <div class="node__content gov-container">
+    {% block contacts %}
+      <div class="csgov-directory__contacts">
+        <div class="csgov-directory__contact-numbers">
+          {% if node.field_csgov_phone.value %}
+            {{ content.field_csgov_phone }}
+          {% endif %}
+          {% if node.field_csgov_mobile.value %}
+            {{ content.field_csgov_mobile }}
+          {% endif %}
+          {% if node.field_csgov_email.value %}
+            {{ content.field_csgov_email }}
+          {% endif %}
+        </div>
+        {% if node.field_csgov_address.value %}
+          <div class="csgov-directory__address">
+            {{ content.field_csgov_address }}
+          </div>
+        {% endif %}
+      </div>
+    {% endblock %}
+    {% if node.field_csgov_office_hours.value %}
+      <div class="csgov-directory__office-hours">
+        <h2 class="node__heading">{{ 'Oppening time'|t({}, {'context' : 'CSGOV: Node strings'}) }}</h2>
+        {{ content.field_csgov_office_hours }}
+      </div>
+    {% endif %}
+    {% block main_image %}
+      {% if node.field_csgov_main_image.value %}
+        <div class="csgov-directory__image">
+          {{ content.field_csgov_main_image }}
+          {% if node.field_csgov_main_image_caption.value %}
+            <div class="node__image-caption">
+              {{ content.field_csgov_main_image_caption }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endblock %}
+
+  </div>
+
+  {% block persons %}
+    {% if node.field_csgov_persons.value %}
+      <div class="csgov-directory__persons">
+        <div class="gov-container">
+          <h2 class="node__heading">{{ 'Persons'|t({}, {'context' : 'CSGOV: Node strings'}) }}</h2>
+          {{ content.field_csgov_persons }}
+        </div>
+      </div>
+    {% endif %}
+  {% endblock %}
+
+  {% if node.field_csgov_geofield.value %}
+    <div class="csgov-directory__map">
+      {{ content.field_csgov_geofield }}
+    </div>
+  {% endif %}
+</article>

@@ -1,0 +1,12 @@
+{% set event_calendar_title = label %}
+{% set event_calendar_url = url %}
+{% if node.field_csgov_event_date.value %}
+  {% set event_calendar_date = content.field_csgov_event_date %}
+{% endif %}
+{% if node.field_csgov_address.value %}
+  {% set event_calendar_address = content.field_csgov_address.0 %}
+{% endif %}
+{% if node.field_csgov_main_image.value %}
+  {% set event_calendar_image = content.field_csgov_main_image %}
+{% endif %}
+{% embed('csgov_theme:event-calendar') %}{% endembed %}

@@ -1,0 +1,70 @@
+.page-node-type-csgov-directory-place .hero__wrapper,
+.page-node-type-csgov-directory-person .hero__wrapper {
+  margin-bottom: var(--csgov-spacing-xl);
+}
+
+.csgov-directory .node__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: var(--csgov-spacing-xl);
+  row-gap: var(--csgov-spacing-m);
+}
+
+@media screen and (min-width: 40em) {
+  .csgov-directory .node__content {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.csgov-directory__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--csgov-spacing-m);
+}
+
+.csgov-directory__persons {
+  background: var(--csgov-color-grey-1);
+  padding-block: var(--csgov-spacing-m);
+  margin-top: var(--csgov-spacing-l);
+}
+
+.csgov-directory__map {
+  grid-column: 1/-1;
+}
+
+.csgov-directory__image {
+  grid-column: 1/-1;
+}
+
+@media screen and (min-width: 40em) {
+  .csgov-directory__image {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+}
+
+.csgov-directory__office-hours {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+}
+
+.csgov-directory__place {
+  grid-column: 1/-1;
+}
+
+/* Office hours */
+.office-hours__item-label {
+  font-weight: normal;
+}
+
+.office-hours__item-comments {
+  padding-left: var(--csgov-spacing-2xs);
+}
+
+.office-hours-status.office-hours-status--open {
+  color: var(--csgov-directory-open);
+}
+
+.office-hours-status.office-hours-status--closed {
+  color: var(--csgov-directory-close);
+}

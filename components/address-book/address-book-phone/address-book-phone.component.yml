@@ -1,0 +1,9 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Address Book – Phone
+props:
+  type: object
+  properties:
+    phone_number:
+      type: string
+      title: Phone Number
+      description:

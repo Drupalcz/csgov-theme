@@ -1,0 +1,47 @@
+.address-book {
+  display: grid;
+  grid-template-columns: var(--csgov-address-book-image-size) 1fr;
+  gap: var(--csgov-spacing-s);
+}
+
+.address-book + .address-book {
+  margin-top: var(--csgov-spacing-m);
+}
+
+.address-book__content {
+  grid-column: 2/3;
+  grid-row: 1/1;
+  display: grid;
+  gap: var(--csgov-spacing-xs);
+}
+
+.address-book__image {
+  grid-column: 1/2;
+  grid-row: 1/1;
+  border-radius: 100%;
+  width: var(--csgov-address-book-image-size);
+  height: var(--csgov-address-book-image-size);
+  overflow: hidden;
+}
+
+.address-book__title {
+  font-size: var(--csgov-fs-m);
+  font-weight: var(--csgov-fw-normal);
+}
+
+.address-book__contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 45em) {
+  .address-book__contacts {
+    flex-direction: row;
+    gap: var(--csgov-spacing);
+  }
+
+  .address-book .address {
+    display: flex;
+    gap: var(--csgov-spacing-xs);
+  }
+}

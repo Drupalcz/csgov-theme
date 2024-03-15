@@ -1,0 +1,35 @@
+.board__container {
+  display: grid;
+  gap: var(--csgov-spacing-xl);
+}
+
+.board__meta {
+  display: grid;
+  gap: var(--csgov-spacing-xs);
+  grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (min-width: 30em) {
+  .board__meta {
+    gap: var(--csgov-spacing-xl);
+    grid-template-columns: unset;
+    grid-auto-flow: column;
+    justify-content: start;
+  }
+}
+
+.board__meta__heading {
+  font-size: var(--csgov-fs-m);
+}
+
+.board__content {
+  max-width: var(--csgov-content-width);
+}
+
+.board__attachments {
+  max-width: var(--csgov-content-width);
+}
+
+.board__attachments .media + .media {
+  margin-top: var(--csgov-spacing-xs);
+}

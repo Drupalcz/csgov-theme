@@ -1,0 +1,120 @@
+/* Set helper variables. */
+.hero__wrapper {
+  --hero-background: var(--csgov-color-white);
+  --hero-foreground: var(--csgov-color-black);
+}
+
+.hero__wrapper:has(.background-primary) {
+  --hero-background: var(--csgov-color-primary);
+  --hero-foreground: var(--csgov-color-white);
+    /* We need to switch the button colors here. */
+  --gov-button-primary-solid-bg: var(--csgov-color-white);
+  --gov-button-primary-solid-color: var(--csgov-color-primary);
+}
+
+.hero__wrapper:has(.background-secondary) {
+  --hero-background: var(--csgov-color-secondary);
+  --hero-foreground: var(--csgov-color-white);
+}
+
+.hero__wrapper:has(.hero--has-image) {
+  padding: 0;
+}
+
+.hero__wrapper > .gov-container {
+  padding: 0;
+}
+
+/* If hero has image, we overlap the content. */
+.hero--has-image {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  margin-top: 0;
+}
+
+.hero--has-image img {
+  width: 100%;
+}
+
+.hero--has-image .hero__content {
+  padding-block: var(--csgov-spacing-l);
+  grid-column: 1 / -1;
+  z-index: 10;
+  border-radius: var(--csgov-border-radius) var(--csgov-border-radius) 0 0;
+  max-width: calc(var(--csgov-container) + 2 * var(--csgov-spacing-3xl));
+}
+
+.hero--has-image .hero__image {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+@media screen and (min-width: 80em) {
+  .hero--has-image .hero__content {
+    margin-top: -5.5rem;;
+    padding-inline: var(--csgov-spacing-3xl);
+  }
+}
+
+/* Hero search */
+@media screen and (min-width: 48rem) {
+  .hero.hero--has-search {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .hero.hero--has-search {
+    grid-template-columns: 1fr calc(var(--csgov-container) + 2*var(--csgov-spacing-xl)) 1fr;
+  }
+}
+
+/* Adjust the gap title if followed by something */
+.hero__content_on_image .hero__title {
+  font-size: var(--csgov-fs-4xl);
+}
+
+.hero__title:has(+ .hero__subtitle) {
+  margin-bottom: var(--csgov-spacing-xs);
+}
+
+.hero--has-search .hero__title:has(+ .search-box-wrapper),
+.hero__subtitle {
+  margin-bottom: var(--csgov-spacing);
+}
+
+.hero__content_on_image {
+  padding: var(--csgov-spacing-s) var(--csgov-site-padding);
+}
+
+@media screen and (min-width: 48rem) {
+  .hero__content_on_image {
+    border-radius: var(--csgov-border-radius);
+    padding: var(--csgov-spacing) var(--csgov-spacing-m);
+    box-shadow: var(--csgov-box-shadow-xl);
+    grid-column: 1/-1;
+    grid-row-end: -1;
+    z-index: 100;
+    margin-bottom: var(--csgov-spacing-2xl);
+    max-width: 50%;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .hero__content_on_image {
+    grid-column: 2/3;
+    grid-row-end: -1;
+    margin-bottom: var(--csgov-spacing-4xl);
+    max-width: 40%;
+  }
+}
+
+/* Color variants */
+.hero__wrapper:has(.hero--has-image) .hero__content,
+.hero__wrapper:not(:has(.hero--has-image)),
+.hero__content_on_image {
+  background: var(--hero-background);
+  color: var(--hero-foreground);
+}

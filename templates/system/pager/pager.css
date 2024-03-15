@@ -1,0 +1,11 @@
+.gov-pagination {
+  margin-top: var(--csgov-spacing-xl);
+}
+
+.pager--mini .pager__item {
+  margin-bottom: 0;
+}
+
+.pager--mini .pager__item:before {
+  display: none;
+}

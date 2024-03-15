@@ -1,0 +1,93 @@
+.facets-widget-checkbox {
+  --facet-checkbox-size: 2.5rem;
+}
+
+@media screen and (min-width: 48em) {
+  .facets-widget-checkbox {
+    --facet-checkbox-size: 1.5rem;
+  }
+}
+
+ /* Customize the label (the container) */
+ .facets-widget-checkbox .item-list__checkbox {
+  padding: 0;
+ }
+
+ .facets-widget-checkbox h3 {
+  font-size: var(--csgov-fs-l);
+  font-weight: var(--csgov-fw-bold);
+  margin-bottom: var(--csgov-spacing);
+ }
+
+ .facets-widget-checkbox .facet-item {
+  display: flex;
+  gap: var(--csgov-spacing-s);
+  position: relative;
+  padding-left: 0;
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
+}
+
+ .facets-widget-checkbox .facet-item + .facet-item {
+  margin-top: var(--csgov-spacing);
+}
+
+.facets-widget-checkbox .facet-item:before {
+  display: none;
+}
+
+.facets-widget-checkbox .facet-item label {
+  padding-left: calc(var(--facet-checkbox-size) + var(--csgov-spacing));
+  cursor: pointer;
+  height: var(--facet-checkbox-size);
+  padding-block: var(--csgov-spacing-xs);
+}
+
+@media screen and (min-width: 48em) {
+  .facets-widget-checkbox .facet-item label {
+    padding-block: 0;
+  }
+}
+
+/* Hide the browser's default checkbox */
+.facets-widget-checkbox .facet-item input {
+  appearance: none;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  border: 2px solid var(--csgov-facets-color);
+  border-radius: 0.1875rem;
+  position: absolute;
+  cursor: pointer;
+  width: var(--facet-checkbox-size);
+  height: var(--facet-checkbox-size);
+}
+
+.facets-widget-checkbox .facet-item input[type="checkbox"]:checked {
+  background: var(--csgov-facets-color);
+}
+
+.facets-widget-checkbox .facet-item input[type="checkbox"]:not(:checked):hover,
+.facets-widget-checkbox .facet-item input[type="checkbox"]:not(:checked):focus {
+  background: var(--csgov-facets-color-hover);
+  transition: var(--csgov-transition-in);
+}
+
+.facets-widget-checkbox .facet-item input[type="checkbox"]::before {
+  content: "";
+  width: var(--facet-checkbox-size);
+  height: var(--facet-checkbox-size);
+  clip-path: polygon(28% 38%, 41% 53%, 75% 24%, 86% 38%, 40% 78%, 15% 50%);
+  transform: scale(0);
+  background-color: var(--csgov-facets-check-color);
+}
+
+.facets-widget-checkbox .facet-item input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+/* Add distance between multiple facets blocks. */
+.block-facets + .block-facets {
+  margin-top: var(--csgov-spacing-xl);
+}

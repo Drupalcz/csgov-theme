@@ -1,0 +1,54 @@
+{# Prepare translatable strings. #}
+{% set text_close = "Menu"|t({}, {'context' : 'CSGOV: Header'}) %}
+{% set text_open = "Close"|t({}, {'context' : 'CSGOV: Header'}) %}
+
+<header class="csgov-header" role="banner">
+  <div class="csgov-header__container gov-container csgov-container--large">
+    {% if logo %}
+      <div class="csgov-header__brand">
+        {{ logo }}
+      </div>
+    {% endif %}
+    {% if search or extra or navigation %}
+      <div class="csgov-header__extra">
+          <div class="csgov-header__search">
+            {{ include('csgov_theme:search-box', {
+              search_box_label: hero_search_label,
+              search_box_placeholder: hero_search_placeholder,
+              search_box_form_id: hero_search_form_id,
+              })
+            }}
+          </div>
+        {% if extra %}
+          <div class="csgov-header__extra">
+            {{ extra }}
+          </div>
+        {% endif %}
+        <button class="csgov-header__toggle" data-target="csgov-header__navigation" data-text-close="{{ text_close }}" data-text-open="{{ text_open }}" aria-controls="csgov-header__navigation" aria-expanded="false">
+          <span class="csgov-header__toggle-icon" aria-hidden>
+            <span class="csgov-header__toggle-icon--open">
+              {% include '@csgov_theme/includes/svg/_svg.twig'
+              with {
+              svgpath: directory ~ '/assets/icons/list.svg'
+              }
+            %}
+            </span>
+            <span class="csgov-header__toggle-icon--close">
+              {% include '@csgov_theme/includes/svg/_svg.twig'
+              with {
+              svgpath: directory ~ '/assets/icons/x-lg.svg'
+              }
+            %}
+            </span>
+          </span>
+          <span class="csgov-header__toggle-text">{{ text_close }}</span>
+        </button>
+      </div>
+    {% endif %}
+    {% if navigation %}
+      <div class="csgov-header__navigation">
+        {{ navigation }}
+      </div>
+    {% endif %}
+  </div>
+</header>

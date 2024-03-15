@@ -1,0 +1,58 @@
+{%
+  set classes = [
+    'csgov-directory',
+    'csgov-node',
+    'node',
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('csgov_theme/node') }}
+{{ attach_library('csgov_theme/directory') }}
+<article{{attributes.addClass(classes)}}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  <div class="node__content gov-container">
+    {% block contacts %}
+      <div class="csgov-directory__contacts">
+        {% if node.field_csgov_person_position.value %}
+         {{ content.field_csgov_person_position }}
+        {% endif %}
+        <div class="csgov-directory__contact-numbers">
+          {% if node.field_csgov_phone.value %}
+            {{ content.field_csgov_phone }}
+          {% endif %}
+          {% if node.field_csgov_mobile.value %}
+            {{ content.field_csgov_mobile }}
+          {% endif %}
+          {% if node.field_csgov_email.value %}
+            {{ content.field_csgov_email }}
+          {% endif %}
+        </div>
+        {% if drupal_view_result('addresbook_place', 'person') %}
+          <div class="csgov-directory__place">
+            <h2 class="node__heading">{{ 'Address'|t({}, {'context' : 'CSGOV: Node strings'}) }}</h2>
+            {{ drupal_view('addresbook_place', 'person') }}
+          </div>
+        {% endif %}
+      </div>
+      {% block main_image %}
+        {% if node.field_csgov_main_image.value %}
+          <div class="csgov-directory__image">
+            {{ content.field_csgov_main_image }}
+            {% if node.field_csgov_main_image_caption.value %}
+              <div class="node__image-caption">
+                {{ content.field_csgov_main_image_caption }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endblock %}
+    {% endblock %}
+
+
+  </div>
+</article>

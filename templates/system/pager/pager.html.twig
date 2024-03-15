@@ -1,0 +1,8 @@
+{{ attach_library('csgov_theme/pager') }}
+{{ include('gov_cz:gov-pagination', {
+  pagination_display: "full",
+  pagination_items: items,
+  pagination_current: current,
+  pagination_aria_label: heading_id,
+  })
+}}

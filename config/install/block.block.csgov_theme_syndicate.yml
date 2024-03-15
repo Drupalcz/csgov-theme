@@ -1,0 +1,20 @@
+langcode: cs
+status: false
+dependencies:
+  module:
+    - node
+  theme:
+    - csgov_theme
+id: csgov_theme_syndicate
+theme: csgov_theme
+region: logo
+weight: -4
+provider: null
+plugin: node_syndicate_block
+settings:
+  id: node_syndicate_block
+  label: 'RSS zdroj'
+  label_display: '0'
+  provider: node
+  block_count: 10
+visibility: {  }

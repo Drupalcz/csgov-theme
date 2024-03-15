@@ -1,0 +1,51 @@
+{# Map file types to icons. #}
+{% if document_type in ['pdf'] %}
+  {% set document_icon_name = 'pdf' %}
+{% elseif document_type in ['txt', 'rtf'] %}
+  {% set document_icon_name = 'lines' %}
+{% elseif document_type in ['csv', 'xml'] %}
+  {% set document_icon_name = 'code' %}
+{% elseif document_type in ['rar', 'zip'] %}
+  {% set document_icon_name = 'zipper' %}
+{% elseif document_type in ['doc', 'docx', 'pages', 'odt'] %}
+  {% set document_icon_name = 'word' %}
+{% elseif document_type in ['xls', 'xlsx', 'numbers', 'ods'] %}
+  {% set document_icon_name = 'excel' %}
+{% elseif document_type in ['ppt', 'pptx', 'keynote', 'odp'] %}
+  {% set document_icon_name = 'powerpoint' %}
+{% elseif document_type in ['jpeg', 'gif', 'png', 'tiff'] %}
+  {% set document_icon_name = 'image' %}
+{% else %}
+  {% set document_icon_name = 'plain' %}
+{% endif %}
+
+<div class="document-download document-download--{{ document_color|default('secondary') }}">
+  {% if document_type %}
+    <div class="gov-icon document-download__icon" aria-hidden="true">
+      <span class="gov-icon__holder">
+        {{- source(componentMetadata.path ~ '/icons/file-' ~ document_icon_name ~ '-regular.svg', ignore_missing = true) -}}
+      </span>
+    </div>
+  {% endif %}
+  <div class="document-download__content">
+    <h3 class="document-download__title">
+      <a href="{{ document_url }}">
+        {{ document_name }}
+      </a>
+    </h3>
+    <div class="document-download__meta">
+      {% if document_pages %}
+        {{ 'pages'|t({}, {'context' : 'CSGOV: Document download'}) }}: {{ document_pages }},
+      {% endif %}
+      {% if document_type %}
+          [{{ document_type }}],
+      {% endif %}
+      {% if document_size %}
+          {{ document_size }},
+      {% endif %}
+      {% if document_filename %}
+        {{ document_filename }}
+      {% endif %}
+    </div>
+  </div>
+</div>

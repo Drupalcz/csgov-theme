@@ -1,0 +1,27 @@
+{{ attach_library('csgov_theme/paragraphs') }}
+{{ attach_library('csgov_theme/accordion') }}
+
+{%
+  set classes = [
+    'accordion',
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+<div{{attributes.addClass(classes)}}>
+  <div class="gov-container">
+    {% if paragraph.field_csgov_p_title.value %}
+      <div class="paragraph__heading text__heading">
+        <h2 class="content__title">{{ content.field_csgov_p_title }}</h2>
+      </div>
+    {% endif %}
+
+  {{ include('gov_cz:gov-accordion', {
+    accordion_items: content.field_csgov_p_accordion_items
+  })
+}}
+  </div>
+</div>

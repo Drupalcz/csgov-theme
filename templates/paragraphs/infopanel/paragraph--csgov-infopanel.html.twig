@@ -1,0 +1,28 @@
+{%
+  set classes = [
+    'infopanel__wrapper',
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+{% if paragraph.field_csgov_p_title.value %}
+  {% set infopanel_title = content.field_csgov_p_title %}
+{% endif %}
+{% if paragraph.field_csgov_p_icon.value %}
+  {% set infopanel_icon = paragraph.field_csgov_p_icon|file_url %}
+{% endif %}
+{% if paragraph.field_csgov_p_link.value %}
+  {% set infopanel_link = content.field_csgov_p_link %}
+{% endif %}
+{% if paragraph.field_csgov_p_content.value %}
+  {% set infopanel_content = content.field_csgov_p_content %}
+{% endif %}
+
+<div{{attributes.addClass(classes)}}>
+  <div class="gov-container">
+    {{ include('csgov_theme:infopanel')}}
+  </div>
+</div>

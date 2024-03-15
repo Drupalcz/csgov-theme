@@ -1,12 +1,12 @@
-# CS Gov Theme
+# CSGov Theme
 
-Starter theme for CS Gov Distribution.
+Starter theme for CSGov Drupal Distribution.
 
-## Frontend changes
+## Basics
 
+* Theme is dependent on [Design system gov.cz](https://www.drupal.org/projects/gov_cz) module, which provides a gov.cz components as Single Directory Components along with basic styling and variables.
 * Theme is using CSS custom properties (variables)
 * There is no gulp, or sass, only old "boring" plain CSS.
 * CSS is separated in small chunks together with the twig templates and JS in form of small components.
-* There is an initial try for a dark mode support.
 
 ***Happy codding!***

@@ -1,0 +1,7 @@
+.messages .item-list__comma-list {
+  display: block;
+}
+
+.messages .item-list__comma-list li:before {
+  display: none;
+}

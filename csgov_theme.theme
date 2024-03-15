@@ -1,61 +1,100 @@
 <?php
+
+declare(strict_types = 1);
+
+use Drupal\Core\Entity\ContentEntityInterface;
+use \Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
+
+
 /**
  * @file
- * CS Gov theme main theme file.
+ * Functions to support theming.
  */
-use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Implements hook_preprocess_page().
+ * Implements hook_preprocess_image_widget().
  */
-function csgov_theme_preprocess_page(&$variables) {
-  // Set flag saying if current page is using any layout.
-  $variables['has_page_layout'] = drupal_static('has_page_layout', FALSE);
+function csgov_theme_preprocess_image_widget(array &$variables) {
+  $data = &$variables['data'];
+
+  // This prevents image widget templates from rendering preview container HTML
+  // to users that do not have permission to access these previews.
+  // @todo revisit in https://drupal.org/node/953034
+  // @todo revisit in https://drupal.org/node/3114318
+  if (isset($data['preview']['#access']) && $data['preview']['#access'] === FALSE) {
+    unset($data['preview']);
+  }
 }
 
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function csgov_theme_preprocess_block(&$variables): void {
+  // Set block_id variable.
+  if (isset($variables['elements']['#id'])) {
+    $variables['content']['#attributes']['block_id'] = $variables['elements']['#id'];
+  }
+
+  // Handle Page title block.
+  if ($variables['plugin_id'] == 'page_title_block') {
+    $page_entity = csgov_base_get_page_entity();
+
+    if ($page_entity instanceof ContentEntityInterface) {
+      // Retrieve possible overridden value for page title block.
+      // Hide page title block if current node has hero set.
+      if (
+        $page_entity instanceof NodeInterface &&
+        $page_entity->hasField('field_csgov_hero') &&
+        $page_entity->hasField('field_csgov_has_hero') &&
+        $page_entity->get('field_csgov_has_hero')->value &&
+        !$page_entity->get('field_csgov_hero')->isEmpty()
+        ) {
+        $variables['hide_block'] = TRUE;
+      }
+    }
+  }
+}
 
 /**
- * Implements template_preprocess_layout().
+ * Implements hook_preprocess_HOOK() for page templates.
  */
-function csgov_theme_preprocess_layout(&$variables) {
-  /** @var \Drupal\Core\Layout\LayoutDefinition $layout */
-  $layout = $variables['layout'];
-  // Set "has_page_layout" flag into static variable storage.
-  if (substr($layout->id(), 0, 8) === 'section_') {
-    drupal_static('has_page_layout', TRUE);
+function csgov_theme_preprocess_page(&$variables) {
+  // Print the Installation Profile version.
+  // Get the name of the current installation profile.
+  $profile_name = \Drupal::installProfile();
+
+  // Load the profile using the extension list service.
+  $profile = \Drupal::service('extension.list.profile')->get($profile_name);
+
+  $variables['install_profile_name'] = $profile_name;
+  // Check if the profile object was loaded and get the info.
+  if ($profile) {
+    $info = $profile->info;
+    // Check if version is set and add it to the variables.
+    if (isset($info['version'])) {
+      $variables['install_profile_version'] = $info['version'];
+    } else {
+      $variables['install_profile_version'] = FALSE;
+    }
   }
 }
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
-*/
-function csgov_theme_theme_suggestions_field_alter(&$suggestions, array $variables) {
-  // Provide a new suggestion for field in specific layouts.
-  $element = $variables['element'];
-  if (isset($element['#third_party_settings']['layout_builder']['view_mode'])) {
-    // See system_theme_suggestions_field().
-    $suggestions[] = 'field__' . $element['#entity_type'] . '__' . $element['#field_name'] . '__' . $element['#third_party_settings']['layout_builder']['view_mode'];
-  }
-
-  return $suggestions;
-}
-
-function csgov_theme_theme_suggestions_input_alter(&$suggestions, array $variables) {
-  $element = $variables['element'];
-
-  // Provide a suggestion for form elements.
-  if (isset($element['#attributes']['data-twig-suggestion'])) {
-    $suggestions[] = 'input__' . $element['#type'] . '__' . $element['#attributes']['data-twig-suggestion'];
+ */
+function csgov_theme_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  if (isset($variables['elements']['#configuration']['webform_id']) && $variables['elements']['#configuration']['webform_id']) {
+    $suggestions[] = 'block__webform__' . $variables['elements']['#configuration']['webform_id'];
   }
 }
 
 /**
  * Implements hook_form_alter().
-*/
-function csgov_theme_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // Add data attribute and class to search exposed form.
-  if ($form['#id'] == 'views-exposed-form-search-page-1') {  
-    $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_results_submit';
-    $form['actions']['submit']['#attributes']['class'][] = 'search-box__button';
+ */
+function csgov_theme_form_alter(&$form, $form_state, $form_id) {
+  // Add a library to all webforms.
+  if (isset($form['#webform_id'])) {
+    $form['#attached']['library'][] = 'csgov_theme/webform';
   }
 }

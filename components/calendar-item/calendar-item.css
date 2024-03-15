@@ -1,0 +1,103 @@
+.calendar-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2rem 1fr;
+  gap: var(--csgov-spacing-s);
+  border: 1px solid var(--csgov-calendar-item-border-color);
+  align-items: center;
+}
+
+@media screen and (min-width: 30em) {
+  .calendar-item {
+    grid-template-columns: 7rem 1fr;
+    grid-template-rows: 1fr;
+    gap: var(--csgov-spacing);
+    align-items: start;
+  }
+}
+
+.calendar-item:hover,
+.calendar-item:focus-within {
+  border-color: var(--csgov-calendar-item-border-color-hover);
+  cursor: pointer;
+  opacity: 1;
+}
+
+.calendar-item--past {
+  opacity: 0.8;
+}
+
+.calendar-item__date {
+  text-align: center;
+  padding: var(--csgov-spacing-xs);
+  display: flex;
+  flex-direction: row;
+  gap: var(--csgov-spacing-xs);
+  border-bottom: 1px solid var(--csgov-calendar-item-border-color);
+  justify-content: center;
+  line-height: 1;
+  height: 100%;
+}
+
+@media screen and (min-width: 30em) {
+  .calendar-item__date {
+    padding: var(--csgov-spacing-s);
+    flex-direction: column;
+    border-right: 1px solid var(--csgov-calendar-item-border-color);
+    border-bottom: none;
+    font-size: var(--csgov-fs-s);
+  }
+}
+
+.calendar-item__date__day {
+  font-weight: var(--csgov-fw-bold);
+}
+
+@media screen and (min-width: 30em) {
+  .calendar-item__date__day {
+    font-size: var(--csgov-fs-4xl);
+  }
+}
+
+.calendar-item__content {
+  padding: var(--csgov-spacing-s);
+  display: grid;
+  grid-template-columns: 1fr 2.5rem;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+}
+
+.calendar-item__title {
+  font-size: var(--csgov-fs-m);
+  font-weight: var(--csgov-fw-bold);
+  margin-bottom: var(--csgov-spacing-s);
+}
+
+.calendar-item__meta {
+  font-size: var(--csgov-fs-s);
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--csgov-spacing-xs);
+  column-gap: var(--csgov-spacing-s);
+}
+
+.calendar-item__meta__info {
+  /* white-space: nowrap; */
+}
+
+.calendar-item .calendar-item__icon {
+  padding: 0 var(--csgov-spacing-xs);
+  color: var(--csgov-color-primary);
+  grid-row: 1/-1;
+  grid-column: 2/3;
+}
+
+.calendar-item .calendar-item__icon svg {
+  transition: var(--csgov-transition-out);
+}
+
+.calendar-item:hover .calendar-item__icon svg,
+.calendar-item:focus-within .calendar-item__icon svg {
+  transform: translateX(0.5rem);
+  transition: var(--csgov-transition-in);
+}

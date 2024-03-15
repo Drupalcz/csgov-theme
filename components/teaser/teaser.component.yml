@@ -1,0 +1,24 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Teaser
+libraryOverrides:
+  js:
+    clickable-items_teaser-apply.js: {}
+  dependencies:
+    - csgov_theme/clickable-items
+props:
+  type: object
+  required:
+    - teaser_title
+  properties:
+    teaser_title:
+      type: string
+      title: Name
+      description: Name of the address book item
+    teaser_content:
+      type: string
+      title: Content
+      description: Content of the teaser
+    teaser_date:
+      type: string
+      title: Date
+      description: Publishing date

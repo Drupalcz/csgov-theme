@@ -1,0 +1,34 @@
+{%
+  set extra_classes = [
+    'csgov-news'
+  ]
+%}
+{{ attach_library('csgov_theme/news') }}
+{% embed "@csgov_theme/content-types/node--full.html.twig" %}
+  {% block teaser %}
+    {{ parent() }}
+
+    {% if node.field_csgov_date_published.value %}
+      <div class="node__date csgov__date">
+        <div class="gov-container padding-horizontal">
+          {{ content.field_csgov_date_published }}
+        </div>
+      </div>
+    {% endif %}
+  {% endblock teaser %}
+
+  {% block bellow_content %}
+
+    {% if node.field_csgov_news_type.value %}
+      <div class="board__types">
+        <div class="gov-container padding-horizontal">
+          <h2 class="node__heading">{{ 'News type'|t({}, {'context' : 'CSGOV: Node strings'}) }}</h2>
+          {{ content.field_csgov_news_type }}
+        </div>
+      </div>
+    {% endif %}
+
+    {{ parent() }}
+  {% endblock %}
+
+{% endembed %}

@@ -1,0 +1,23 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Page Header
+props:
+  type: object
+  required:
+    - logo
+  properties:
+    logo:
+      type: string
+      title: Site logo
+      description: Sitewide logo
+    navigation:
+      type: array
+      title: Main menu
+      description: The main navigation for the site
+    search:
+      type: string
+      title: Search box
+      description: Search box for input the search term
+    extra:
+      type: string
+      title: Extra items
+      description: Space for various, optional, items e.g. language switcher, mobile toggle…

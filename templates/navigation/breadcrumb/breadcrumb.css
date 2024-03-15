@@ -1,0 +1,12 @@
+.gov-breadcrumbs ul {
+  padding-bottom: 0;
+  font-size: var(--csgov-fs-s);
+}
+
+.small-screen .gov-breadcrumbs .gov-icon {
+  transform: rotate(180deg);
+  width: 1rem;
+  height: 1rem;
+  color: var(--csgov-breadcrumb-arrow-solo-color);
+  margin-left: 0;
+}

@@ -1,0 +1,28 @@
+/*
+ * @file
+ * Provides the layout styles for three-column layout section.
+ */
+
+.layout--threecol-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--csgov-spacing-l);
+}
+
+@media screen and (min-width: 48em) {
+  .layout--threecol-section--25-50-25 {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+
+  .layout--threecol-section--25-25-50 {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+
+  .layout--threecol-section--50-25-25 {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .layout--threecol-section--33-34-33 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

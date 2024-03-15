@@ -1,0 +1,19 @@
+{%
+  set classes = [
+    'block',
+    'menu-page',
+  ]
+%}
+{{ attach_library('csgov_theme/block-menu-page')}}
+{% if content['#items']|length > 0 %}
+  <nav{{attributes.addClass(classes)}} aria-labelledby="menu-page-label" role="navigation">
+    <div class="gov-container">
+      {{ title_prefix }}
+      {% if label %}
+        <h2 id="menu-page-label" class="visually-hidden">{{ 'Submenu'|t({}, {'context' : 'CSGOV: In Page Menu'}) }} {{ label }}</h2>
+      {% endif %}
+      {{ title_suffix }}
+      {{ content }}
+    </div>
+  </div>
+{% endif %}

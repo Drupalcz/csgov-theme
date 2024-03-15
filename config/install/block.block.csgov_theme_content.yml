@@ -1,0 +1,19 @@
+langcode: cs
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - csgov_theme
+id: csgov_theme_content
+theme: csgov_theme
+region: content
+weight: -7
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Obsah hlavní stránky'
+  label_display: '0'
+  provider: system
+visibility: {  }

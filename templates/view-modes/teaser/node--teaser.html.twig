@@ -1,0 +1,15 @@
+{% if content.search_api_excerpt %}
+  {% set teaser_content = content.search_api_excerpt %}
+{% else %}
+  {% set teaser_content = content.field_csgov_teaser %}
+{% endif %}
+{% if node.field_csgov_date_published.value %}
+  {% set teaser_date = content.field_csgov_date_published %}
+{% elseif node.field_csgov_event_date.value %}
+  {% set teaser_date = content.field_csgov_event_date %}
+{% endif %}
+{{ attach_library('csgov_theme/teaser') }}
+{% embed 'csgov_theme:teaser' %}
+  {% set teaser_title = label %}
+  {% set teaser_url = url %}
+{% endembed %}

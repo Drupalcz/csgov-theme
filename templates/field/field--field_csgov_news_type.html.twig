@@ -1,0 +1,7 @@
+{% for item in items %}
+  {{ include ('gov_cz:gov-chip', {
+    chip_url: item.content['#url'],
+    chip_content: item.content['#title'],
+    })
+  }}
+{% endfor %}

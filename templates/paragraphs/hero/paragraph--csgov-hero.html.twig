@@ -1,0 +1,46 @@
+{%
+  set classes = [
+    'hero__wrapper',
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{# If checkbox is checked we print the searchbox. #}
+{% if paragraph.field_csgov_p_has_search_box.value %}
+  {% set hero_search_box = TRUE %}
+  {% if paragraph.field_csgov_p_search_placeholder.value %}
+    {% set hero_search_placeholder = content.field_csgov_p_search_placeholder.0['#context'].value %}
+  {% endif %}
+  {% if paragraph.field_csgov_p_search_label.value %}
+    {% set hero_search_label = content.field_csgov_p_search_label %}
+  {% endif %}
+{% endif %}
+{# Is there a subtitle? #}
+{% if paragraph.field_csgov_p_subtitle.value %}
+  {% set hero_subtitle = content.field_csgov_p_subtitle %}
+{% endif %}
+{# Do we have an image. #}
+{% if paragraph.field_csgov_p_image.value %}
+  {% set hero_image = content.field_csgov_p_image %}
+{% endif %}
+{# Should the hero content have any colour? #}
+{% if paragraph.field_csgov_p_background.value %}
+  {% set hero_background = 'background-' ~ paragraph.field_csgov_p_background.value %}
+{% endif %}
+<div{{attributes.addClass(classes)}}>
+  <div class="gov-container csgov-container--large">
+    {{ include('csgov_theme:hero', {
+      hero_title: content.field_csgov_p_title,
+      hero_subtitle: hero_subtitle,
+      hero_image: hero_image,
+      hero_background: hero_background,
+      hero_search_box: hero_search_box,
+      hero_search_placeholder: hero_search_placeholder,
+      hero_search_label: hero_search_label,
+      hero_search_form_id: 'form-' ~ paragraph.id(),
+      })
+    }}
+  </div>
+</div>

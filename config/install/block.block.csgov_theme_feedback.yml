@@ -1,0 +1,25 @@
+langcode: cs
+status: true
+dependencies:
+  config:
+    - webform.webform.csgov_feedback
+  module:
+    - webform
+  theme:
+    - csgov_theme
+id: csgov_theme_feedback
+theme: csgov_theme
+region: content_bottom
+weight: 0
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Našli jste, co jste hledali?'
+  label_display: visible
+  provider: webform
+  webform_id: csgov_feedback
+  default_data: ''
+  redirect: false
+  lazy: true
+visibility: {  }

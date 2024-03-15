@@ -1,0 +1,9 @@
+{{ attach_library('csgov_theme/card') }}
+{% embed 'gov_cz:gov-card' %}
+  {% set card_title = label %}
+  {% set card_url = url %}
+  {% set card_content = content.field_csgov_teaser %}
+  {% set card_image = content.field_csgov_main_image %}
+  {% set card_promotion = content.field_csgov_promotion %}
+  {% set card_footer = content.field_csgov_footer %}
+{% endembed %}

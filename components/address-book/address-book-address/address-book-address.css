@@ -1,0 +1,10 @@
+.address_component {
+  display: flex;
+  align-items: first baseline;
+  gap: var(--csgov-spacing-xs);
+}
+
+.field-address__icon .gov-icon__holder {
+  width: 1rem;
+  height: 1rem;
+}
