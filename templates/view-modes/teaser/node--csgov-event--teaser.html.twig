@@ -9,6 +9,7 @@
   {% set teaser_date = content.field_csgov_event_date %}
 {% endif %}
 {{ attach_library('csgov_theme/teaser') }}
+{{ attach_library('gov_cz/gov-icon') }}
 {% embed 'csgov_theme:teaser' %}
   {% set teaser_title = label %}
   {% set teaser_url = url %}

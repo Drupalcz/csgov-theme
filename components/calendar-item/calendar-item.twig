@@ -1,7 +1,7 @@
 {% set classes = [
   'calendar-item'
 ] %}
-
+{{ attach_library('gov_cz/gov-icon') }}
 <div {{ attributes.addClass(classes) }} data-time="{{ calendar_item_date|date('U') }}">
   {{ title_prefix }}
   {{ title_suffix }}

@@ -18,7 +18,7 @@
 {% else %}
   {% set document_icon_name = 'plain' %}
 {% endif %}
-
+{{ attach_library('gov_cz/gov-icon') }}
 <div class="document-download document-download--{{ document_color|default('secondary') }}">
   {% if document_type %}
     <div class="gov-icon document-download__icon" aria-hidden="true">

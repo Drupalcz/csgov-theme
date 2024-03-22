@@ -7,6 +7,7 @@
   {% set calendar_item_date_archive = content.field_csgov_date_archived %}
 {% endif %}
 {{ attach_library('csgov_theme/calendar-item-event')}}
+{{ attach_library('gov_cz/gov-icon') }}
 {% embed('csgov_theme:calendar-item') %}
   {% block calendar_item_meta %}
      {% if node.field_csgov_event_date.value %}
