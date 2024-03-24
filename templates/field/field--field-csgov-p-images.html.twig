@@ -1,0 +1,24 @@
+{# The gallery_columns is used for setting the layout,
+# and for setting correct image style according to the layout.
+# Otherwise the images might be too blury or too big.
+#}
+{% if element['#object']._referringItem.entity.field_csgov_p_columns %}
+  {% set gallery_columns = element['#object']._referringItem.entity.field_csgov_p_columns.value %}
+{% endif %}
+
+{% set gallery_id = random(100) %}
+
+{% for item in items %}
+  {% if item.content['#media'].field_media_image.value %}
+    {% set item_title = item.content['#media'].name.value %}
+    {% set item_alt = item.content['#media'].field_media_image.0.alt %}
+  {% endif %}
+  {% set gallery_item_url = item.content['#media'].field_media_image.entity.uri.value %}
+
+  {% include "csgov_theme:gallery" with {
+    item_url_large: gallery_item_url|image_style('native_l'),
+    item_image: drupal_image(gallery_item_url, 'csgov_gallery_' ~ gallery_columns|default(3), {alt: item_alt}, responsive=true),
+    item_title: item_title
+  } %}
+
+{% endfor %}

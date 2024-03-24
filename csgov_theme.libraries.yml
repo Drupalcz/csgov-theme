@@ -42,6 +42,15 @@ messages:
     component:
       templates/system/messages/messages.css: {}
 
+# Vendor
+glightbox:
+  css:
+    theme:
+      vendor/glightbox/glightbox.min.css: { minified: true }
+  js:
+    vendor/glightbox/glightbox.min.js: { minified: true }
+
+
 # Blocks
 page-title:
   css:
@@ -53,18 +62,16 @@ block-menu-page:
     component:
       templates/block/menu-page/block-menu-page.css: {}
 
+branding:
+  css:
+    component:
+      templates/system/branding-block/branding.css: {}
+
 # Content components / Paragraphs
 paragraphs:
   css:
     component:
       templates/paragraphs/paragraphs.css: {}
-
-tiles:
-  css:
-    component:
-      templates/paragraphs/tiles/tiles.css: {}
-  dependencies:
-    - csgov_theme/paragraphs
 
 content:
   css:
@@ -78,15 +85,28 @@ embed-view:
     component:
       templates/paragraphs/embed-view/embed-view.css: {}
 
+gallery:
+  css:
+    component:
+      templates/paragraphs/gallery/gallery.css: {}
+  js:
+    components/gallery/gallery.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - csgov_theme/glightbox
+
 node-list:
   css:
     component:
       templates/paragraphs/node-list/node-list.css: {}
 
-branding:
+tiles:
   css:
     component:
-      templates/system/branding-block/branding.css: {}
+      templates/paragraphs/tiles/tiles.css: {}
+  dependencies:
+    - csgov_theme/paragraphs
 
 # Content types
 node:

@@ -1,0 +1,23 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Gallery
+props:
+  type: object
+  required:
+    - item_image
+  properties:
+    item_url_large:
+      type: string
+      title: Link to large image
+      description: Location of the large version of the image.
+    item_image:
+      type: string
+      title: Item Image
+      description: The small version of image.
+    item_title:
+      type: string
+      title: Item title
+      description: Description of the item.
+    gallery_id:
+      type: string
+      title: Gallery ID
+      description: Unique identifier for individual galleries.

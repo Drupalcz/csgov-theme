@@ -1,0 +1,3 @@
+.gallery .paragraph__content + .list {
+  margin-top: var(--csgov-spacing-xl);
+}
