@@ -1,0 +1,30 @@
+langcode: cs
+status: true
+dependencies:
+  config:
+    - system.menu.housekeeping
+  module:
+    - menu_block
+  theme:
+    - csgov_theme
+id: csgov_theme_housekeeping
+theme: csgov_theme
+region: footer_bottom
+weight: -10
+provider: null
+plugin: 'menu_block:housekeeping'
+settings:
+  id: 'menu_block:housekeeping'
+  label: 'Podmínky a pravidla'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'housekeeping:'
+  suggestion: housekeeping
+visibility: {  }
