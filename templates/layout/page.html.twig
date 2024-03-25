@@ -42,44 +42,46 @@
  * @see html.html.twig
  */
 #}
-{% if page.notifications %}
-  {{ page.notifications }}
-{% endif %}
+<div class="page__wrapper">
+  {% if page.notifications %}
+    {{ page.notifications }}
+  {% endif %}
 
-{% block header %}
-  {{ attach_library('csgov_theme/header') }}
-  {{ include('csgov_theme:header', {
+  {% block header %}
+    {{ attach_library('csgov_theme/header') }}
+    {{ include('csgov_theme:header', {
       logo: page.logo,
       navigation: page.navigation,
       search: page.search,
       extra: page.header_extra
     })
     }}
-{% endblock %}
+  {% endblock %}
 
-{{ page.off_canvas }}
+  {{ page.off_canvas }}
 
-{{ page.breadcrumb }}
+  {{ page.breadcrumb }}
 
-{{ page.admin_area }}
+  {{ page.admin_area }}
 
-{{ page.messages }}
+  {{ page.messages }}
 
-{{ page.help }}
+  {{ page.help }}
 
 
-<main role="main">
-  <a id="main-content" tabindex="-1"></a>
-  {# link is in html.html.twig #}
+  <main role="main">
 
-  <div class="layout-content">
-    {{ page.content_top }}
-    {{ page.content }}
-    {{ page.content_bottom }}
-  </div>
-  {# /.layout-content #}
+    <div class="layout-content">
+      {{ page.content_top }}
+      <a id="main-content" tabindex="-1"></a>
+      {# link is in html.html.twig #}
+      {{ page.content }}
+      {{ page.content_bottom }}
+    </div>
+    {# /.layout-content #}
 
-</main>
+  </main>
+</div>
 
 {% if page.footer_top or page.footer_bottom %}
   {{ include('csgov_theme:footer', {

@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.dialog-off-canvas-main-canvas {
+.page__wrapper {
   max-width: var(--csgov-container-large);
   margin-inline: auto;
   position: relative;
