@@ -55,6 +55,14 @@
       {% endif %}
     {% endblock %}
 
+    {% block content %}
+      {% if node.field_csgov_content_components.value %}
+        <div class="node__content-components">
+          {{ content.field_csgov_content_components }}
+        </div>
+      {% endif %}
+    {% endblock %}
+
   </div>
 
   {% block persons %}

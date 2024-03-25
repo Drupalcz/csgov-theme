@@ -96,12 +96,15 @@
   {% endblock teaser %}
 
   {% block content %}
+    {# This content type uses Layout Builder, thus content bellow is fully managed with Layout Builder.
+    # In Order to render node fields in this template, we need to add theme in different manner.
+    #}
     <div class="node__content gov-container padding-horizontal">
       {{ content }}
     </div>
     {% if node.field_csgov_content_components.value %}
       <div class="node__content-components">
-        {{ content.field_csgov_content_components }}
+        {{ drupal_field('field_csgov_content_components', 'node', node.id(), 'default') }}
       </div>
     {% endif %}
   {% endblock %}
