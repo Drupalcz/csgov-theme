@@ -38,9 +38,13 @@
   --infopanel-foreground: var(--csgov-color-white);
 }
 
-.infopanel {
-  padding: var(--csgov-spacing-xl) var(--csgov-spacing);
+.infopanel__wrapper[class*=background--]  {
   background: var(--infopanel-background);
+  color: var(--infopanel-foreground);
+  padding: var(--csgov-spacing-xl) var(--csgov-spacing);
+}
+
+.infopanel a {
   color: var(--infopanel-foreground);
 }
 
@@ -94,10 +98,4 @@
   color: var(--infopanel-cta-foreground);
   border-radius: var(--csgov-border-radius);
   display: inline-block;
-}
-
-/* Colors */
-.infopanel__wrapper[class*=background--] {
-  background: transparent;
-  padding: 0;
 }
