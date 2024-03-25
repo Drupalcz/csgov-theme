@@ -101,6 +101,11 @@ node-list:
     component:
       templates/paragraphs/node-list/node-list.css: {}
 
+statsbar:
+  css:
+    component:
+      templates/paragraphs/statsbar/statsbar.css: {}
+
 tiles:
   css:
     component:
