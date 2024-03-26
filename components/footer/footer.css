@@ -1,12 +1,12 @@
 .footer {
   background: var(--csgov-footer-background);
   color: var(--csgov-footer-foreground);
-  padding-block: var(--csgov-spacing-3xl) var(--csgov-spacing-xl);
+  padding-top: var(--csgov-spacing-3xl);
   margin-top: var(--csgov-spacing-3xl);
 }
 
 .footer a,
-.footer-legal  a,
+.footer-legal a,
 .footer a > *,
 .footer-legal  a > * {
   color: var(--csgov-footer-foreground);
@@ -102,6 +102,7 @@
 }
 
 .footer-legal {
+  margin-top: var(--csgov-spacing-xl);
   background: var(--csgov-footer-legal-background);
   padding-block: var(--csgov-spacing-s);
   display: flex;

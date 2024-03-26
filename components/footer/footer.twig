@@ -16,13 +16,13 @@
       </div>
     {% endif %}
   </div>
-</footer>
-<div class="footer-legal">
-  <div class="gov-container">
-    {{ footer_legal }}
-    <div class="footer__legal__csgov">
-      {{ 'Powered by'|t({}, {'context' : 'CSGOV: Footer legal'}) }} <a href="https://www.csgov.cz" title="{{ 'System for managing municipal websites.'|t({}, {'context' : 'CSGOV: Footer legal'}) }}">CSGOV</a>
-      {% if footer_profile_version %}({{ footer_profile_version }}){% endif %}
+  <div class="footer-legal">
+    <div class="gov-container">
+      {{ footer_legal }}
+      <div class="footer__legal__csgov">
+        {{ 'Powered by'|t({}, {'context' : 'CSGOV: Footer legal'}) }} <a href="https://www.csgov.cz" title="{{ 'System for managing municipal websites.'|t({}, {'context' : 'CSGOV: Footer legal'}) }}">CSGOV</a>
+        {% if footer_profile_version %}({{ footer_profile_version }}){% endif %}
+      </div>
     </div>
   </div>
-</div>
+</footer>

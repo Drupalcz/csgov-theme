@@ -20,7 +20,7 @@
 %}
 {{ attach_library('csgov_theme/region-notifications') }}
 {% if content %}
-  <div{{ attributes.addClass(classes) }}>
+  <section{{ attributes.addClass(classes) }} aria-label="{{ 'Notifications'|t({}, {'context' : 'CSGOV: Notifications'}) }}">
     {{ content }}
-  </div>
+  </section>
 {% endif %}
