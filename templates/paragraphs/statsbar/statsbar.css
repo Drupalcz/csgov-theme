@@ -1,0 +1,9 @@
+.statsbar:has([variant="primary"]) {
+  background: var(--csgov-color-primary-2);
+  color: var(--csgov-color-primary);
+}
+
+.statsbar:has([variant="secondary"]) {
+  background: var(--csgov-color-secondary);
+  color: var(--csgov-color-white);
+}

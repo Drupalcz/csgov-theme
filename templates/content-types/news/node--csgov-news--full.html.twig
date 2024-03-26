@@ -15,7 +15,23 @@
         </div>
       </div>
     {% endif %}
+
+    {% block main_image %}
+      {% if node.field_csgov_main_image.value %}
+        <div class="node__image">
+          <div class="gov-container padding-horizontal">
+            {{ content.field_csgov_main_image }}
+            {% if node.field_csgov_main_image_caption.value %}
+              <div class="node__image-caption">
+                {{ content.field_csgov_main_image_caption }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endblock %}
   {% endblock teaser %}
+
 
   {% block bellow_content %}
 

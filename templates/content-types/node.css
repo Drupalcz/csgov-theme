@@ -1,5 +1,5 @@
 .node__teaser-wrapper {
-  margin-block: var(--csgov-spacing-xl);
+  margin-top: var(--csgov-spacing-xl);
 }
 
 .node__teaser-wrapper:has(+ .node__date) {

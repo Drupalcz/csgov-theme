@@ -1,0 +1,19 @@
+.gallery__item {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--csgov-border-radius);
+}
+
+.gallery__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: var(--csgov-transition-out);
+}
+
+.gallery__item:hover img {
+  transform: scale(105%);
+  transition: var(--csgov-transition-in);
+}

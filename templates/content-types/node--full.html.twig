@@ -95,21 +95,6 @@
     {% endif %}
   {% endblock teaser %}
 
-  {% block main_image %}
-    {% if node.field_csgov_main_image.value %}
-      <div class="node__image">
-        <div class="gov-container padding-horizontal">
-          {{ content.field_csgov_main_image }}
-          {% if node.field_csgov_main_image_caption.value %}
-            <div class="node__image-caption">
-              {{ content.field_csgov_main_image_caption }}
-            </div>
-          {% endif %}
-        </div>
-      </div>
-    {% endif %}
-  {% endblock %}
-
   {% block content %}
     {% if node.field_csgov_content_components.value %}
       <div class="node__content-components">

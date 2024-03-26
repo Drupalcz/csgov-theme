@@ -1,0 +1,4 @@
+{{ attach_library('csgov_theme/gallery') }}
+<a href="{{ item_url_large }}" class="glightbox gallery__item" data-glightbox="title:{{item_title}}; type: image;" data-gallery="gallery-{{ gallery_id|default(random(1000)) }}">
+  {{ item_image }}
+</a>

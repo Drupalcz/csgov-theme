@@ -3,6 +3,7 @@
   'infopanel',
   infopanel_icon ? 'infopanel--has-icon',
 ] %}
+{{ attach_library('gov_cz/gov-icon') }}
 <div{{infopanel_attribute.addClass(classes)}}>
   {% if infopanel_icon %}
     <div class="gov-icon infopanel__icon" aria-hidden="true">

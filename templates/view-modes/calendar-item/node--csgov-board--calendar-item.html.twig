@@ -10,17 +10,17 @@
   {% block calendar_item_meta %}
     {% if node.field_csgov_date_published.value %}
       <span class="calendar-item__meta__info">
-      {{ 'Published:'|t({}, {'context' : 'CSGOV: Node strings – board'}) }} <strong>{{ content.field_csgov_date_published }}</strong>
+      {{ 'Published:'|t({}, {'context' : 'CSGOV: Node strings - board'}) }} <strong>{{ content.field_csgov_date_published }}</strong>
       </span>
     {% endif %}
     {% if node.field_csgov_date_archived.value %}
     <span class="calendar-item__meta__info">
-      {{ 'Unpublished:'|t({}, {'context' : 'CSGOV: Node strings – board'}) }} <strong>{{ content.field_csgov_date_archived }}</strong>
+      {{ 'Unpublished:'|t({}, {'context' : 'CSGOV: Node strings - board'}) }} <strong>{{ content.field_csgov_date_archived }}</strong>
       </span>
     {% endif %}
     {% if node.field_csgov_ref_person.value %}
     <span class="calendar-item__meta__info">
-      {{ 'Responsible:'|t({}, {'context' : 'CSGOV: Node strings – board'}) }} <strong>{{ content.field_csgov_ref_person }}</strong>
+      {{ 'Responsible:'|t({}, {'context' : 'CSGOV: Node strings - board'}) }} <strong>{{ content.field_csgov_ref_person }}</strong>
       </span>
     {% endif %}
   {% endblock %}

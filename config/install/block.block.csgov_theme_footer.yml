@@ -1,0 +1,30 @@
+langcode: cs
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - menu_block
+  theme:
+    - csgov_theme
+id: csgov_theme_footer
+theme: csgov_theme
+region: footer_top
+weight: -9
+provider: null
+plugin: 'menu_block:footer'
+settings:
+  id: 'menu_block:footer'
+  label: 'Užitečné odkazy'
+  label_display: visible
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'footer:'
+  suggestion: footer
+visibility: {  }

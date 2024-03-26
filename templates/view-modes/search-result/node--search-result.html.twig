@@ -1,5 +1,5 @@
 {% if node.bundle in ["csgov_directory_person", "csgov_directory_place"] %}
-  {% include "@csgov_theme/view-modes/address-book/node--address-book.html.twig" %}
+  {% include "@csgov_theme/view-modes/address-book/node--csgov-address-book.html.twig" %}
 {% elseif node.bundle in ["csgov_board"] %}
   {% include "@csgov_theme/view-modes/calendar-item/node--csgov-board--calendar-item.html.twig" %}
 {% elseif node.bundle in ["csgov_event"] %}
