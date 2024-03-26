@@ -2,7 +2,7 @@
 {{ attach_library('gov_cz/gov-button') }}
 {{ attach_library('gov_cz/gov-icon') }}
 <div class="search-box-wrapper">
-  <form class="search-box" action="/search" method="get" accept-charset="UTF-8">
+  <form class="search-box" action="/search" method="get" accept-charset="UTF-8" role="search">
     <div class="search-box__inputs">
       <div class="form-item search-box__input">
         {% set label_id = 'search-box_' ~ search_box_form_id|default('form')|clean_unique_id %}
