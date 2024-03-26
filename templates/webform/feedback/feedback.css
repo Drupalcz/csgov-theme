@@ -10,7 +10,13 @@
 }
 
 .block-csgov-feedback .form-item-csgov-feedback-question input {
-  display: none;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .block-csgov-feedback .form-item {
@@ -36,6 +42,7 @@
   background: var(--csgov-color-primary);
 }
 
+.block-csgov-feedback .form-item-csgov-feedback-question:has(input:focus) label:before,
 .block-csgov-feedback .form-item-csgov-feedback-question:has(input:checked) label:before {
   width: 2.5rem;
   height: 2.5rem;
