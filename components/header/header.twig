@@ -1,7 +1,7 @@
 {# Prepare translatable strings. #}
 {% set text_close = "Menu"|t({}, {'context' : 'CSGOV: Header'}) %}
 {% set text_open = "Close"|t({}, {'context' : 'CSGOV: Header'}) %}
-
+{{ attach_library('csgov_theme/header') }}
 <header class="csgov-header" role="banner">
   <div class="csgov-header__container gov-container csgov-container--large">
     {% if logo %}
