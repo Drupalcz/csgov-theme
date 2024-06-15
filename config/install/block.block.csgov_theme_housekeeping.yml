@@ -10,7 +10,7 @@ dependencies:
 id: csgov_theme_housekeeping
 theme: csgov_theme
 region: footer_bottom
-weight: -10
+weight: -11
 provider: null
 plugin: 'menu_block:housekeeping'
 settings:
