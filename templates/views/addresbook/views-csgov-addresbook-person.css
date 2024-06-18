@@ -1,0 +1,15 @@
+.view-csgov-addresbook-person .view-filters {
+  margin-block: 0 var(--csgov-spacing-xl);
+}
+
+.view-csgov-addresbook-person .views-exposed-form {
+  display: flex;
+  gap: var(--csgov-spacing);
+  align-items: end;
+}
+
+.view-csgov-addresbook-person .views-row + .views-row {
+  padding-top: var(--csgov-spacing-m);
+  margin-top: var(--csgov-spacing-m);
+  border-top: 1px solid var(--csgov-color-grey-3);
+}

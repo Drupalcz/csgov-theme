@@ -202,6 +202,11 @@ region-notifications:
       templates/region/notifications/region-notifications.css: {}
 
 # Views
+addresbook-person:
+  css:
+    theme:
+      templates/views/addresbook/views-csgov-addresbook-person.css: {}
+
 view-notification:
   css:
     theme:
