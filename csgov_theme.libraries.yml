@@ -172,7 +172,7 @@ breadcrumb:
 
 header:
   js:
-    js/header.js: {}
+    components/header/header.js: {}
   dependencies:
     - core/drupal
     - core/once
