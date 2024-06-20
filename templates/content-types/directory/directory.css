@@ -20,10 +20,6 @@
   grid-column: 1/-1;
 }
 
-.csgov-directory .node__content-components .gov-container {
-  padding-inline: 0;
-}
-
 .csgov-directory__contacts {
   display: flex;
   flex-direction: column;
