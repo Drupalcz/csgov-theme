@@ -64,11 +64,3 @@
 .office-hours__item-comments {
   padding-left: var(--csgov-spacing-2xs);
 }
-
-.office-hours-status.office-hours-status--open {
-  color: var(--csgov-directory-open);
-}
-
-.office-hours-status.office-hours-status--closed {
-  color: var(--csgov-directory-close);
-}

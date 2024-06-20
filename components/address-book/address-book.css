@@ -45,3 +45,11 @@
     gap: var(--csgov-spacing-xs);
   }
 }
+
+.address-book .office-hours-status.office-hours-status--open {
+  color: var(--csgov-directory-open);
+}
+
+.address-book .office-hours-status.office-hours-status--closed {
+  color: var(--csgov-directory-close);
+}
