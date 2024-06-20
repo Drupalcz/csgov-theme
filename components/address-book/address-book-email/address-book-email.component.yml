@@ -3,7 +3,7 @@ name: Address Book – Email
 props:
   type: object
   properties:
-    email_number:
+    email:
       type: string
-      title: Email Number
+      title: Email
       description:

@@ -3,7 +3,7 @@ name: Address Book – Address
 props:
   type: object
   properties:
-    address_number:
+    address:
       type: string
-      title: Address Number
+      title: Address
       description:
