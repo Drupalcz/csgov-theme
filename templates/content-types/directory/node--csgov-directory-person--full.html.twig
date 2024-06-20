@@ -32,10 +32,16 @@
             {{ content.field_csgov_email }}
           {% endif %}
         </div>
-        {% if drupal_view_result('addresbook_place', 'person') %}
+        {% if drupal_view_result('csgov_addresbook_place', 'person') %}
           <div class="csgov-directory__place">
-            <h2 class="node__heading">{{ 'Address'|t({}, {'context' : 'CSGOV: Node strings'}) }}</h2>
-            {{ drupal_view('addresbook_place', 'person') }}
+            <h2 class="node__heading">
+            {% if drupal_view_result('csgov_addresbook_place', 'person')|length > 1 %}
+              {{ 'Addresses'|t({}, {'context' : 'CSGOV: Node strings'}) }}
+            {% else %}
+              {{ 'Address'|t({}, {'context' : 'CSGOV: Node strings'}) }}
+            {% endif %}
+            </h2>
+            {{ drupal_view('csgov_addresbook_place', 'person') }}
           </div>
         {% endif %}
       </div>
@@ -52,7 +58,5 @@
         {% endif %}
       {% endblock %}
     {% endblock %}
-
-
   </div>
 </article>

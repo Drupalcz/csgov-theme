@@ -80,6 +80,10 @@ msgid "Address"
 msgstr "Adresa"
 
 msgctxt "CSGOV: Node strings"
+msgid "Addresses"
+msgstr "Adresy"
+
+msgctxt "CSGOV: Node strings"
 msgid "Oppening time"
 msgstr "Otevírací doba"
 
