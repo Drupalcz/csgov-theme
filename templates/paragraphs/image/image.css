@@ -1,0 +1,14 @@
+.paragraph.csgov-image__wrapper {
+  padding-block: var(--csgov-spacing);
+}
+
+.csgov-image img {
+  width: 100%;
+  border-radius: var(--csgov-border-radius);
+}
+
+.csgov-image--has-caption .csgov-image__caption {
+  margin-block: var(--csgov-spacing) var(--csgov-spacing);
+  font-size: var(--csgov-fs-s);
+  max-width: var(--csgov-content-width);
+}

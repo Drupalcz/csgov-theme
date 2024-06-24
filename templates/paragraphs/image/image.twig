@@ -1,0 +1,25 @@
+{% set image_attribute = create_attribute() %}
+{% set classes = [
+  'csgov-image',
+  image_full_width ? 'csgov-image--is-full-width',
+  image_caption ? 'csgov-image--has-caption',
+] %}
+
+<div{{image_attribute.addClass(classes)}}>
+  {% if not image_full_width %}
+    <div class="gov-container">
+  {% endif %}
+    <div class="csgov-image__image">
+      {{ image }}
+    </div>
+  {% if not image_full_width %}
+    </div>
+  {% endif %}
+  {% if image_caption %}
+    <div class="gov-container">
+      <div class="csgov-image__caption">
+        {{ image_caption }}
+      </div>
+    </div>
+  {% endif %}
+</div>
