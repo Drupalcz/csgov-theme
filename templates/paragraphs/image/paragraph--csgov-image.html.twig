@@ -1,0 +1,28 @@
+{%
+  set classes = [
+    'csgov-image__wrapper',
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+{% if paragraph.field_csgov_p_full_width.value %}
+  {% set image_full_width = TRUE %}
+{% endif %}
+{% if paragraph.field_csgov_p_image.value %}
+  {% set image = content.field_csgov_p_image %}
+{% endif %}
+{% if paragraph.field_csgov_p_image_caption.value %}
+  {% set image_caption = content.field_csgov_p_image_caption %}
+{% endif %}
+
+<div{{attributes.addClass(classes)}}>
+    {{ include('csgov_theme:image', {
+      image: image,
+      image_full_width: image_full_width,
+      image_caption: image_caption,
+      })
+    }}
+</div>
