@@ -1,0 +1,36 @@
+{% set image_text_attribute = create_attribute() %}
+{% set classes = [
+  'csgov-image-text',
+  image_text_image_position ? image_text_image_position|clean_class,
+] %}
+
+<div{{image_text_attribute.addClass(classes)}}>
+  {% if image_text_image_position == 'image_left' %}
+    <div class="csgov-image-text__image">
+      {{ image_text_image }}
+    </div>
+  {% endif %}
+
+  {% if image_text_label or image_text_content %}
+    <div class="csgov-image-text__content-wrapper">
+      {% if image_text_label %}
+        <div class="paragraph__heading">
+          <h2 class="csgov-image-text__label">
+            {{ image_text_label }}
+          </h2>
+        </div>
+      {% endif %}
+      {% if image_text_content %}
+        <div class="csgov-image-text__content paragraph__content">
+          {{ image_text_content }}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if image_text_image_position == 'image_right' %}
+    <div class="csgov-image-text__image">
+      {{ image_text_image }}
+    </div>
+  {% endif %}
+</div>

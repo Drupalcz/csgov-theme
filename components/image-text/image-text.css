@@ -1,0 +1,77 @@
+.paragraph.csgov-image-text__wrapper {
+  padding: 0;
+}
+
+/* Image on left */
+@media screen and (min-width: 48em) {
+  .paragraph.csgov-image-text__wrapper:has(.image-left) {
+    display: grid;
+    grid-template-columns: auto calc(((100vw - var(--csgov-container)) / 2) - var(--csgov-site-padding));
+    padding-right: var(--csgov-site-padding);
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .paragraph.csgov-image-text__wrapper:has(.image-left) {
+    grid-template-columns: auto calc(((var(--csgov-container-large) - var(--csgov-container)) / 2) - var(--csgov-site-padding));
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .csgov-image-text.image-left {
+    grid-column: 1/2;
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    align-items: center;
+    gap: var(--csgov-spacing-l);
+  }
+}
+
+/* Image on right */
+@media screen and (min-width: 48em) {
+  .paragraph.csgov-image-text__wrapper:has(.image-right) {
+    display: grid;
+    grid-template-columns: calc(((100vw - var(--csgov-container)) / 2) - var(--csgov-site-padding)) auto;
+    padding-left: var(--csgov-site-padding);
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .paragraph.csgov-image-text__wrapper:has(.image-right) {
+    grid-template-columns: calc(((var(--csgov-container-large) - var(--csgov-container)) / 2) - var(--csgov-site-padding)) auto;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .csgov-image-text {
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    align-items: center;
+    gap: var(--csgov-spacing-l);
+  }
+}
+
+.csgov-image-text__content-wrapper {
+  padding-inline: var(--csgov-site-padding);
+  padding-block: var(--csgov-spacing-l);
+}
+
+@media screen and (min-width: 48em) {
+  .csgov-image-text__content-wrapper {
+    padding-inline: 0;
+  }
+}
+
+
+.csgov-image-text__image,
+.csgov-image-text__image picture {
+  height: 100%;
+}
+
+.csgov-image-text img {
+  height: 100%;
+  width: 100%;
+  border-radius: var(--csgov-border-radius);
+  object-fit: cover;
+}

@@ -1,0 +1,15 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Image
+props:
+  type: object
+  required:
+    - image
+  properties:
+    image:
+      type: object
+      title: Image
+      description: Main Image Object
+    image_caption:
+      type: string
+      title: Image Caption
+      description: Optional image caption text.
