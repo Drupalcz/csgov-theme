@@ -1,8 +1,8 @@
 .node__teaser-wrapper {
-  margin-top: var(--csgov-spacing-xl);
+  margin-block: var(--csgov-spacing-xl);
 }
 
-.node__teaser-wrapper:has(+ .node__date) {
+.node__teaser-wrapper:has(+ .node__content-components .background--default:first-child) {
   margin-bottom: var(--csgov-spacing);
 }
 
