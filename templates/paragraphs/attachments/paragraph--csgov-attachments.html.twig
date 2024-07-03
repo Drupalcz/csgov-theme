@@ -1,0 +1,34 @@
+{{ attach_library('csgov_theme/paragraphs') }}
+{{ attach_library('csgov_theme/attachments') }}
+
+{%
+  set classes = [
+    'attachments',
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+<div{{attributes.addClass(classes)}}>
+  <div class="gov-container">
+    {% if paragraph.field_csgov_p_title.value %}
+      <div class="paragraph__heading attachments__heading">
+        <h2 class="content__title">{{ content.field_csgov_p_title }}</h2>
+      </div>
+    {% endif %}
+
+    {% if paragraph.field_csgov_p_content.value %}
+      <div class="gov-content paragraph__content">
+        {{ content.field_csgov_p_content }}
+      </div>
+    {% endif %}
+
+    {% if paragraph.field_csgov_p_attachments_files.value %}
+      <div class="attachments__files">
+        {{ content.field_csgov_p_attachments_files }}
+      </div>
+    {% endif %}
+  </div>
+</div>

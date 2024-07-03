@@ -73,6 +73,11 @@ paragraphs:
     component:
       templates/paragraphs/paragraphs.css: {}
 
+attachments:
+  css:
+    component:
+      templates/paragraphs/attachments/attachments.css: {}
+
 content:
   css:
     component:

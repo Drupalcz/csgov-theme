@@ -1,0 +1,11 @@
+.attachments__files {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  gap: var(--csgov-spacing-xs);
+  max-width: var(--csgov-content-width);
+}
+
+.paragraph__content + .attachments__files {
+  margin-top: var(--csgov-spacing);
+}
