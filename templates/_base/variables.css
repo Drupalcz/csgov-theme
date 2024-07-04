@@ -99,6 +99,10 @@
   --csgov-line-height-5xl: var(--gov-text-5xl-line-height);
   --csgov-line-height-6xl: var(--gov-text-6xl-line-height);
 
+  /* Blockquote */
+  --csgov-blockquote-quote-color: var(--csgov-color-primary);
+  --csgov-blockquote-content-color: var(--csgov-color-grey-7);
+
   /* Breadcrumbs */
   --csgov-breadcrumb-arrow-solo-color: var(--csgov-color-primary);
 

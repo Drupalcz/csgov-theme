@@ -84,3 +84,35 @@ a.ext:focus svg.ext {
   transform: translate(-50%);
   z-index: 100;
 }
+
+/* Styling for blockquotes */
+blockquote {
+  padding-left: var(--csgov-spacing-xl);
+  position: relative;
+  margin-block: var(--csgov-spacing-xl);
+  max-width: var(--csgov-content-width);
+  font-style: italic;
+  color: var(--csgov-blockquote-content-color);
+}
+
+blockquote::before {
+  content: "“";
+  display: block;
+  height: 100%;
+  font-size: calc(var(--csgov-fs-6xl)* 2);
+  color: var(--csgov-blockquote-quote-color);
+  position: absolute;
+  left: calc(-1 * var(--csgov-spacing-xs));
+  top: var(--csgov-spacing-m);
+}
+
+@media screen and (min-width: 48em) {
+  blockquote {
+    padding-left: var(--csgov-spacing-2xl);
+  }
+
+  blockquote::before {
+    top: var(--csgov-spacing-l);
+  }
+
+}
