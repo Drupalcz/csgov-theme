@@ -1,0 +1,65 @@
+{# Stepper item
+  ## Variables ##
+  # step_by_step_item_id – The link for the tile.
+  # step_by_step_item_variant – Icon for the item.
+  # step_by_step_item_size – Title of the tile.
+  # step_by_step_item_icon – Title of the tile.
+  # step_by_step_item_prefix – Title of the tile.
+  # step_by_step_item_label – Title of the tile.
+  # step_by_step_item_annotation – Title of the tile.
+  # step_by_step_item_content – Title of the tile.
+#}
+<div class="gov-stepper-item {{ step_by_step_item_annotation ? 'gov-stepper-item--w-annot' }} {{ step_by_step_item_content ? 'step-by-step--has-content' }} {{ step_by_step_item_current ? 'step-by-step--current' }}" variant="{{ step_by_step_item_variant|default('primary') }}" size="{{ step_by_step_item_size|default('m') }}" {{ step_by_step_item_expanded ? 'is-expanded="true"'}}>
+  <div class="gov-stepper-item__header">
+    <div class="gov-stepper-item__title">
+      <span class="gov-stepper-item__prefix">
+        {% if step_by_step_item_icon and not step_by_step_item_noprefix %}
+          <div class="gov-icon" aria-hidden="true">
+            <span class="gov-icon__holder">
+              {{ source(step_by_step_item_icon, ignore_missing = true) }}
+            </span>
+          </div>
+        {% elseif not step_by_step_item_noprefix %}
+          {{ step_by_step_item_prefix }}
+        {% else %}
+          &nbsp;
+        {% endif %}
+      </span>
+      <span class="gov-stepper-item__name">
+        <h3 {{ attributes.addClass('gov-stepper-item__label') }}>
+          {{ title_prefix }}
+          {% if step_by_step_item_url %}
+            <a href="{{ step_by_step_item_url }}" class="gov-stepper-item__label__link">
+              {% if step_by_step_item_current %}
+                <span class="visually-hidden">{{ 'Momentálně prohlížíte:'|t }} </span>
+              {% endif %}
+              {{ step_by_step_item_label }}
+            </a>
+          {% else %}
+            {{ step_by_step_item_label }}
+          {% endif %}
+          {{ title_suffix }}
+        </h3>
+        {% if step_by_step_item_annotation %}
+          <span class="gov-stepper-item__annot">{{ step_by_step_item_annotation }}</span>
+        {% endif %}
+      {# If there is some content we add a button for accordion like behaviour. #}
+      {% if step_by_step_item_content %}
+        <button id="{{ step_by_step_item_label_id }}" class="step-by-step__trigger" aria-controls="{{ step_by_step_item_content_id }}" aria-label="{{ 'Zobrazit'|t }} {{ step_by_step_item_label }}">
+          {{ 'Zobrazit podrobnosti'|t }}
+          <span class="step-by-step__trigger__icon gov-icon">
+            <span class="gov-icon" aria-hidden="true">
+              <span class="gov-icon__holder">
+                {{ source('@gov_cz/assets/gov-design-system/gov-icons/basic/chevron-down.svg') }}
+              </span>
+            </span>
+          </span>
+        </button>
+      {% endif %}
+      </span>
+    </div>
+  </div>
+  <div class="gov-stepper-item__content" id="{{ step_by_step_item_content_id }}" aria-labelledby="{{ step_by_step_item_label_id }}" role="tabpanel">
+    {{ step_by_step_item_content }}
+  </div>
+</div>

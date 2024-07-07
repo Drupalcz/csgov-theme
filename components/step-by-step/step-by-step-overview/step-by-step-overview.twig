@@ -1,0 +1,8 @@
+{# Stepper
+  ## Variables ##
+  # step_by_step_size – Number of columns.
+  # step_by_step_items– List of tiles.
+#}
+<div size="{{ step_by_step_size|default('m') }}" class="gov-stepper" role="list">
+  {{ step_by_step_items }}
+</div>

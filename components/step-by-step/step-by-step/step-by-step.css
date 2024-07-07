@@ -1,0 +1,68 @@
+.gov-stepper-item__title {
+  width: 100%;
+  max-width: var(--csgov-content-width);
+}
+
+.gov-stepper-item__label {
+  font-size: var(--csgov-fs-xl);
+}
+
+.gov-stepper-item__name {
+  width: 100%;
+}
+
+.step-by-step__trigger {
+  background-color: transparent;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
+  border: 0;
+  width: fit-content;
+  padding: 0;
+  margin-block: var(--csgov-spacing-s);
+}
+
+.step-by-step__trigger:focus {
+  outline: none;
+}
+
+.step-by-step__trigger:focus {
+  outline: none;
+}
+
+.step-by-step__trigger:focus-visible {
+  border-radius: var(--gov-border-radius, 0.1875rem);
+  outline: var(--gov-outline-width, 0.125rem) solid var(--gov-color-focus-base);
+  outline-offset: 0;
+}
+
+.step-by-step__trigger:focus-visible::before {
+  display: none;
+}
+
+.step-by-step__trigger[aria-expanded=true i] .step-by-step__trigger__icon .gov-icon:not([slot=toggle-icon]) {
+  transform: scale(-1);
+}
+
+.step-by-step__trigger__icon {
+  display: inline-flex;
+  vertical-align: middle;
+  flex: 0 0 auto;
+  margin-left: var(--csgov-spacing-xs);
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+/* Gov_cz override for stepper */
+.gov-stepper-item .gov-stepper-item__prefix {
+  box-shadow: none !important;
+}
+
+.gov-stepper-item__content {
+  max-width: var(--csgov-content-width);
+}
+
+.step-by-step__content {
+  margin-bottom: var(--csgov-spacing-m);
+}

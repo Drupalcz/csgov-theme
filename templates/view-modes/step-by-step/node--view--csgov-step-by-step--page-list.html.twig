@@ -1,0 +1,18 @@
+{# If there is no icon we need to insert the current item number. #}
+{% if path('<current>') == url %}
+  {% set step_by_step_item_current = true %}
+{% endif %}
+
+{{ include('csgov_theme:step-by-step', {
+  step_by_step_item_size: 'xs',
+  step_by_step_item_noprefix: true,
+  step_by_step_item_label_id: 'label-' ~ node.id(),
+  step_by_step_item_content_id: 'content-' ~ node.id(),
+  step_by_step_item_variant: node.field_csgov_sbs_variant.value,
+  step_by_step_item_label: node.field_csgov_sbs_step_label.value ? content.field_csgov_sbs_step_label : label,
+  step_by_step_item_url: url,
+  step_by_step_item_current: step_by_step_current,
+  step_by_step_item_content: content.field_csgov_teaser.0,
+  step_by_step_item_annotation: content.field_csgov_sbs_annotation,
+  })
+}}

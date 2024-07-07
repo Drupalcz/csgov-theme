@@ -1,5 +1,7 @@
 {% if content.search_api_excerpt %}
   {% set teaser_content = content.search_api_excerpt %}
+{% elseif content.field_csgov_sbs_annotation %}
+  {% set teaser_content = content.field_csgov_sbs_annotation %}
 {% else %}
   {% set teaser_content = content.field_csgov_teaser %}
 {% endif %}

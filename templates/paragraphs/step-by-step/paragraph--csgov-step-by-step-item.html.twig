@@ -1,0 +1,25 @@
+{# If there is no icon we need to insert the current item number. #}
+{% set parent_items = paragraph._referringItem.parent.parent.entity.field_csgov_p_sbs_items %}
+{% set current_item = paragraph.id() %}
+
+{% set step_index = 0 %}
+{% for key, item in parent_items %}
+  {% if item.target_id == current_item %}
+    {% set step_index = key + 1 %}
+  {% endif %}
+{% endfor %}
+
+{{ include('csgov_theme:step-by-step', {
+  step_by_step_item_size: paragraph._referringItem.parent.parent.entity.field_csgov_p_size.value,
+  step_by_step_item_noprefix: paragraph._referringItem.parent.parent.entity.field_csgov_p_sbs_noprefix.value,
+  step_by_step_item_variant: paragraph.field_csgov_p_sbs_variant.value,
+  step_by_step_item_label_id: 'label-' ~ paragraph.id(),
+  step_by_step_item_content_id: 'content-' ~ paragraph.id(),
+  step_by_step_item_label: content.field_csgov_p_title,
+  step_by_step_item_content: content.field_csgov_p_content.0,
+  step_by_step_item_icon: paragraph.field_csgov_p_icon|file_url,
+  step_by_step_item_prefix: step_index,
+  step_by_step_item_annotation: content.field_csgov_p_annotation.0,
+  step_by_step_item_expanded: paragraph.field_csgov_p_expanded.value,
+  })
+}}
