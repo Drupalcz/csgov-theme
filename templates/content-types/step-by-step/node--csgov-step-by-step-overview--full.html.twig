@@ -1,0 +1,29 @@
+{{ attach_library('csgov_theme/node') }}
+{{ attach_library('csgov_theme/step-by-step') }}
+
+{%
+  set extra_classes = [
+    'csgov-step-by-step-overview'
+  ]
+%}
+{{ attach_library('csgov_theme/news') }}
+{% embed "@csgov_theme/content-types/node--full.html.twig" %}
+  {% block teaser %}
+    {{ parent() }}
+
+  {% endblock teaser %}
+
+
+  {% block bellow_content %}
+    <div class="gov-container">
+      {{ include('csgov_theme:step-by-step-overview', {
+        step_by_step_items: content.field_csgov_sbs_items
+        })
+      }}
+    </div>
+
+
+    {{ parent() }}
+  {% endblock %}
+
+{% endembed %}

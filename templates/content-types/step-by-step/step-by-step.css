@@ -1,0 +1,43 @@
+.csgov-step-by-step__container {
+  padding-left: 0;
+}
+
+.csgov-step-by-step__navigation {
+  /* margin-top: var(--csgov-spacing-xl); */
+  padding-inline: var(--csgov-site-padding);
+}
+
+.csgov-step-by-step__navigation .gov-stepper-item .gov-stepper-item__label .gov-stepper-item__label__link {
+  font-size: var(--csgov-fs-m);
+  color: var(--csgov-color-secondary);
+}
+
+.csgov-step-by-step__navigation .gov-stepper-item.step-by-step--current .gov-stepper-item__prefix {
+  border: 2px solid var(--csgov-color-secondary);
+}
+
+.csgov-step-by-step__navigation .gov-stepper-item.step-by-step--current .gov-stepper-item__label .gov-stepper-item__label__link,
+.csgov-step-by-step__navigation .gov-stepper-item.step-by-step--current ~ * .gov-stepper-item__label .gov-stepper-item__label__link {
+  font-size: var(--csgov-fs-xl);
+  color: inherit;
+}
+
+.csgov-step-by-step__parent {
+  border-left: 5px solid var(--csgov-color-primary);
+  background: var(--csgov-color-primary-2);
+  border-radius: var(--border-radius);
+  padding: var(--csgov-spacing-s) var(--csgov-spacing);
+}
+
+.csgov-step-by-step__parent-label {
+  font-size: var(--csgov-fs-l);
+  font-weight: var(--csgov-fw-bold);
+}
+
+.csgov-step-by-step__parent-label__pretitle {
+  display: block;
+}
+
+.csgov-step-by-step__parent-label a {
+  font-weight: var(--csgov-fw-normal);
+}

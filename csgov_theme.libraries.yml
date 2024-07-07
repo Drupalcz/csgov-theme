@@ -124,11 +124,6 @@ node:
     theme:
       templates/content-types/node.css: {}
 
-notification:
-  css:
-    theme:
-      templates/content-types/notification/notification.css: {}
-
 board:
   css:
     theme:
@@ -143,6 +138,22 @@ event:
   css:
     theme:
       templates/content-types/event/event.css: {}
+
+notification:
+  css:
+    theme:
+      templates/content-types/notification/notification.css: {}
+
+step-by-step:
+  css:
+    component:
+      templates/content-types/step-by-step/step-by-step.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - gov_cz/toggle-section
+    - gov_cz/gov-icon
+    - gov_cz/gov-stepper
 
 # View modes
 card:

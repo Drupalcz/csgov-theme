@@ -1,0 +1,33 @@
+{{ attach_library('csgov_theme/paragraphs') }}
+{{ attach_library('csgov_theme/step-by-step') }}
+
+{%
+  set classes = [
+    'step-by-step',
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+<div{{attributes.addClass(classes)}}>
+  <div class="gov-container">
+    {% if paragraph.field_csgov_p_title.value %}
+      <div class="paragraph__heading text__heading">
+        <h2 class="content__title">{{ content.field_csgov_p_title }}</h2>
+      </div>
+    {% endif %}
+
+    {% if paragraph.field_csgov_p_content.value %}
+      <div class="gov-content step-by-step__content">
+        {{ content.field_csgov_p_content }}
+      </div>
+    {% endif %}
+
+  {{ include('csgov_theme:step-by-step-overview', {
+    step_by_step_items: content.field_csgov_p_sbs_items
+  })
+}}
+  </div>
+</div>

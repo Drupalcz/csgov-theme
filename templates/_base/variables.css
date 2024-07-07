@@ -193,8 +193,11 @@
 
   /* Webform */
     --csgov-feedback-background: var(--csgov-color-primary-2);
-}
 
+  /* Gov.cz colors A11Y fix */
+  --gov-wizard-warning-indicator-color: var(--csgov-color-grey-8);
+  --gov-button-warning-base-color: var(--csgov-color-grey-8);
+}
 
 @media (min-width: 48em) {
   :root {
