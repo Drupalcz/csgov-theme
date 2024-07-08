@@ -59,7 +59,9 @@
       </span>
     </div>
   </div>
+  {% if step_by_step_item_content %}
   <div class="gov-stepper-item__content" id="{{ step_by_step_item_content_id }}" aria-labelledby="{{ step_by_step_item_label_id }}" role="tabpanel">
     {{ step_by_step_item_content }}
   </div>
+  {% endif %}
 </div>
