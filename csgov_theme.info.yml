@@ -2,7 +2,7 @@ name: CSGOV Theme
 type: theme
 'base theme': false
 starterkit: true
-version: 4.x
+version: 4.0
 
 core_version_requirement: ^10.1
 
