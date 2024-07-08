@@ -37,6 +37,7 @@
   line-height: 1.5;
   font-size: var(--csgov-fs-l);
   transition: var(--csgov-transition-out);
+  align-items: center;
 }
 
 .csgov-menu-page__link--link:hover,

@@ -1,0 +1,14 @@
+{# Overrides template at `core/modules/system/templates/block--system-menu-block.html.twig`.
+# We remove the standard Drupal heading label and use the aria-label, so assistive technology users are not confused. #}
+<nav role="navigation" aria-label="{{ configuration.label }}" {{ attributes|without('role', 'aria-labelledby') }}>
+  {% if configuration.label_display %}
+    <h2>{{ configuration.label }}</h2>
+  {% endif %}
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  {# Menu. #}
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+</nav>

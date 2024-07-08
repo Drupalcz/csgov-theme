@@ -6,11 +6,11 @@
 %}
 {{ attach_library('csgov_theme/block-menu-page')}}
 {% if content['#items']|length > 0 %}
-  <nav{{attributes.addClass(classes)}} aria-labelledby="menu-page-label" role="navigation">
+  <nav{{attributes.addClass(classes)}} aria-label="{{ 'Submenu'|t({}, {'context' : 'CSGOV: In Page Menu'}) }} {{ configuration.label }}" role="navigation">
     <div class="gov-container">
       {{ title_prefix }}
-      {% if label %}
-        <h2 id="menu-page-label" class="visually-hidden">{{ 'Submenu'|t({}, {'context' : 'CSGOV: In Page Menu'}) }} {{ label }}</h2>
+      {% if configuration.label_display %}
+        <h2 id="menu-page-label">{{ 'Submenu'|t({}, {'context' : 'CSGOV: In Page Menu'}) }} {{ configuration.label }}</h2>
       {% endif %}
       {{ title_suffix }}
       {{ content }}
