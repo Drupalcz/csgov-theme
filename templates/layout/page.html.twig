@@ -84,12 +84,12 @@
         <div class="attached-galleries">
           {% if drupal_view_result('csgov_gallery_attach', 'multiple_gallery')|length > 1 %}
             <div class="gov-container padding-horizontal">
-              <h2 class="content__title">{{ 'Galleries'|t }}</h2>
+              <h2 class="content__title">{{ 'Galleries'|t({}, {'context' : 'CSGOV: Node strings - gallery'}) }}</h2>
               {{ drupal_view('csgov_gallery_attach', 'multiple_gallery') }}
             </div>
           {% else %}
             <div class="gov-container csgov-container--large padding-horizontal">
-              <h2 class="content__title">{{ 'Gallery'|t }}</h2>
+              <h2 class="content__title">{{ 'Gallery'|t({}, {'context' : 'CSGOV: Node strings - gallery'}) }}</h2>
               {{ drupal_view('csgov_gallery_attach', 'single_gallery') }}
             </div>
           {% endif %}

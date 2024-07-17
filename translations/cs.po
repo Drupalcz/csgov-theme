@@ -67,6 +67,18 @@ msgctxt "CSGOV: Node strings - board"
 msgid "Responsible"
 msgstr "Zodpovídá"
 
+msgctxt "CSGOV: Node strings - gallery"
+msgid "Gallery attached to:"
+msgstr "Galerie je připojená k:"
+
+msgctxt "CSGOV: Node strings - gallery"
+msgid "Gallery"
+msgstr "Galerie"
+
+msgctxt "CSGOV: Node strings - gallery"
+msgid "Galleries"
+msgstr "Galerie"
+
 msgctxt "CSGOV: Node strings"
 msgid "Reference mark"
 msgstr "Jednací číslo"
