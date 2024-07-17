@@ -75,6 +75,27 @@
       <a id="main-content" tabindex="-1"></a>
       {# link is in html.html.twig #}
       {{ page.content }}
+
+      {# Attaching gallery to a page. If a page has more than one gallery attached
+      # it will use alternative display to render a gallery of galleries. If only one is present
+      # it will render directly the gallery content.
+      #}
+      {% if drupal_view_result('csgov_gallery_attach', 'multiple_gallery') %}
+        <div class="attached-galleries">
+          {% if drupal_view_result('csgov_gallery_attach', 'multiple_gallery')|length > 1 %}
+            <div class="gov-container padding-horizontal">
+              <h2 class="content__title">{{ 'Galleries'|t }}</h2>
+              {{ drupal_view('csgov_gallery_attach', 'multiple_gallery') }}
+            </div>
+          {% else %}
+            <div class="gov-container csgov-container--large padding-horizontal">
+              <h2 class="content__title">{{ 'Gallery'|t }}</h2>
+              {{ drupal_view('csgov_gallery_attach', 'single_gallery') }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
       {{ page.content_bottom }}
     </div>
     {# /.layout-content #}

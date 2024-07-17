@@ -71,3 +71,11 @@
   transform: translateX(0.5rem);
   transition: var(--csgov-transition-in);
 }
+
+.attached-galleries {
+  padding-block: var(--csgov-spacing-2xl);
+}
+
+.attached-galleries h2.content__title {
+  margin-bottom: var(--csgov-spacing-m);
+}

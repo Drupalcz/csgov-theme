@@ -1,0 +1,7 @@
+.gallery__attach a + a {
+  margin-left: var(--csgov-spacing-xs);
+}
+
+.node__gallery_images {
+  padding-block: var(--csgov-spacing-2xl);
+}

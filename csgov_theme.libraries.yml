@@ -139,6 +139,11 @@ event:
     theme:
       templates/content-types/event/event.css: {}
 
+gallery-node:
+  css:
+    component:
+      templates/content-types/gallery/gallery-node.css: {}
+
 notification:
   css:
     theme:
