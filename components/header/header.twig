@@ -3,7 +3,7 @@
 {% set text_open = "Close"|t({}, {'context' : 'CSGOV: Header'}) %}
 {{ attach_library('csgov_theme/header') }}
 <header class="csgov-header" role="banner">
-  <div class="csgov-header__container gov-container csgov-container--large">
+  <div class="csgov-header__top csgov-header__container gov-container csgov-container--large">
     {% if logo %}
       <div class="csgov-header__brand">
         {{ logo }}
@@ -11,14 +11,14 @@
     {% endif %}
     {% if search or extra or navigation %}
       <div class="csgov-header__extra">
-          <div class="csgov-header__search">
-            {{ include('csgov_theme:search-box', {
-              search_box_label: hero_search_label,
-              search_box_placeholder: hero_search_placeholder,
-              search_box_form_id: hero_search_form_id,
-              })
-            }}
-          </div>
+        <div class="csgov-header__search">
+          {{ include('csgov_theme:search-box', {
+            search_box_label: hero_search_label,
+            search_box_placeholder: hero_search_placeholder,
+            search_box_form_id: hero_search_form_id,
+            })
+          }}
+        </div>
         {% if extra %}
           <div class="csgov-header__extra">
             {{ extra }}
@@ -45,10 +45,12 @@
         </button>
       </div>
     {% endif %}
-    {% if navigation %}
-      <div class="csgov-header__navigation">
+  </div>
+  {% if navigation %}
+    <div class="csgov-header__navigation">
+      <div class="gov-container csgov-container--large">
         {{ navigation }}
       </div>
-    {% endif %}
-  </div>
+    </div>
+  {% endif %}
 </header>

@@ -175,6 +175,8 @@
   --csgov-header-background: var(--csgov-color-primary);
   --csgov-header-foreground: var(--csgov-color-white);
   --csgov-header-divider: rgba(var(--gov-color-neutral-white-rgb), 0.1);
+  --csgov-header-navigation-background: var(--csgov-header-background);
+  --csgov-header-navigation-foreground: var(--csgov-header-foreground);
 
   /* Footer */
   --csgov-footer-background: var(--csgov-color-secondary);
