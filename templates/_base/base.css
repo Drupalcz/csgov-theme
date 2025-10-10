@@ -114,5 +114,19 @@ blockquote::before {
   blockquote::before {
     top: var(--csgov-spacing-l);
   }
+}
 
+/* GOV Desing system does some unusuall styling leaking to unwanted 
+areas of the admin theme while on frontend */
+ul.toolbar-block__list li::before,
+.toolbar-dropdown__item::before {
+  display: none;
+}
+
+ul>li.toolbar-block__list-item a>* {
+  color: var(--gin-color-text); 
+}
+
+.toolbar-button>* {
+  color: var(--toolbar-button-color);
 }
