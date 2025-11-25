@@ -160,6 +160,17 @@ step-by-step:
     - gov_cz/gov-icon
     - gov_cz/gov-stepper
 
+guide:
+  css:
+    component:
+      templates/content-types/guide/guide.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - gov_cz/toggle-section
+    - gov_cz/gov-icon
+    - gov_cz/gov-stepper
+
 # View modes
 card:
   css:
