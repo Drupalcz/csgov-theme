@@ -7,30 +7,13 @@ libraryOverrides:
     - csgov_theme/clickable-items
 props:
   type: object
-  required:
-    - address_book_title
   properties:
-    address_book_title:
-      type: string
-      title: Name
-      description: Name of the address book item
-    address_book_position:
-      type: string
-      title: Job Position
-      description:
-    address_book_email:
-      type: string
-      title: Email
-      description:
-    address_book_mobile:
-      type: string
-      title: Mobile phone number
-      description:
-    address_book_phone:
-      type: string
-      title: Landline
-      description:
-    address_book_image:
-      type: string
-      title: Image
-      description:
+    calendar_item_date:
+      type: [string, object, 'null']
+      title: Date
+    calendar_item_title:
+      type: [string, object, 'null']
+      title: Title
+    calendar_item_url:
+      type: [string, object, 'null']
+      title: URL

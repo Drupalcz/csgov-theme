@@ -6,4 +6,3 @@ props:
     web:
       type: string
       title: Web Number
-      description:

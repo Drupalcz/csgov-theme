@@ -2,18 +2,24 @@ $schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc
 name: Hero Search Box
 props:
   type: object
-  required:
-    - search_box_id
   properties:
-    search_box_id:
-      type: string
-      title: Search box ID
+    search_box_form_id:
+      type: [string, 'null']
+      title: Search box form ID
       description: A11y – connects label to input.
     search_box_label:
-      type: string
+      type: [string, 'null']
       title: Hero search box label
       description: The title for the input field.
+    search_box_label_visible:
+      type: [boolean, 'null']
+      title: Show search box label
+      description: Whether the label is visible or visually hidden.
+    search_box_button_label_visible:
+      type: [boolean, 'null']
+      title: Show submit button label
+      description: Whether the submit button label is visible or visually hidden.
     search_box_placeholder:
-      type: string
+      type: [string, 'null']
       title: Hero search box placeholder
       description: The placeholder for the input field.

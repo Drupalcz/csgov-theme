@@ -6,4 +6,3 @@ props:
     mobile_number:
       type: string
       title: Mobile Number
-      description:

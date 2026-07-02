@@ -6,4 +6,3 @@ props:
     email:
       type: string
       title: Email
-      description:

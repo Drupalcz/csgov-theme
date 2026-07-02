@@ -6,4 +6,3 @@ props:
     event_calendar_date:
       type: string
       title: The date
-      description:

@@ -6,4 +6,3 @@ props:
     phone_number:
       type: string
       title: Phone Number
-      description:

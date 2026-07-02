@@ -7,30 +7,25 @@ libraryOverrides:
     - csgov_theme/clickable-items
 props:
   type: object
-  required:
-    - address_book_title
   properties:
-    address_book_title:
-      type: string
-      title: Name
-      description: Name of the address book item
-    address_book_position:
-      type: string
-      title: Job Position
-      description:
-    address_book_email:
-      type: string
-      title: Email
-      description:
-    address_book_mobile:
-      type: string
-      title: Mobile phone number
-      description:
-    address_book_phone:
-      type: string
-      title: Landline
-      description:
-    address_book_image:
-      type: string
-      title: Image
-      description:
+    document_color:
+      type: [string, 'null']
+      title: Color variant
+    document_type:
+      type: [string, 'null']
+      title: File type
+    document_url:
+      type: [string, 'null']
+      title: File URL
+    document_name:
+      type: [string, object, 'null']
+      title: Document name
+    document_filename:
+      type: [string, 'null']
+      title: File name
+    document_size:
+      type: [string, 'null']
+      title: File size
+    document_pages:
+      type: [string, integer, 'null']
+      title: Number of pages

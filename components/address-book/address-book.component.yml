@@ -12,20 +12,15 @@ props:
     address_book_position:
       type: string
       title: Job Position
-      description:
     address_book_email:
       type: string
       title: Email
-      description:
     address_book_mobile:
       type: string
       title: Mobile phone number
-      description:
     address_book_phone:
       type: string
       title: Landline
-      description:
     address_book_image:
       type: string
       title: Image
-      description:
