@@ -10,9 +10,16 @@
  * @see template_preprocess_input()
  */
 #}
-{# <input{{attributes}}/>{{ children }} #}
-{{ include('gov_cz:gov-form-input', {
-  gov_form_input_type: attributes.type,
-  gov_form_input: '<input'~ attributes ~'/>',
-  })
-}}
+{# Radios and checkboxes render bare: DS 4.6 paints a text-field frame and
+   focus ring on the gov-form-input wrapper, which breaks custom-styled
+   controls (e.g. the feedback faces). DS has separate radio/checkbox
+   components, the text-input wrapper never styled them. #}
+{% if ('' ~ attributes.type) in ['radio', 'checkbox'] %}
+  <input{{ attributes }}/>{{ children }}
+{% else %}
+  {{ include('gov_cz:gov-form-input', {
+    gov_form_input_type: attributes.type,
+    gov_form_input: '<input'~ attributes ~'/>',
+    })
+  }}
+{% endif %}
