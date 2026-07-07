@@ -21,6 +21,13 @@
   cursor: pointer;
 }
 
+/* Keep the reset button in the layout even when hidden so its appearance
+ * doesn't shift the toggle sideways. */
+.theme-switch__reset[hidden] {
+  display: inline-block;
+  visibility: hidden;
+}
+
 .theme-switch__reset:focus-visible {
   border-radius: var(--corner-radius-xs, 0.1875rem);
   outline: 0.125rem solid var(--status-focus);

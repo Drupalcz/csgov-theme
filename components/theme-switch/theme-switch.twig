@@ -10,17 +10,11 @@
   <div class="gov-theme-switch" theme="light" size="{{ switch_size|default('s') }}">
     <button type="button" class="theme-switch__toggle" role="switch" aria-checked="false" aria-label="{{ 'Tmavý režim'|t }}">
       <span>
+        {# The DS positions the icons absolutely inside the indicator; any
+           extra wrapper (e.g. gov-icon__holder) breaks their sizing. #}
         <span class="gov-theme-switch__indicator">
-          <span class="gov-icon gov-theme-switch__icon-light" aria-hidden="true">
-            <span class="gov-icon__holder">
-              {{ source('@gov_cz/assets/gov-design-system/gov-icons/components/sun.svg') }}
-            </span>
-          </span>
-          <span class="gov-icon gov-theme-switch__icon-dark" aria-hidden="true">
-            <span class="gov-icon__holder">
-              {{ source('@gov_cz/assets/gov-design-system/gov-icons/components/moon.svg') }}
-            </span>
-          </span>
+          <span class="gov-icon gov-theme-switch__icon-light" aria-hidden="true">{{ source('@gov_cz/assets/gov-design-system/gov-icons/components/sun.svg') }}</span>
+          <span class="gov-icon gov-theme-switch__icon-dark" aria-hidden="true">{{ source('@gov_cz/assets/gov-design-system/gov-icons/components/moon.svg') }}</span>
         </span>
         {% if switch_label_visible %}
           <span class="theme-switch__label" aria-hidden="true">{{ 'Tmavý režim'|t }}</span>
