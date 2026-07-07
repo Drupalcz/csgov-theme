@@ -11,7 +11,7 @@
           <input type="text" id="{{ label_id }}" name="keywords" value="" size="30" maxlength="128" class="form-text" {% if search_box_placeholder %} placeholder="{{ search_box_placeholder }}" {% endif %}>
         </div>
       </div>
-      <div class="gov-button" variant="primary" type="solid" size="m" hoverable="">
+      <div class="gov-button" variant="primary" color="primary" type="solid" size="m" hoverable="">
         <button class="element search-box__submit-button" type="submit" value="Submit">
           <span class="search-box__submit-button__label {{ search_box_button_label_visible ? '' : 'visually-hidden' }}">{{ 'Search'|t({}, {'context' : 'CSGOV: Search'}) }}</span>
           <span class="gov-icon" aria-hidden="true">

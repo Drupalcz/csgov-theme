@@ -9,7 +9,8 @@
   # step_by_step_item_annotation – Title of the tile.
   # step_by_step_item_content – Title of the tile.
 #}
-<div class="gov-stepper-item {{ step_by_step_item_annotation ? 'gov-stepper-item--w-annot' }} {{ step_by_step_item_content ? 'step-by-step--has-content' }} {{ step_by_step_item_current ? 'step-by-step--current' }}" variant="{{ step_by_step_item_variant|default('primary') }}" size="{{ step_by_step_item_size|default('m') }}" {{ step_by_step_item_expanded ? 'is-expanded="true"'}} role="listitem">
+{% set step_by_step_item_variant = step_by_step_item_variant|default('primary') %}
+<div class="gov-stepper-item {{ step_by_step_item_annotation ? 'gov-stepper-item--w-annot' }} {{ step_by_step_item_content ? 'step-by-step--has-content' }} {{ step_by_step_item_current ? 'step-by-step--current' }}" variant="{{ step_by_step_item_variant }}" color="{{ step_by_step_item_variant == 'secondary' ? 'neutral' : step_by_step_item_variant }}" size="{{ step_by_step_item_size|default('m') }}" {{ step_by_step_item_expanded ? 'is-expanded="true"'}} role="listitem">
   <div class="gov-stepper-item__header">
     <div class="gov-stepper-item__title">
       <span class="gov-stepper-item__prefix">
