@@ -18,7 +18,7 @@ props:
     switch_size:
       type: [string, 'null']
       title: Size
-      description: Size of the switch (xs, s, m, l, xl). Defaults to s.
+      description: Size of the switch (xs, s, m, l, xl). Defaults to m.
     switch_label_visible:
       type: [boolean, 'null']
       title: Show label
