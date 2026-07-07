@@ -14,28 +14,28 @@
 }
 
 .infopanel__wrapper.background--primary {
-  --infopanel-background: var(--csgov-color-primary);
-  --infopanel-foreground: var(--csgov-color-white);
+  --infopanel-background: var(--background-primary);
+  --infopanel-foreground: var(--text-white-fixed);
 }
 
 .infopanel__wrapper.background--secondary {
-  --infopanel-background: var(--csgov-color-secondary);
-  --infopanel-foreground: var(--csgov-color-white);
+  --infopanel-background: var(--color-neutral-900);
+  --infopanel-foreground: var(--text-white-fixed);
 }
 
 .infopanel__wrapper.background--success {
-  --infopanel-background: var(--csgov-color-success-lighter);
-  --infopanel-foreground: var(--csgov-color-white);
+  --infopanel-background: var(--background-status-success);
+  --infopanel-foreground: var(--text-white-fixed);
 }
 
 .infopanel__wrapper.background--warning {
-  --infopanel-background: var(--csgov-color-warning);
-  --infopanel-foreground: var(--csgov-color-black);
+  --infopanel-background: var(--background-status-warning-subtle);
+  --infopanel-foreground: var(--text-primary);
 }
 
 .infopanel__wrapper.background--error {
-  --infopanel-background: var(--csgov-color-error);
-  --infopanel-foreground: var(--csgov-color-white);
+  --infopanel-background: var(--background-status-error);
+  --infopanel-foreground: var(--text-white-fixed);
 }
 
 .infopanel__wrapper[class*=background--]  {

@@ -1,3 +1,3 @@
 .region-notifications:has(.gov-infobar:not([hidden])) {
-  border-bottom: 1px solid var(--csgov-color-white);
+  border-bottom: 1px solid var(--border-subtlest);
 }

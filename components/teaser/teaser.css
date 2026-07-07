@@ -34,7 +34,7 @@
 
 .teaser__text + .teaser__date:before {
   content: "";
-  border-top: 1px solid var(--csgov-color-black);
+  border-top: 1px solid var(--border-neutral);
   width: 2rem;
   margin-bottom: var(--csgov-spacing-2xs);
   display: block;

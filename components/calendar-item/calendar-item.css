@@ -87,7 +87,7 @@
 
 .calendar-item .calendar-item__icon {
   padding: 0 var(--csgov-spacing-xs);
-  color: var(--csgov-color-primary);
+  color: var(--text-primary-color);
   grid-row: 1/-1;
   grid-column: 2/3;
 }

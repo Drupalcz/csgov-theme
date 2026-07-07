@@ -27,58 +27,64 @@
   --csgov-content-width: 48rem;
 
   /* Colors */
-  /** CSS primary shades */
-  --csgov-color-primary-1: var(--gov-color-primary-100);
-  --csgov-color-primary-2: var(--gov-color-primary-200);
-  --csgov-color-primary-3: var(--gov-color-primary-300);
-  --csgov-color-primary-4: var(--gov-color-primary-400);
-  --csgov-color-primary-5: var(--gov-color-primary-500);
-  --csgov-color-primary-6: var(--gov-color-primary-600);
-  --csgov-color-primary-7: var(--gov-color-primary-700);
-  --csgov-color-primary-8: var(--gov-color-primary-800);
-  --csgov-color-primary-9: var(--gov-color-primary-900);
+  /* Every color alias resolves through a DS 4.6 semantic token so the whole
+   * theme follows the DS light/dark mechanism ([data-theme] on <html>).
+   * Aliases mapped to primitive --color-* shades are deliberately constant
+   * in both modes (brand surfaces: header, footer, dark panels). */
 
-  /** CSS secondary shades */
-  --csgov-color-white: var(--gov-color-neutral-white);
-  --csgov-color-grey-1: var(--gov-color-secondary-100);
-  --csgov-color-grey-2: var(--gov-color-secondary-200);
-  --csgov-color-grey-3: var(--gov-color-secondary-300);
-  --csgov-color-grey-4: var(--gov-color-secondary-400);
-  --csgov-color-grey-5: var(--gov-color-secondary-500);
-  --csgov-color-grey-6: var(--gov-color-secondary-600);
-  --csgov-color-grey-7: var(--gov-color-secondary-700);
-  --csgov-color-grey-8: var(--gov-color-secondary-800);
-  --csgov-color-grey-9: var(--gov-color-secondary-900);
-  --csgov-color-black: var(--gov-color-neutral-black);
+  /** CSS primary shades (deprecated: constant primitives, do not flip) */
+  --csgov-color-primary-1: var(--color-primary-100);
+  --csgov-color-primary-2: var(--color-primary-200);
+  --csgov-color-primary-3: var(--color-primary-300);
+  --csgov-color-primary-4: var(--color-primary-400);
+  --csgov-color-primary-5: var(--color-primary-500);
+  --csgov-color-primary-6: var(--color-primary-600);
+  --csgov-color-primary-7: var(--color-primary-700);
+  --csgov-color-primary-8: var(--color-primary-800);
+  --csgov-color-primary-9: var(--color-primary-900);
+
+  /** CSS neutral shades (former DS 4.0 "secondary" greys) */
+  --csgov-color-white: var(--background-white);
+  --csgov-color-grey-1: var(--background-neutral-subtlest);
+  --csgov-color-grey-2: var(--background-neutral-subtlest);
+  --csgov-color-grey-3: var(--border-subtlest);
+  --csgov-color-grey-4: var(--background-neutral-subtle);
+  --csgov-color-grey-5: var(--border-subtle);
+  --csgov-color-grey-6: var(--text-tertiary);
+  --csgov-color-grey-7: var(--text-secondary);
+  --csgov-color-grey-8: var(--icon-default);
+  --csgov-color-grey-9: var(--color-neutral-950);
+  --csgov-color-black: var(--text-primary);
 
   /** CSS Primary COLORS */
-  --csgov-color-primary: var(--gov-color-primary);
-  --csgov-color-primary-light: var(--gov-color-primary-100);
-  --csgov-color-secondary: var(--gov-color-secondary);
-  --csgov-color-secondary-lighter: var(--gov-color-secondary-300);
-  --csgov-color-secondary-light: var(--gov-color-secondary-700);
-  --csgov-color-secondary-darker: var(--gov-color-secondary-900);
+  --csgov-color-primary: var(--background-primary);
+  --csgov-color-primary-light: var(--background-primary-subtle);
+  /* DS 4.6 "secondary" is yellow; the old grey secondary maps to neutral. */
+  --csgov-color-secondary: var(--color-neutral-900);
+  --csgov-color-secondary-lighter: var(--background-block-secondary);
+  --csgov-color-secondary-light: var(--color-neutral-600);
+  --csgov-color-secondary-darker: var(--color-neutral-950);
 
   /* More colours */
-  --csgov-color-success: var(--gov-color-success-600);
-  --csgov-color-success-lighter: var(--gov-color-success-500);
-  --csgov-color-error: var(--gov-color-error);
-  --csgov-color-warning: var(--gov-color-warning-200);
+  --csgov-color-success: var(--text-status-success);
+  --csgov-color-success-lighter: var(--background-status-success);
+  --csgov-color-error: var(--text-status-error);
+  --csgov-color-warning: var(--background-status-warning-subtle);
 
   /* Typography */
-  --csgov-ff: var(--gov-font-family);
+  --csgov-ff: var(--font-family);
 
   /* Font size */
-  --csgov-fs-xs: var(--gov-text-xs-font-size);
-  --csgov-fs-s: var(--gov-text-s-font-size);
-  --csgov-fs-m: var(--gov-text-m-font-size);
-  --csgov-fs-l: var(--gov-text-l-font-size);
-  --csgov-fs-xl: var(--gov-text-xl-font-size);
-  --csgov-fs-2xl: var(--gov-text-2xl-font-size);
-  --csgov-fs-3xl: var(--gov-text-3xl-font-size);
-  --csgov-fs-4xl: var(--gov-text-4xl-font-size);
-  --csgov-fs-5xl: var(--gov-text-5xl-font-size);
-  --csgov-fs-6xl: var(--gov-text-6xl-font-size);
+  --csgov-fs-xs: var(--font-size-body-xs);
+  --csgov-fs-s: var(--font-size-body-s);
+  --csgov-fs-m: var(--font-size-body-m);
+  --csgov-fs-l: var(--font-size-body-l);
+  --csgov-fs-xl: var(--font-size-body-xl);
+  --csgov-fs-2xl: var(--font-size-headline-m);
+  --csgov-fs-3xl: var(--font-size-headline-l);
+  --csgov-fs-4xl: var(--font-size-headline-xl);
+  --csgov-fs-5xl: var(--font-size-display-s);
+  --csgov-fs-6xl: var(--font-size-display-l);
 
   /* Font weight */
   --csgov-fw-thin: 100;
@@ -87,136 +93,142 @@
   --csgov-fw-medium: 500;
   --csgov-fw-bold: 700;
 
-  /* Line height */
-  --csgov-line-height-xs: var(--gov-text-xs-line-height);
-  --csgov-line-height-s: var(--gov-text-s-line-height);
-  --csgov-line-height-m: var(--gov-text-m-line-height);
-  --csgov-line-height-l: var(--gov-text-l-line-height);
-  --csgov-line-height-xl: var(--gov-text-xl-line-height);
-  --csgov-line-height-2xl: var(--gov-text-2xl-line-height);
-  --csgov-line-height-3xl: var(--gov-text-3xl-line-height);
-  --csgov-line-height-4xl: var(--gov-text-4xl-line-height);
-  --csgov-line-height-5xl: var(--gov-text-5xl-line-height);
-  --csgov-line-height-6xl: var(--gov-text-6xl-line-height);
+  /* Line height (DS 4.6 has no line-height tokens; values match DS 4.0) */
+  --csgov-line-height-xs: 1.5;
+  --csgov-line-height-s: 1.5;
+  --csgov-line-height-m: 1.5;
+  --csgov-line-height-l: 1.5;
+  --csgov-line-height-xl: 1.5;
+  --csgov-line-height-2xl: 1.5;
+  --csgov-line-height-3xl: 1.5;
+  --csgov-line-height-4xl: 1.3;
+  --csgov-line-height-5xl: 1.25;
+  --csgov-line-height-6xl: 1.25;
 
   /* Blockquote */
-  --csgov-blockquote-quote-color: var(--csgov-color-primary);
-  --csgov-blockquote-content-color: var(--csgov-color-grey-7);
+  --csgov-blockquote-quote-color: var(--text-primary-color);
+  --csgov-blockquote-content-color: var(--text-secondary);
 
   /* Breadcrumbs */
-  --csgov-breadcrumb-arrow-solo-color: var(--csgov-color-primary);
+  --csgov-breadcrumb-arrow-solo-color: var(--text-primary-color);
 
   /* Misc */
   --csgov-border-radius: 0;
   --csgov-transition-in: all 150ms ease-in-out;
   --csgov-transition-out: all 300ms ease-in-out;
-  --csgov-box-shadow-xl: var(--gov-box-shadow-xl);
+  /* DS 4.6 has no shadow tokens; value matches DS 4.0 --gov-box-shadow-xl. */
+  --csgov-box-shadow-xl: 0 0 2rem rgb(59 59 59 / 0.32);
 
   /* Facets */
-  --csgov-facets-color: var(--csgov-color-primary);
-  --csgov-facets-color-hover: var(--csgov-color-primary-3);
-  --csgov-facets-check-color: var(--csgov-color-white);
+  --csgov-facets-color: var(--text-primary-color);
+  --csgov-facets-color-hover: var(--button-outlined-primary-hover);
+  --csgov-facets-check-color: var(--icon-on-bold-white);
 
   /* Admin tabs */
-  --csgov-admin-area-background: var(--csgov-color-grey-2);
+  --csgov-admin-area-background: var(--background-neutral-subtlest);
   --csgov-admin-tabs-border-radius: 0.2rem;
-  --csgov-admin-tabs-background: var(--csgov-color-black);
-  --csgov-admin-tabs-foreground: var(--csgov-color-white);
-  --csgov-admin-tabs-active-background: var(--gov-color-success-700);
+  --csgov-admin-tabs-background: var(--background-neutral-primary);
+  --csgov-admin-tabs-foreground: var(--text-white-fixed);
+  --csgov-admin-tabs-active-background: var(--color-success-700);
 
   /* Components */
   /* Address book */
   --csgov-address-book-image-size: 3rem;
 
   /* Calendar item */
-  --csgov-calendar-item-border-color: var(--csgov-color-grey-3);
-  --csgov-calendar-item-border-color-hover: var(--csgov-color-black);
+  --csgov-calendar-item-border-color: var(--border-subtlest);
+  --csgov-calendar-item-border-color-hover: var(--border-neutral);
 
   /* Document download */
-  --csgov-document-download-background: var(--csgov-color-grey-1);
-  --csgov-document-download-border-color: var(--csgov-color-grey-3);
-  --csgov-document-download-background-hover: var(--csgov-color-grey-2);
-  --csgov-document-download-border-color-hover: var(--csgov-color-grey-5);
-  --csgov-document-download-icon-color: var(--csgov-color-grey-8);
-  --csgov-document-download-title-color: var(--csgov-color-black);
-  --csgov-document-download-variant-background: var(--csgov-color-primary-1);
-  --csgov-document-download-variant-border-color: var(--csgov-color-primary-2);
-  --csgov-document-download-variant-background-hover: var(--csgov-color-primary-2);
-  --csgov-document-download-variant-border-color-hover: var(--csgov-color-primary-4);
-  --csgov-document-download-variant-icon-color: var(--csgov-color-primary-7);
-  --csgov-document-download-variant-title-color: var(--csgov-color-primary);
+  --csgov-document-download-background: var(--background-neutral-subtlest);
+  --csgov-document-download-border-color: var(--border-subtlest);
+  --csgov-document-download-background-hover: var(--background-neutral-subtle);
+  --csgov-document-download-border-color-hover: var(--border-subtle);
+  --csgov-document-download-icon-color: var(--icon-default);
+  --csgov-document-download-title-color: var(--text-primary);
+  --csgov-document-download-variant-background: var(--background-primary-subtlest);
+  --csgov-document-download-variant-border-color: var(--background-primary-subtle);
+  --csgov-document-download-variant-background-hover: var(--background-primary-subtle);
+  --csgov-document-download-variant-border-color-hover: var(--border-primary);
+  --csgov-document-download-variant-icon-color: var(--icon-on-subtle);
+  --csgov-document-download-variant-title-color: var(--text-primary-color);
 
   /* Event calendar item */
-  --csgov-event-calendar-border-color: var(--csgov-color-grey-3);
-  --csgov-event-calendar-border-color-hover: var(--csgov-color-black);
+  --csgov-event-calendar-border-color: var(--border-subtlest);
+  --csgov-event-calendar-border-color-hover: var(--border-neutral);
 
   /* Content types */
   /* Generic node */
-  --csgov-node-date-published: var(--csgov-color-primary);
+  --csgov-node-date-published: var(--text-primary-color);
 
   /* Directory */
   --csgov-directory-open: var(--csgov-color-success);
   --csgov-directory-close: var(--csgov-color-error);
 
   /* Event */
-  --csgov-event-meta-background: var(--csgov-color-primary-1);
+  --csgov-event-meta-background: var(--background-primary-subtlest);
 
-  /* Main menu */
-  --csgov-menu-main-link-accent: var(--csgov-color-white);
-  --csgov-menu-main-link-active-trail-accent: var(--csgov-color-grey-5);
+  /* Main menu (accents sit on the constant primary header) */
+  --csgov-menu-main-link-accent: var(--color-neutral-0);
+  --csgov-menu-main-link-active-trail-accent: var(--color-neutral-200);
 
   /* Main menu on page */
-  --csgov-menu-main-on-page-background: var(--csgov-color-primary-2);
-  --csgov-menu-main-on-page-foreground: var(--csgov-color-black);
-  --csgov-menu-main-on-page-background-hover: var(--csgov-color-primary);
-  --csgov-menu-main-on-page-foreground-hover: var(--csgov-color-white);
+  --csgov-menu-main-on-page-background: var(--background-primary-subtle);
+  --csgov-menu-main-on-page-foreground: var(--text-primary);
+  --csgov-menu-main-on-page-background-hover: var(--background-primary);
+  --csgov-menu-main-on-page-foreground-hover: var(--text-white-fixed);
 
-  /* Header */
-  --csgov-header-background: var(--csgov-color-primary);
-  --csgov-header-foreground: var(--csgov-color-white);
-  --csgov-header-divider: rgba(var(--gov-color-neutral-white-rgb), 0.1);
+  /* Header (constant brand surface in both modes) */
+  --csgov-header-background: var(--background-primary);
+  --csgov-header-foreground: var(--text-white-fixed);
+  --csgov-header-divider: rgb(255 255 255 / 0.1);
   --csgov-header-navigation-background: var(--csgov-header-background);
   --csgov-header-navigation-foreground: var(--csgov-header-foreground);
 
-  /* Footer */
-  --csgov-footer-background: var(--csgov-color-secondary);
-  --csgov-footer-foreground: var(--csgov-color-white);
-  --csgov-footer-bottom-divider: var(--csgov-color-secondary-light);
-  --csgov-footer-legal-background: var(--csgov-color-secondary-darker);
-  --csgov-footer-legal-foreground: var(--csgov-color-white);
+  /* Footer (constant dark surface in both modes) */
+  --csgov-footer-background: var(--color-neutral-900);
+  --csgov-footer-foreground: var(--text-white-fixed);
+  --csgov-footer-bottom-divider: var(--color-neutral-600);
+  --csgov-footer-legal-background: var(--color-neutral-950);
+  --csgov-footer-legal-foreground: var(--text-white-fixed);
 
   /* View modes */
-  --csgov-card-border-color: var(--csgov-color-black);
+  --csgov-card-border-color: var(--border-neutral);
 
   /* Teaser */
-  --teaser-border-color: var(--csgov-color-primary-4);
-  --teaser-border-color-hover: var(--csgov-color-primary);
-  --teaser-icon-color: var(--csgov-color-primary);
+  --teaser-border-color: var(--color-primary-400);
+  --teaser-border-color-hover: var(--border-primary);
+  --teaser-icon-color: var(--icon-on-subtle);
 
   /* Webform */
-    --csgov-feedback-background: var(--csgov-color-primary-2);
+  --csgov-feedback-background: var(--background-primary-subtle);
 
-  /* Gov.cz colors A11Y fix */
-  --gov-wizard-warning-indicator-color: var(--csgov-color-grey-8);
-  --gov-button-warning-base-color: var(--csgov-color-grey-8);
+  /* Gov.cz container overrides: DS 4.6 gives .gov-container a default
+   * bottom padding of --spacing-8xl (7.5rem) which would break every
+   * paragraph wrapper; the theme controls vertical rhythm itself. */
+  --container-padding-horizontal: var(--csgov-site-padding);
+  --container-padding-top: 0;
+  --container-padding-bottom: 0;
 }
 
 @media (min-width: 48em) {
   :root {
     --csgov-site-padding: var(--csgov-spacing-l);
-
-    /* Accordions overrides */
-    --gov-accordion-l-padding-x: var(--csgov-spacing-m);
-    --gov-accordion-l-padding-inner: var(--csgov-spacing-m);
   }
 }
 
-/* Set values for --gov vars. */
-:root {
-  /* Container overrides. */
-  --gov-container-padding-mobile: var(--csgov-site-padding);
-  --gov-container-padding-desktop: var(--csgov-site-padding);
-  /* Accordions overrides */
-  --gov-accordion-l-padding-x: var(--csgov-spacing-s);
-  --gov-accordion-l-padding-inner: var(--csgov-spacing-s);
+/* Gov.cz accordion overrides. DS 4.6 renamed the padding hooks; the names
+ * are generic, so they must stay scoped to the accordion (not :root). */
+.gov-accordion,
+.gov-accordion-item {
+  --padding-summary: var(--csgov-spacing-s);
+  --padding-content: var(--csgov-spacing-s);
+}
+
+@media (min-width: 48em) {
+  .gov-accordion,
+  .gov-accordion-item {
+    --padding-summary: var(--csgov-spacing-m);
+    --padding-content: var(--csgov-spacing-m);
+  }
 }

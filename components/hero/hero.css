@@ -5,16 +5,22 @@
 }
 
 .hero__wrapper:has(.background-primary) {
-  --hero-background: var(--csgov-color-primary);
-  --hero-foreground: var(--csgov-color-white);
-    /* We need to switch the button colors here. */
-  --gov-button-primary-solid-bg: var(--csgov-color-white);
-  --gov-button-primary-solid-color: var(--csgov-color-primary);
+  --hero-background: var(--background-primary);
+  --hero-foreground: var(--text-white-fixed);
+}
+
+/* Invert the primary solid button on the primary surface. The DS 4.6
+ * per-instance vars are generic names, so they stay scoped to the button. */
+.hero__wrapper:has(.background-primary) .gov-button[type="solid"][color="primary"] {
+  --background: var(--color-neutral-0);
+  --color: var(--color-primary-600);
+  --hover-background: var(--color-primary-100);
+  --active-background: var(--color-primary-200);
 }
 
 .hero__wrapper:has(.background-secondary) {
-  --hero-background: var(--csgov-color-secondary);
-  --hero-foreground: var(--csgov-color-white);
+  --hero-background: var(--color-neutral-900);
+  --hero-foreground: var(--text-white-fixed);
 }
 
 .hero__wrapper:has(.hero--has-image) {

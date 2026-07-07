@@ -32,8 +32,8 @@
 }
 
 .step-by-step__trigger:focus-visible {
-  border-radius: var(--gov-border-radius, 0.1875rem);
-  outline: var(--gov-outline-width, 0.125rem) solid var(--gov-color-focus-base);
+  border-radius: var(--corner-radius-xs, 0.1875rem);
+  outline: 0.125rem solid var(--status-focus);
   outline-offset: 0;
 }
 
