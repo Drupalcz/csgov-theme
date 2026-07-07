@@ -13,6 +13,8 @@
 
 .step-by-step__trigger {
   background-color: transparent;
+  /* Buttons don't inherit color (UA buttontext stays dark in dark mode). */
+  color: inherit;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
