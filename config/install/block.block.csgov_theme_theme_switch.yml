@@ -1,0 +1,21 @@
+langcode: cs
+status: true
+dependencies:
+  module:
+    - csgov_base
+  theme:
+    - csgov_theme
+id: csgov_theme_theme_switch
+theme: csgov_theme
+region: header_extra
+weight: 0
+provider: null
+plugin: csgov_theme_switch
+settings:
+  id: csgov_theme_switch
+  label: 'Tmavý režim'
+  label_display: '0'
+  provider: csgov_base
+  switch_size: s
+  switch_label_visible: false
+visibility: {  }

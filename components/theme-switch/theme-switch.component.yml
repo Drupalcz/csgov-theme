@@ -1,0 +1,25 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Theme switch
+description: Three-way dark mode switch (light / dark / follow the OS).
+libraryOverrides:
+  css:
+    component:
+      theme-switch.css: {}
+  js:
+    theme-switch.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - gov_cz/theme-switch
+    - gov_cz/gov-icon
+props:
+  type: object
+  properties:
+    switch_size:
+      type: [string, 'null']
+      title: Size
+      description: Size of the switch (xs, s, m, l, xl). Defaults to s.
+    switch_label_visible:
+      type: [boolean, 'null']
+      title: Show label
+      description: Show the mode label next to the toggle.

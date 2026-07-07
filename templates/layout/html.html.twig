@@ -36,6 +36,13 @@
   <head>
     <head-placeholder token="{{ placeholder_token }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
+    {#
+      Apply the visitor's stored dark mode preference before the first paint
+      (FOUC prevention). No-op when the server already forced a theme (the
+      theme switch block is not placed). The script is static — sites with a
+      strict CSP can allow it by hash.
+    #}
+    <script>(function () { try { var h = document.documentElement; if (h.hasAttribute('data-theme')) { return; } var t = localStorage.getItem('data-theme'); if (t === 'light' || t === 'dark') { h.setAttribute('data-theme', t); } } catch (e) {} })();</script>
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
   </head>

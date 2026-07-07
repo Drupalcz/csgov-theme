@@ -3,5 +3,8 @@
   "type": "drupal-theme",
   "description": "A CSGOV base theme.",
   "license": "GPL-2.0-or-later",
-  "minimum-stability": "dev"
+  "minimum-stability": "dev",
+  "require": {
+    "drupal/gov_cz": "~4.6.0"
+  }
 }

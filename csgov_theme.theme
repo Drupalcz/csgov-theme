@@ -13,6 +13,27 @@ use Drupal\node\NodeInterface;
  */
 
 /**
+ * Implements hook_preprocess_html().
+ */
+function csgov_theme_preprocess_html(array &$variables): void {
+  // Dark mode is controlled solely by the presence of the theme switch
+  // block: without it the site is forced light (the pre-DS-4.6 behavior),
+  // with it the DS follows the OS preference and the visitor's choice.
+  $blocks = \Drupal::entityTypeManager()->getStorage('block')->loadByProperties([
+    'theme' => \Drupal::theme()->getActiveTheme()->getName(),
+    'plugin' => 'csgov_theme_switch',
+  ]);
+  $blocks = array_filter($blocks, fn ($block) => $block->status());
+
+  if (!$blocks) {
+    $variables['html_attributes']->setAttribute('data-theme', 'light');
+  }
+
+  // Placing or removing the block must invalidate the cached page.
+  $variables['#cache']['tags'][] = 'config:block_list';
+}
+
+/**
  * Implements hook_preprocess_image_widget().
  */
 function csgov_theme_preprocess_image_widget(array &$variables) {

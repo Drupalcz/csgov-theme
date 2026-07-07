@@ -1,0 +1,28 @@
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--csgov-spacing-s);
+}
+
+/* The switch usually sits on the constant-primary header; inherit its
+ * foreground instead of the DS default form label color. */
+.theme-switch .gov-theme-switch button {
+  color: inherit;
+}
+
+.theme-switch__reset {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: var(--csgov-fs-xs);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.theme-switch__reset:focus-visible {
+  border-radius: var(--corner-radius-xs, 0.1875rem);
+  outline: 0.125rem solid var(--status-focus);
+  outline-offset: 0.125rem;
+}

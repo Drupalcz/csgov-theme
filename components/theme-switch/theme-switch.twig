@@ -1,0 +1,32 @@
+{# Theme switch
+  ## Variables ##
+  # switch_size – DS size of the switch (xs|s|m|l|xl).
+  # switch_label_visible – Show the mode label next to the toggle.
+
+  The wrapper starts hidden: without JS there is nothing to switch (the page
+  then simply follows the OS preference), the behavior reveals it.
+#}
+<div class="theme-switch" role="group" aria-label="{{ 'Nastavení vzhledu'|t }}" hidden>
+  <div class="gov-theme-switch" theme="light" size="{{ switch_size|default('s') }}">
+    <button type="button" class="theme-switch__toggle" role="switch" aria-checked="false" aria-label="{{ 'Tmavý režim'|t }}">
+      <span>
+        <span class="gov-theme-switch__indicator">
+          <span class="gov-icon gov-theme-switch__icon-light" aria-hidden="true">
+            <span class="gov-icon__holder">
+              {{ source('@gov_cz/assets/gov-design-system/gov-icons/components/sun.svg') }}
+            </span>
+          </span>
+          <span class="gov-icon gov-theme-switch__icon-dark" aria-hidden="true">
+            <span class="gov-icon__holder">
+              {{ source('@gov_cz/assets/gov-design-system/gov-icons/components/moon.svg') }}
+            </span>
+          </span>
+        </span>
+        {% if switch_label_visible %}
+          <span class="theme-switch__label" aria-hidden="true">{{ 'Tmavý režim'|t }}</span>
+        {% endif %}
+      </span>
+    </button>
+  </div>
+  <button type="button" class="theme-switch__reset" hidden>{{ 'Podle systému'|t }}</button>
+</div>
