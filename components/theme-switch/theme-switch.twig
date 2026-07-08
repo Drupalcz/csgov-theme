@@ -7,7 +7,9 @@
   then simply follows the OS preference), the behavior reveals it.
 #}
 <div class="theme-switch" role="group" aria-label="{{ 'Nastavení vzhledu'|t }}" hidden>
-  <button type="button" class="theme-switch__reset" hidden>{{ 'Podle systému'|t }}</button>
+  <button type="button" class="theme-switch__reset" hidden aria-label="{{ 'Přepnout na režim podle systému'|t }}" title="{{ 'Přepnout na režim podle systému'|t }}">
+    <span class="gov-icon" aria-hidden="true">{{ source('@gov_cz/assets/legacy/gov-icons/basic/arrow-counterclockwise.svg') }}</span>
+  </button>
   <div class="gov-theme-switch" theme="light" size="{{ switch_size|default('m') }}">
     <button type="button" class="theme-switch__toggle" role="switch" aria-checked="false" aria-label="{{ 'Tmavý režim'|t }}">
       <span>

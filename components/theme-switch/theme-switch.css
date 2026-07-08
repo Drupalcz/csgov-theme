@@ -30,28 +30,25 @@
   background: none;
   padding: 0;
   color: inherit;
-  font-size: var(--csgov-fs-xs);
-  text-decoration: underline;
   cursor: pointer;
-  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+}
+
+.theme-switch__reset .gov-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.theme-switch__reset:focus-visible {
+  border-radius: var(--corner-radius-xs, 0.1875rem);
+  outline: 0.125rem solid var(--status-focus);
+  outline-offset: 0.125rem;
 }
 
 /* Keep the reset button in the layout even when hidden so its appearance
  * doesn't shift the toggle sideways. */
 .theme-switch__reset[hidden] {
-  display: inline-block;
+  display: inline-flex;
   visibility: hidden;
-}
-
-/* On mobile the reset label would crowd the top bar next to the menu
- * toggle; the switch alone stays. Resetting is still available on
- * desktop and the preference keeps working either way. */
-@media (max-width: 47.99em) {
-  .theme-switch__reset {
-    display: none;
-  }
-
-  .theme-switch__reset[hidden] {
-    display: none;
-  }
 }
