@@ -21,25 +21,17 @@
   color: currentColor;
 }
 
+/* The brand gets its content width, the extras (theme switch, language
+ * switcher, menu toggle) take the rest — a fixed extras column would
+ * overflow under the brand and steal its clicks. */
 .csgov-header .csgov-header__container {
   display: grid;
-  grid-template-columns: 1fr 2rem;
+  grid-template-columns: auto 1fr;
   grid-template-rows: auto;
   gap: var(--csgov-spacing);
   align-items: center;
 }
 
-@media (min-width: 48em) {
-  .csgov-header .csgov-header__container {
-    grid-template-columns: 5fr 3fr;
-  }
-}
-
-@media (min-width: 80em) {
-  .csgov-header .csgov-header__container {
-    grid-template-columns: 3fr 1fr;
-  }
-}
 
 .csgov-header__brand {
   grid-column: 1 / 2;
