@@ -93,6 +93,27 @@
   gap: var(--csgov-spacing-s);
 }
 
+/* Very narrow screens: tighten the extras and shorten language links to
+ * the language code. The full name keeps its font-size 0 text for
+ * assistive tech, the code is drawn from the lang attribute. */
+@media (max-width: 30em) {
+  .csgov-header__extra,
+  .csgov-header__extra .region-header-extra,
+  .csgov-header__extra .theme-switch {
+    gap: var(--csgov-spacing-xs);
+  }
+
+  .csgov-header__extra .language-link {
+    font-size: 0;
+  }
+
+  .csgov-header__extra .language-link::after {
+    content: attr(lang);
+    font-size: var(--csgov-fs-m);
+    text-transform: uppercase;
+  }
+}
+
 .csgov-header__toggle {
   display: inline-flex;
   flex-direction: column;
