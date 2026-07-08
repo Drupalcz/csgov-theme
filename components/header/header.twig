@@ -11,6 +11,11 @@
     {% endif %}
     {% if search or extra or navigation %}
       <div class="csgov-header__extra">
+        {% if extra %}
+          <div class="csgov-header__extra">
+            {{ extra }}
+          </div>
+        {% endif %}
         <div class="csgov-header__search">
           {{ include('csgov_theme:search-box', {
             search_box_label: hero_search_label,
@@ -19,11 +24,6 @@
             })
           }}
         </div>
-        {% if extra %}
-          <div class="csgov-header__extra">
-            {{ extra }}
-          </div>
-        {% endif %}
         <button class="csgov-header__toggle" data-target="csgov-header__navigation" data-text-close="{{ text_close }}" data-text-open="{{ text_open }}" aria-controls="csgov-header__navigation" aria-expanded="false">
           <span class="csgov-header__toggle-icon" aria-hidden>
             <span class="csgov-header__toggle-icon--open">

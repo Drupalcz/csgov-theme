@@ -8,7 +8,7 @@ dependencies:
 id: csgov_theme_theme_switch
 theme: csgov_theme
 region: header_extra
-weight: 0
+weight: -10
 provider: null
 plugin: csgov_theme_switch
 settings:
@@ -16,6 +16,6 @@ settings:
   label: 'Tmavý režim'
   label_display: '0'
   provider: csgov_base
-  switch_size: s
+  switch_size: m
   switch_label_visible: false
 visibility: {  }

@@ -10,6 +10,20 @@
   color: inherit;
 }
 
+/* Self-contained icon colors: regions may paint all descendants (e.g.
+ * `.footer-legal * { color: … }`), which would break inheritance inside
+ * the indicator. Mirror the DS defaults with enough specificity, svg
+ * included. The tokens flip with the color scheme, not with the region. */
+.theme-switch .gov-theme-switch .gov-icon,
+.theme-switch .gov-theme-switch .gov-icon * {
+  color: var(--icon-neutral);
+}
+
+.theme-switch .gov-theme-switch[theme="dark"] .gov-theme-switch__icon-dark,
+.theme-switch .gov-theme-switch[theme="dark"] .gov-theme-switch__icon-dark * {
+  color: var(--icon-on-subtle-fixed-bg);
+}
+
 .theme-switch__reset {
   appearance: none;
   border: 0;
@@ -19,6 +33,7 @@
   font-size: var(--csgov-fs-xs);
   text-decoration: underline;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 /* Keep the reset button in the layout even when hidden so its appearance
@@ -28,8 +43,15 @@
   visibility: hidden;
 }
 
-.theme-switch__reset:focus-visible {
-  border-radius: var(--corner-radius-xs, 0.1875rem);
-  outline: 0.125rem solid var(--status-focus);
-  outline-offset: 0.125rem;
+/* On mobile the reset label would crowd the top bar next to the menu
+ * toggle; the switch alone stays. Resetting is still available on
+ * desktop and the preference keeps working either way. */
+@media (max-width: 47.99em) {
+  .theme-switch__reset {
+    display: none;
+  }
+
+  .theme-switch__reset[hidden] {
+    display: none;
+  }
 }
