@@ -85,6 +85,14 @@
   gap: var(--csgov-spacing-xs);
 }
 
+/* The region template wraps the blocks in an extra div; lay the blocks
+ * (theme switch, language switcher, ...) out in a row. */
+.csgov-header__extra .region-header-extra {
+  display: flex;
+  align-items: center;
+  gap: var(--csgov-spacing-s);
+}
+
 .csgov-header__toggle {
   display: inline-flex;
   flex-direction: column;
