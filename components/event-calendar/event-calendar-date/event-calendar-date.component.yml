@@ -4,5 +4,5 @@ props:
   type: object
   properties:
     event_calendar_date:
-      type: string
+      type: [string, 'null']
       title: The date

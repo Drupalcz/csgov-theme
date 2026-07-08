@@ -4,5 +4,5 @@ props:
   type: object
   properties:
     web:
-      type: string
+      type: [string, 'null']
       title: Web Number

@@ -2,22 +2,20 @@ $schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc
 name: Page Header
 props:
   type: object
-  required:
-    - logo
   properties:
     logo:
-      type: string
+      type: [string, 'null']
       title: Site logo
       description: Sitewide logo
     navigation:
-      type: array
+      type: [array, 'null']
       title: Main menu
       description: The main navigation for the site
     search:
-      type: string
+      type: [string, 'null']
       title: Search box
       description: Search box for input the search term
     extra:
-      type: string
+      type: [string, 'null']
       title: Extra items
       description: Space for various, optional, items e.g. language switcher, mobile toggle…

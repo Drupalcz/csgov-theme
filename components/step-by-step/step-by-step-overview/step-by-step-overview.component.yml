@@ -2,14 +2,12 @@ $schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc
 name: Step by step
 props:
   type: object
-  required:
-    - step_by_step_items
   properties:
     step_by_step_size:
-      type: boolean
+      type: [boolean, 'null']
       title: Size
       description: Size of the items.
     step_by_step_items:
-      type: array
+      type: [array, 'null']
       title: Step by step Items
       description: The items for the step by step.

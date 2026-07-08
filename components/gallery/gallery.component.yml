@@ -2,22 +2,20 @@ $schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc
 name: Gallery
 props:
   type: object
-  required:
-    - item_image
   properties:
     item_url_large:
-      type: string
+      type: [string, 'null']
       title: Link to large image
       description: Location of the large version of the image.
     item_image:
-      type: string
+      type: [string, 'null']
       title: Item Image
       description: The small version of image.
     item_title:
-      type: string
+      type: [string, 'null']
       title: Item title
       description: Description of the item.
     gallery_id:
-      type: string
+      type: [string, integer, 'null']
       title: Gallery ID
       description: Unique identifier for individual galleries.

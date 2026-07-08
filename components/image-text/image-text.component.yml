@@ -1,15 +1,17 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
-name: Image
+name: Image with text
 props:
   type: object
-  required:
-    - image
   properties:
-    image:
-      type: object
+    image_text_image:
+      type: [string, object, 'null']
       title: Image
-      description: Main Image Object
-    image_caption:
-      type: string
-      title: Image Caption
-      description: Optional image caption text.
+    image_text_image_position:
+      type: [string, 'null']
+      title: Image position
+    image_text_label:
+      type: [string, object, 'null']
+      title: Label
+    image_text_content:
+      type: [string, object, 'null']
+      title: Content

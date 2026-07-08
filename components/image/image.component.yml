@@ -2,14 +2,12 @@ $schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc
 name: Image
 props:
   type: object
-  required:
-    - image
   properties:
     image:
-      type: object
+      type: [object, 'null']
       title: Image
       description: Main Image Object
     image_caption:
-      type: string
+      type: [string, 'null']
       title: Image Caption
       description: Optional image caption text.

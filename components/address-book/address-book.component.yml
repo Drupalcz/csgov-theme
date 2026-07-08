@@ -2,25 +2,23 @@ $schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc
 name: Address Book
 props:
   type: object
-  required:
-    - address_book_title
   properties:
     address_book_title:
-      type: string
+      type: [string, 'null']
       title: Name
       description: Name of the address book item
     address_book_position:
-      type: string
+      type: [string, 'null']
       title: Job Position
     address_book_email:
-      type: string
+      type: [string, 'null']
       title: Email
     address_book_mobile:
-      type: string
+      type: [string, 'null']
       title: Mobile phone number
     address_book_phone:
-      type: string
+      type: [string, 'null']
       title: Landline
     address_book_image:
-      type: string
+      type: [string, 'null']
       title: Image

@@ -4,5 +4,5 @@ props:
   type: object
   properties:
     phone_number:
-      type: string
+      type: [string, 'null']
       title: Phone Number

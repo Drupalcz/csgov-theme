@@ -4,18 +4,18 @@ props:
   type: object
   properties:
     infopanel_icon:
-      type: string
+      type: [string, 'null']
       title: infopanel Icon
       description: Infopanel Icon
     infopanel_title:
-      type: string
+      type: [string, 'null']
       title: Infopanel title
       description: The title for the infopanel.
     infopanel_content:
-      type: string
+      type: [string, 'null']
       title: Infopanel content
       description: The content for the infopanel.
     infopanel_link:
-      type: string
+      type: [string, 'null']
       title: Infopanel Link
       description: Optional link at the bottom of the panel.

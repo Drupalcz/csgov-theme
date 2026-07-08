@@ -7,18 +7,16 @@ libraryOverrides:
     - csgov_theme/clickable-items
 props:
   type: object
-  required:
-    - teaser_title
   properties:
     teaser_title:
-      type: string
+      type: [string, 'null']
       title: Name
       description: Name of the address book item
     teaser_content:
-      type: string
+      type: [string, 'null']
       title: Content
       description: Content of the teaser
     teaser_date:
-      type: string
+      type: [string, 'null']
       title: Date
       description: Publishing date

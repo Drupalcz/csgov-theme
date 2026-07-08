@@ -4,5 +4,5 @@ props:
   type: object
   properties:
     address:
-      type: string
+      type: [string, 'null']
       title: Address
