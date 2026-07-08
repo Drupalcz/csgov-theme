@@ -105,11 +105,16 @@
 
   .csgov-header__extra .language-link {
     font-size: 0;
+    /* Flex centering: the zero-size text would otherwise drag the
+     * ::after off the baseline. */
+    display: inline-flex;
+    align-items: center;
   }
 
   .csgov-header__extra .language-link::after {
     content: attr(lang);
     font-size: var(--csgov-fs-m);
+    line-height: 1.5;
     text-transform: uppercase;
   }
 }
