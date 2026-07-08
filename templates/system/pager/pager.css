@@ -1,4 +1,6 @@
-.gov-pagination {
+/* DS 4.6 gives .gov-pagination display: contents (layout-neutral host),
+ * so the box properties belong on the inner nav. */
+.gov-pagination > nav {
   margin-top: var(--csgov-spacing-xl);
 }
 
